@@ -7,17 +7,17 @@ import os
 from os.path import join
 import logging
 
-from .input import pdftotext
-from .input import pdfminer_wrapper
-from .input import tesseract
-from .input import tesseract4
-from .input import gvision
+from input import pdftotext
+from input import pdfminer_wrapper
+from input import tesseract
+from input import tesseract4
+from input import gvision
 
-from .extract.loader import read_templates
+from extract.loader import read_templates
 
-from .output import to_csv
-from .output import to_json
-from .output import to_xml
+from output import to_csv
+from output import to_json
+from output import to_xml
 
 
 logger = logging.getLogger(__name__)
@@ -90,7 +90,7 @@ def extract_data(invoicefile, templates=None, input_module=pdftotext):
         optimized_str = t.prepare_input(extracted_str)
 
         if t.matches_input(optimized_str):
-            return t.extract(optimized_str)
+            return t.extract(optimized_str, invoicefile)
 
     logger.error('No template for %s', invoicefile)
     return False

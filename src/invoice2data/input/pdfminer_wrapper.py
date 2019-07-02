@@ -23,6 +23,10 @@ def to_text(path):
         sys.setdefaultencoding('utf8')
     except ImportError:
         from io import StringIO
+    
+    import sys
+    sys.path.append("/home/teemo/source/pdfminer/")
+
 
     from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
     from pdfminer.converter import TextConverter

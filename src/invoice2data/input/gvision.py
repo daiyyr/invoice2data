@@ -1,22 +1,18 @@
 # -*- coding: utf-8 -*-
 def to_text(path, bucket_name='cloud-vision-84893', language='fr'):
     """Sends PDF files to Google Cloud Vision for OCR.
-
     Before using invoice2data, make sure you have the auth json path set as
     env var GOOGLE_APPLICATION_CREDENTIALS
-
     Parameters
     ----------
     path : str
         path of electronic invoice in JPG or PNG format
     bucket_name : str
         name of bucket to use for file storage and results cache.
-
     Returns
     -------
     extracted_str : str
         returns extracted text from image in JPG or PNG format
-
     """
 
     """OCR with PDF/TIFF as source files on GCS"""
@@ -24,6 +20,8 @@ def to_text(path, bucket_name='cloud-vision-84893', language='fr'):
     from google.cloud import vision
     from google.cloud import storage
     from google.protobuf import json_format
+
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/teemo/source/my_GOOGLE_APPLICATION_CREDENTIALS.json"
 
     # Supported mime_types are: 'application/pdf' and 'image/tiff'
     mime_type = 'application/pdf'
