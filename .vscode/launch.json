@@ -7,7 +7,7 @@
             "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
              "console": "integratedTerminal",
              "args": [
-                "--output-format", "csv", "--template-folder", "template", "./pdf/watercare/negtive.pdf", "./pdf/watercare/1.pdf"
+                "--output-format", "csv", "--template-folder", "template", "./pdf/watercare/2.pdf", "./pdf/watercare/1.pdf"
             ],
         },
         {
@@ -27,7 +27,7 @@
             "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
             "console": "integratedTerminal",
             "args": [
-                "./pdf/sitecare/18865.pdf", "--input-reader", "pdftotext", "--debug", "&>", "output.txt"
+                "./pdf/watercare/1.pdf", "--input-reader", "pdftotext", "--debug", "&>", "output.txt"
             ],
         },
         {

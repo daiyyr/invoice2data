@@ -6,13 +6,17 @@ keywords:
 fields:
   invoice_number: 'Account\snumber\:\s+(\d+\-\d+)'
   bc_number: '[^\-]\sBody\sCorporate\s+(\w+)'
-  customer_number: 'Account\snumber\:\s+(\d+\-\d+)'
   gst_number: '56\-892\-397'
   date: 'Invoice date\:[\w\s]+?(\d{1,2} \w\w\w \d\d\d\d)'
   due_date: 'Due date\:[\w\s]+?(\d{1,2} \w\w\w \d\d\d\d)'
-  amount: '([\d\,]{1,10}\.[\d\scr]{2,5})[^\$]+All current charges'
+  amount: 'Total amount due\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
   gst: 'All current charges include 15\% GST\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
-  overdue_amout: ''
+  this_month_reading: 'This\s*\w*? reading\s*(\d{1,2}\-\w\w\w\-\d\d\s*\d{1,10}\s*\w{6,8})'
+  last_month_reading: 'Last\s*\w*? reading\s*(\d{1,2}\-\w\w\w\-\d\d\s*\d{1,10}\s*\w{6,8})'
+  water_usage_0_water_1_wastewater: '[\d\,]{1,10}\.\d\d\s*kL\s*\$[\d\,]{1,10}\.\d{1,5}\/kL\s*\$\s*[\d\,]{1,10}\.\d{1,2}'
+  fixed_charges: '\d\d\s*days\s*\$[\d\,]{1,10}\.\d{1,5}\s*pa\s*\$\s*\d{1,10}\.\d{1,2}'
+  filename: ''
+
 
 options:
   currency: NZD
@@ -20,3 +24,4 @@ options:
   date_formats:
     - '%d/%m/%Y'
     - '%d %b %Y'
+    - '%d-%b-%y'
