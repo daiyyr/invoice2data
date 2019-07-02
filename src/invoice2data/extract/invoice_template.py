@@ -10,6 +10,7 @@ from unidecode import unidecode
 import logging as logger
 from collections import OrderedDict
 from .plugins import lines, tables
+import datetime
 
 OPTIONS_DEFAULT = {
     'remove_whitespace': False,
@@ -163,6 +164,15 @@ class InvoiceTemplate(OrderedDict):
                 output[k] = filename
             else:
                 logger.debug("field=%s | regexp=%s", k, v)
+                if k=='due_date' and v.endswith('days') and (output['date'] is not None):
+                    duedays = v.replace('days', '')
+                    try:
+                        i = int(duedays)
+                        output[k] = output['date']+ datetime.timedelta(days=i)
+                        continue
+                    except ValueError:
+                        #not in '20days' format
+                        i = 0
 
                 sum_field = False
                 if k.startswith('sum_amount') and type(v) is list:
@@ -179,7 +189,11 @@ class InvoiceTemplate(OrderedDict):
                             else:
                                 res_find.extend(res_val)
                 else:
-                    res_find = re.findall(v, optimized_str)
+                    try:
+                        res_find = re.findall(v, optimized_str)
+                    except:
+                        logger.error("Error when matching '%s'", k)
+                        return None
                 if res_find:
                     logger.debug("res_find=%s", res_find)
                     if k.startswith('date') or k.endswith('date'):
