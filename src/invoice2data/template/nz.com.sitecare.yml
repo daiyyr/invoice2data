@@ -5,7 +5,7 @@ keywords:
 
 fields:
   invoice_number: 'Reference\:\s*([ \w]+)'
-  bc_number: 'Body Corporate\s([\s\w]+)\s*\-'
+  bc_number: 'Body Corporate\s([ \w]+)\s*\-'
   gst_number: '109\-430\-048'
   date: 'Date\s+(\w{3,9} \d{1,2}\,\s*\d\d\d\d)'
   due_date: 'Date\s+(\w{3,9} \d{1,2}\,\s*\d\d\d\d)'
