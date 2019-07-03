@@ -1,0 +1,21 @@
+issuer: L. A. Inspection Services Ltd
+keywords:
+- L. A. Inspection Services Ltd
+- accounts@lainspections.co.nz
+
+fields:
+  invoice_number: 'Invoice No\:\s*(\d+)'
+  bc_number: 'BC (\d+)'
+  gst_number: '99\-285\-427'
+  date: 'Invoice Date\:\s*(\d\d\/\d\d\/\d\d\d\d)'
+  due_date: '20days'
+  amount: 'Total\s*\(inc\s*GST\)\s*\$([\d\,]{1,10}\.\d\d)'
+  gst: 'GST\s*Amount\s*\$([\d\,]{1,10}\.\d\d)'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d/%m/%Y'

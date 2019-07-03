@@ -8,7 +8,7 @@ fields:
   bc_number: ''
   customer_number: ''
   gst_number: '121\-762\-706'
-  date: 'TAX INVOICE\s+(\d{1,2} \w\w\w \d\d\d\d)'
+  date: 'Invoice\sDate\s+Auckland\sGarden\sServices\s+(\d{1,2} \w\w\w \d\d\d\d)'
   due_date: 'Due Date\s+(\d{1,2} \w\w\w \d\d\d\d)'
   amount: 'TOTAL NZD\s*(\d{1,10}\.\d\d)'
   gst: 'TOTAL GST 15\%\s+(\d{1,10}\.\d\d)'

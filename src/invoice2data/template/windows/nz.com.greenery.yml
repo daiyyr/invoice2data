@@ -10,7 +10,7 @@ fields:
   gst_number: ''
   date: 'Greenery\s*(\d{1,2} \w{3} \d{4})'
   due_date: '(?<=Due Date\:)\s+(\d{1,2} \w{3} \d{4})'
-  amount: 'Amount Due\s*([\d\,]{1,10}\.\d\d)'
+  amount: '(?<=Due Date)\s*\d{1,10}\.\d\d'
   gst: ''
   overdue_amout: ''
 

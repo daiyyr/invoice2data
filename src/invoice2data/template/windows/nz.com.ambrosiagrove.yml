@@ -4,11 +4,11 @@ keywords:
 - 34B Monteith Crescent
 
 fields:
-  invoice_number: 'Invoice Number.*?\n.*?(INV\-\d+)'
-  bc_number: 'BC(\w+)\s*NEW\s*ZEALAND'
+  invoice_number: 'Remuera\s+(INV\-\d+)\s+Auckland'
+  bc_number: 'Reference\s+BC(\d+)'
   customer_number: ''
   gst_number: ''
-  date: 'Invoice Date.*?\n.*(\d{1,2} \w\w\w \d\d\d\d)'
+  date: 'Grove\s+(\d{1,2} \w\w\w \d\d\d\d)'
   due_date: 'Due Date\:\s*(\d{1,2} \w\w\w \d\d\d\d)'
   amount: 'Subtotal\s*(\d{1,10}.\d\d)'
   gst: ''

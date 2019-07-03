@@ -9,7 +9,7 @@ fields:
   customer_number: ''
   gst_number: 'GST No\.\: (\d\d\d\-\d\d\d\-\d\d\d)'
   date: 'Invoice date\: (\d\d\/\d\d\/\d\d\d\d)'
-  due_date: 'Due\:.*?\n.*?(\d\d\/\d\d\/\d\d\d\d)'
+  due_date: '(\d\d\/\d\d\/\d\d\d\d)\s+DESCRIPTION'
   amount: 'INVOICE NUMBER\:\s*\w+\s+AMOUNT DUE\:\s*\$([\d\,]{1,10}\.\d\d)'
   gst: 'Total \(inc GST\)\:\s+\$([\d\,]{1,10}\.\d\d)'
   overdue_amout: ''

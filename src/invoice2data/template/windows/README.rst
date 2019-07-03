@@ -1,0 +1,1 @@
+Templates here are for Windows version of 'pdf2text'

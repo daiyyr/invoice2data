@@ -5,7 +5,7 @@ keywords:
 
 fields:
   invoice_number: 'Invoice No\:\s+(\d+)'
-  bc_number: '(?<!C\/\- )Body Corporate\s*(\w+)'
+  bc_number: '(?<=Body Corporate)\s*(\w+)\s+www'
   customer_number: 'Contract No\:\s+(\w+)'
   gst_number: ' GST No\.\s*(\d+)'
   date: 'Invoice Date\s+(\d\d\-\w\w\w\-\d\d\d\d)'

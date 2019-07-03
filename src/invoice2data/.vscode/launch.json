@@ -7,7 +7,7 @@
            "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
             "console": "integratedTerminal",
             "args": [
-               "--output-format", "csv", "--template-folder", "template", "./pdf/watercare/2.pdf", "./pdf/watercare/1.pdf"
+               "--output-format", "csv", "--template-folder", "template", "./pdf/spark.pdf"
            ],
        },
        {
@@ -27,7 +27,7 @@
            "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
            "console": "integratedTerminal",
            "args": [
-               "./pdf/watercare/1.pdf", "--input-reader", "pdftotext", "--debug", "&>", "output.txt"
+            "--output-format", "csv", "./pdf/spark.pdf", "--input-reader", "pdftotext", "--debug", "&>", "output.txt"
            ],
        },
        {
@@ -60,6 +60,15 @@
            "args": [
                "./pdf/sitecare2.pdf", "--input-reader", "gvision", "--template-folder", "template", "--debug", "&>", "output.txt"
             ],
-        }
+        },
+        {
+            "name": "current python file",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+             ],
+         }
     ]
 }

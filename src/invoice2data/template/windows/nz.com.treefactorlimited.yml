@@ -4,13 +4,13 @@ keywords:
 - www.treefactor.co.nz
 
 fields:
-  invoice_number: 'Invoice Number\s*Body Corporate Administration\s*(\d+)'
+  invoice_number: 'Invoice Number\s+(\d+)'
   bc_number: ''
   customer_number: ''
   gst_number: 'GST NO\: (\d\d\d\-\d\d\d\-\d\d\d)'
   date: 'Due Date\s+(\d{1,2}[a-zA-Z]{2} [a-zA-Z]{3,9} \d\d\d\d)'
   due_date: 'Due Date\s+(\d{1,2}[a-zA-Z]{2} [a-zA-Z]{3,9} \d\d\d\d)'
-  amount: 'Amount Due\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  amount: 'Total \$\s*([\d\,]{1,10}\.\d\d)'
   gst: 'GST \d+\%\s+\$\s*([\d\,]{1,10}\.\d\d)'
   overdue_amout: ''
 

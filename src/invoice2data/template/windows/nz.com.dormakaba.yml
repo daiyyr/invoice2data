@@ -4,12 +4,12 @@ keywords:
 - www.dormakaba.co.nz
 
 fields:
-  invoice_number: 'Number\:\s*(\d+\w+\-\d+)'
+  invoice_number: 'Date\:\s*(\d+\w+\-\d+)'
   bc_number: '(?<=Body Corporate\s)[^B]\w+'
-  customer_number: 'SAP Number\:\s*(\d+)'
+  customer_number: 'Due Date\:\s*(\d+)'
   gst_number: 'registered for GST\s*([^.]{10,11})'
-  date: '(?<=Date\:)\s+(\d{2}\/\d{2}\/\d{4})'
-  due_date: 'Due Date\:\s*(\d{2}\/\d{2}\/\d{4})'
+  date: '(?<=SAP Number\:)\s+(\d{2}\/\d{2}\/\d{4})'
+  due_date: 'Due Date\:\s*\d+\s+(\d{2}\/\d{2}\/\d{4})'
   amount: '(?<=Amount due incl\.GST\:)\s*NZD\s*(\d{1,10}.\d\d)'
   gst: '(?<=Total GST component\:)\s*NZD\s*(\d{1,10}.\d\d)'
   overdue_amout: ''
