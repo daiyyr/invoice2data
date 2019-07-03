@@ -64,3 +64,224 @@ target/
 # PyTest
 .pytest_cache/
 
+src/invoice2data/install.sh
+src/invoice2data/invoices-output.csv
+output.txt
+src/invoice2data/out.jpg
+src/invoice2data/output.txt
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/t3txor45fEPBjGpU2EQBgGE6iSpk6Eqy8MLz4QMxALs=/termios.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/0lethqjhhM1F7b7nhBoJ2WB7rP7Ds-zVPemU0eyU-kg=/_regex.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/8cF8_i67ZD42N-BUbbaWpsv66M4ZEHxM7FUElI_I2C8=/_api_implementation.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/FWOFJr0Ko_9iRSs0ZJrFm8GrsXrDnMEJde9dSr7NewY=/python3.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._ast.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._bisect.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._blake2.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._codecs.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._collections.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._datetime.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._elementtree.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._functools.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._heapq.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._imp.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._io.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._locale.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._md5.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._operator.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._pickle.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._posixsubprocess.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._random.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._sha1.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._sha256.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._sha3.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._sha512.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._signal.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._socket.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._sre.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._stat.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._string.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._struct.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._thread.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._tracemalloc.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._warnings.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3._weakref.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.array.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.atexit.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.binascii.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.errno.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.gc.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.grp.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.itertools.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.marshal.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.math.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.posix.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.pwd.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.pyexpat.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.select.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.sys.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.time.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.unicodedata.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.zipimport.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/M2KcDmVDYL_Yq1CJMCom4n3OUETWJLIvUfy8ZvHg0Zw=/python3.zlib.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/YV6zvSQouGYedZ-D2P0FIIvU1Pdn24AOsvUtpvtaUmU=/_AES.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/YV6zvSQouGYedZ-D2P0FIIvU1Pdn24AOsvUtpvtaUmU=/_ARC4.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/a0sB6YBMdNEDj6fxohYSr9f9AsUcGBPr5Bx9kCPxQzA=/_message.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/c_9OHGNB5hkYzy9GLWRtowGpvHwB-PprKqS7FwA1uaA=/_SHA256.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/lxZFQG_YCJATvcHJZPT3KS4tVSXSHe9W0opaD3PnDKQ=/_yaml.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/t3txor45fEPBjGpU2EQBgGE6iSpk6Eqy8MLz4QMxALs=/_bz2.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/t3txor45fEPBjGpU2EQBgGE6iSpk6Eqy8MLz4QMxALs=/_csv.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/t3txor45fEPBjGpU2EQBgGE6iSpk6Eqy8MLz4QMxALs=/_ctypes.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/t3txor45fEPBjGpU2EQBgGE6iSpk6Eqy8MLz4QMxALs=/_decimal.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/t3txor45fEPBjGpU2EQBgGE6iSpk6Eqy8MLz4QMxALs=/_hashlib.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/t3txor45fEPBjGpU2EQBgGE6iSpk6Eqy8MLz4QMxALs=/_json.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/t3txor45fEPBjGpU2EQBgGE6iSpk6Eqy8MLz4QMxALs=/_lzma.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/t3txor45fEPBjGpU2EQBgGE6iSpk6Eqy8MLz4QMxALs=/_multiprocessing.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/t3txor45fEPBjGpU2EQBgGE6iSpk6Eqy8MLz4QMxALs=/_opcode.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/t3txor45fEPBjGpU2EQBgGE6iSpk6Eqy8MLz4QMxALs=/_ssl.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/t3txor45fEPBjGpU2EQBgGE6iSpk6Eqy8MLz4QMxALs=/mmap.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/XDG_CACHE_HOME/Microsoft/Python Language Server/stubs.v1/t3txor45fEPBjGpU2EQBgGE6iSpk6Eqy8MLz4QMxALs=/readline.cpython-36m-x86_64-linux-gnu.pyi
+src/invoice2data/envname/share/python-wheels/setuptools-39.0.1-py2.py3-none-any.whl
+src/invoice2data/envname/bin/activate
+src/invoice2data/envname/bin/activate.csh
+src/invoice2data/envname/bin/activate.fish
+src/invoice2data/envname/bin/activate_this.py
+src/invoice2data/envname/bin/easy_install
+src/invoice2data/envname/bin/easy_install-3.6
+src/invoice2data/envname/bin/pip
+src/invoice2data/envname/bin/pip3
+src/invoice2data/envname/bin/pip3.6
+src/invoice2data/envname/bin/python
+src/invoice2data/envname/bin/python-config
+src/invoice2data/envname/bin/python3
+src/invoice2data/envname/bin/python3.6
+src/invoice2data/envname/bin/virtualenv
+src/invoice2data/envname/bin/wheel
+src/invoice2data/envname/include/python3.6m
+src/invoice2data/envname/share/python-wheels/CacheControl-0.11.7-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/appdirs-1.4.3-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/certifi-2018.1.18-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/chardet-3.0.4-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/colorama-0.3.7-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/distlib-0.2.6-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/distro-1.0.1-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/html5lib-0.999999999-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/idna-2.6-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/ipaddress-0.0.0-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/lockfile-0.12.2-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/packaging-17.1-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/pip-9.0.1-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/pkg_resources-0.0.0-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/progress-1.2-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/requests-2.18.4-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/retrying-1.3.3-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/six-1.11.0-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/urllib3-1.22-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/webencodings-0.5-py2.py3-none-any.whl
+src/invoice2data/envname/share/python-wheels/wheel-0.30.0-py2.py3-none-any.whl
+.gitignore
+src/invoice2data/pdf/sitecare/19088.pdf
+src/invoice2data/pdf/GourleyHoldings.pdf
+src/invoice2data/pdf/Greenery.pdf
+src/invoice2data/pdf/J.J.Richards.pdf
+src/invoice2data/pdf/ambrosiagrove.pdf
+src/invoice2data/pdf/aucklandgardenservices.pdf
+src/invoice2data/pdf/dormakaba.pdf
+src/invoice2data/pdf/envirowaste.pdf
+src/invoice2data/pdf/otiselevatorcompany.pdf
+src/invoice2data/pdf/profileplumbing.pdf
+src/invoice2data/pdf/sitecare.pdf
+src/invoice2data/pdf/sitecare2.pdf
+src/invoice2data/pdf/spark.pdf
+src/invoice2data/pdf/treefactorlimited.pdf
+src/invoice2data/pdf/viplawnsgardens.pdf
+src/invoice2data/pdf/vocus.pdf
+src/invoice2data/pdf/watertightplumbing.pdf
+src/invoice2data/pdf/erve/3623.pdf
+src/invoice2data/pdf/erve/3651.pdf
+src/invoice2data/pdf/erve/3673.pdf
+src/invoice2data/pdf/erve/3675.pdf
+src/invoice2data/pdf/erve/3718.pdf
+src/invoice2data/pdf/la/00010656.pdf
+src/invoice2data/pdf/laneneave/B147164.pdf
+src/invoice2data/pdf/laneneave/B147186.pdf
+src/invoice2data/pdf/robslawn/00001503.pdf
+src/invoice2data/pdf/robslawn/00001649.pdf
+src/invoice2data/pdf/sitecare/18865.pdf
+src/invoice2data/pdf/sitecare/19007.pdf
+src/invoice2data/pdf/sitecare/19120.pdf
+src/invoice2data/pdf/sitecare/sitecare.png
+src/invoice2data/pdf/watercare/Watercare_Bill_1346233-01_2019_Feb_28.pdf
+src/invoice2data/pdf/watercare/1.pdf
+src/invoice2data/pdf/watercare/10.pdf
+src/invoice2data/pdf/watercare/11.pdf
+src/invoice2data/pdf/watercare/12.pdf
+src/invoice2data/pdf/watercare/13.pdf
+src/invoice2data/pdf/watercare/14.pdf
+src/invoice2data/pdf/watercare/15.pdf
+src/invoice2data/pdf/watercare/16.pdf
+src/invoice2data/pdf/watercare/17.pdf
+src/invoice2data/pdf/watercare/18.pdf
+src/invoice2data/pdf/watercare/19.pdf
+src/invoice2data/pdf/watercare/2.pdf
+src/invoice2data/pdf/watercare/20.pdf
+src/invoice2data/pdf/watercare/21.pdf
+src/invoice2data/pdf/watercare/22.pdf
+src/invoice2data/pdf/watercare/23.pdf
+src/invoice2data/pdf/watercare/24.pdf
+src/invoice2data/pdf/watercare/25.pdf
+src/invoice2data/pdf/watercare/26.pdf
+src/invoice2data/pdf/watercare/27.pdf
+src/invoice2data/pdf/watercare/28.pdf
+src/invoice2data/pdf/watercare/29.pdf
+src/invoice2data/pdf/watercare/3.pdf
+src/invoice2data/pdf/watercare/30.pdf
+src/invoice2data/pdf/watercare/31.pdf
+src/invoice2data/pdf/watercare/32.pdf
+src/invoice2data/pdf/watercare/33.pdf
+src/invoice2data/pdf/watercare/34.pdf
+src/invoice2data/pdf/watercare/35.pdf
+src/invoice2data/pdf/watercare/35.8.pdf
+src/invoice2data/pdf/watercare/4.pdf
+src/invoice2data/pdf/watercare/5.pdf
+src/invoice2data/pdf/watercare/6.pdf
+src/invoice2data/pdf/watercare/7.pdf
+src/invoice2data/pdf/watercare/8.pdf
+src/invoice2data/pdf/watercare/9.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0008136-01_2019_Feb_27.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0013620-01_2019_Feb_27.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0019429-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0019619-01_2019_Feb_28.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0020412-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0024402-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0025252-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0045596-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0055752-04_2019_Feb_27.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0090177-02_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0125164-01_2019_Feb_27.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0545694-01_2019_Feb_27.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0546109-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0546110-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0547893-01_2019_Feb_27.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0547896-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0932526-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_0935356-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_1028430-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_1358376-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_1457985-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_1529945-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_2010484-01_2019_Feb_28.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_2021982-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_2356398-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_2491819-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_3181616-01_2019_Feb_28.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_4001542-03_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_4001542-04_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_4003055-02_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_4004956-02_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_5098336-04_2019_Feb_28.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_5104452-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_5354820-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_5386577-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/Watercare_Bill_5387082-01_2019_Feb_26.pdf
+src/invoice2data/pdf/watercare/negtive.pdf
+.gitignore
