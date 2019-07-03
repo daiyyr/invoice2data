@@ -1,0 +1,20 @@
+issuer: Metro Mowing Services West Limited
+keywords:
+- Metro Mowing Services West Limited
+
+fields:
+  invoice_number: 'Invoice Number\s*(INV\-\w+)'
+  bc_number: ''
+  static_gst_number: ''
+  date: 'Invoice Date.*\n.*(\d{1,2} \w\w\w \d\d\d\d)'
+  due_date: 'Due Date\:\s*(\d{1,2} \w\w\w \d\d\d\d)'
+  amount: 'Amount\s*Due\s*([\d\,]{1,10}\.\d\d)'
+  gst: ''
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d/%m/%Y'
