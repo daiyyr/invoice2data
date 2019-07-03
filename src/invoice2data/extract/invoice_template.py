@@ -241,8 +241,16 @@ class InvoiceTemplate(OrderedDict):
 
         if set(required_fields).issubset(output.keys()):
             # output['desc'] = 'Invoice from %s' % (self['issuer'])
-            logger.debug(output)
-            return output
+            succeed = True
+            for field in required_fields:
+                if output[field] == '':
+                    succeed = False
+                    logger.error('required fields ' + field + ' is blank')
+            if succeed:
+                logger.debug(output)
+                return output
+            else:
+                return None
         else:
             fields = list(set(output.keys()))
             logger.error(

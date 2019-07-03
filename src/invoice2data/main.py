@@ -99,17 +99,23 @@ def extract_data(invoicefile, templates=None, input_module=pdftotext):
     if not tried_tesseract:
         logger.debug('No template matched, now try tesseract ===========================')
         tried_tesseract = True
-        extracted_str = tesseract.to_text(invoicefile).decode('utf-8')
+        extracted_str2 = tesseract.to_text(invoicefile).decode('utf-8')
         logger.debug('START tesseract result ===========================')
-        logger.debug(extracted_str)
+        logger.debug(extracted_str2)
         logger.debug('END tesseract result =============================')
         logger.debug('Testing {} template files'.format(len(templates)))
         for t in templates:
-            optimized_str = t.prepare_input(extracted_str)
+            optimized_str2 = t.prepare_input(extracted_str2)
 
-            if t.matches_input(optimized_str):
-                return t.extract(optimized_str, invoicefile)
-
+            if t.matches_input(optimized_str2):
+                tesseract_result = t.extract(optimized_str2, invoicefile)
+                if tesseract_result is None:
+                    #tesseract find the right template, but do not match all required fields
+                    #so use this template and use pdf2text string
+                    optimized_str = t.prepare_input(extracted_str)
+                    return t.extract(optimized_str, invoicefile)
+                else:
+                    return tesseract_result
     logger.error('No template for %s', invoicefile)
     return False
 
