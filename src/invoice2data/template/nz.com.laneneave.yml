@@ -1,16 +1,16 @@
-issuer: L. A. Inspection Services Ltd
+issuer: Lane Neave
 keywords:
-- L. A. Inspection Services Ltd
-- accounts@lainspections.co.nz
+- Lane Neave
+- www.laneneave.co.nz
 
 fields:
-  invoice_number: 'Invoice No\:\s*(\d+)'
-  bc_number: 'BC (\d+)'
-  gst_number: '99\-285\-427'
-  date: 'Invoice Date\:\s*(\d\d\/\d\d\/\d\d\d\d)'
-  due_date: '20days'
-  amount: 'Total\s*\(inc\s*GST\)\s*\$([\d\,]{1,10}\.\d\d)'
-  gst: 'GST\s*Amount\s*\$([\d\,]{1,10}\.\d\d)'
+  invoice_number: 'Invoice\s*No\:\s*(\w+)'
+  bc_number: '(?<!C\/\- )Body\s*Corporate\s*(\w+)'
+  gst_number: '43 898 051'
+  date: 'Invoice\s*Date\:\s*(\d{1,2} \w{3,9} \d\d\d\d)'
+  due_date: 'Due\s*Date\:\s*(\d{1,2} \w{3,9} \d\d\d\d)'
+  amount: 'Total Amount Due\s*\$([\d\,]{1,10}\.\d\d)'
+  gst: 'GST\s*([\d\,]{1,10}\.\d\d)'
 
 options:
   currency: NZD
