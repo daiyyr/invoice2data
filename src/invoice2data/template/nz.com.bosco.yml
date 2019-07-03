@@ -1,0 +1,20 @@
+issuer: Bosco Connect Limited
+keywords:
+- Bosco Connect Limited
+
+fields:
+  invoice_number: 'Reference\:\s*(\w+)'
+  bc_number: ''
+  static_gst_number: '71 048 870'
+  date: '\d{1,2} \w{3,9} \d\d\d\d'
+  due_date: 'Payment\s*due\s*(\d{1,2} \w{3,9} \d\d\d\d)'
+  amount: 'Total\s*Current\s*Charges\s*\(incl\s*GST\)\s*\$([\d\,]{1,10}\.[\d\scr]{2,5})'
+  gst: 'GST\s*\$([\d\,]{1,10}\.\d\d)'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d/%m/%Y'
