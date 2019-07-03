@@ -40,13 +40,13 @@ def to_text(path):
             i += 1
         images = map(Image.open, imagefiles)
         widths, heights = zip(*(j.size for j in images))
-        total_width = sum(widths)
-        max_height = max(heights)
-        new_im = Image.new('RGB', (total_width, max_height))
-        x_offset = 0
+        new_width = max(widths)
+        new_height = sum(heights)
+        new_im = Image.new('RGB', (new_width, new_height))
+        y_offset = 0
         for im in images:
-            new_im.paste(im, (x_offset,0))
-            x_offset += im.size[0]
+            new_im.paste(im, (0,y_offset))
+            y_offset += im.size[1]
         new_im.save('out.jpg')
 
 
