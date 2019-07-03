@@ -153,7 +153,7 @@ class InvoiceTemplate(OrderedDict):
         logger.debug(self.options)
 
         # Try to find data for each field.
-        output = {}
+        output = OrderedDict()
         output['issuer'] = self['issuer']
 
         for k, v in self['fields'].items():
@@ -240,7 +240,7 @@ class InvoiceTemplate(OrderedDict):
                 required_fields.append(v)
 
         if set(required_fields).issubset(output.keys()):
-            output['desc'] = 'Invoice from %s' % (self['issuer'])
+            # output['desc'] = 'Invoice from %s' % (self['issuer'])
             logger.debug(output)
             return output
         else:
