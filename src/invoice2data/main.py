@@ -80,7 +80,7 @@ def extract_data(invoicefile, templates=None, input_module=pdftotext):
 
     # print(templates[0])
     extracted_str = input_module.to_text(invoicefile).decode('utf-8')
-    if extracted_str == '' and input_module == pdftotext:
+    if len(extracted_str) < 20 and input_module == pdftotext:
         extracted_str = tesseract.to_text(invoicefile).decode('utf-8')
 
     logger.debug('START pdftotext result ===========================')
