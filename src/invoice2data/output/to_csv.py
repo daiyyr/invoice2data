@@ -43,20 +43,33 @@ def write_to_file(data, path, date_format="%Y-%m-%d"):
     with openfile as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
 
+        first_row = []
         for line in data:
-            first_row = []
             for k, v in line.items():
-                first_row.append(k)
+                exist = False
+                for column in first_row:
+                    if column == k:
+                        exist = True
+                        break
+                if not exist:
+                    first_row.append(k)
 
         writer.writerow(first_row)
         for line in data:
             csv_items = []
-            for k, v in line.items():
-                # first_row.append(k)
-                if k.startswith('date') or k.endswith('date'):
-                    try:
-                        v = v.strftime('%d/%m/%Y')
-                    except:
-                        pass
-                csv_items.append(v)
+            for column in first_row:
+                exist = False
+                for k, v in line.items():
+                    if column == k:
+                    # first_row.append(k)
+                        if k.startswith('date') or k.endswith('date'):
+                            try:
+                                v = v.strftime('%d/%m/%Y')
+                            except:
+                                pass
+                        exist = True
+                        csv_items.append(v)
+                        break
+                if not exist:
+                    csv_items.append('')
             writer.writerow(csv_items)
