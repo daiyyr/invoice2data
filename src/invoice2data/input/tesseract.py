@@ -37,8 +37,9 @@ def to_text(path):
         for page in pages:
             page.save('out'+str(i)+'.jpg', 'JPEG')
             imagefiles.append('out'+str(i)+'.jpg')
+            i += 1
         images = map(Image.open, imagefiles)
-        widths, heights = zip(*(i.size for i in images))
+        widths, heights = zip(*(j.size for j in images))
         total_width = sum(widths)
         max_height = max(heights)
         new_im = Image.new('RGB', (total_width, max_height))
