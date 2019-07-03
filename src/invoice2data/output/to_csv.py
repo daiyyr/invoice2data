@@ -68,6 +68,8 @@ def write_to_file(data, path, date_format="%Y-%m-%d"):
                             except:
                                 pass
                         exist = True
+                        if isinstance(v, basestring):
+                            v = v.encode('utf-8')
                         csv_items.append(v)
                         break
                 if not exist:
