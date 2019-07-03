@@ -198,22 +198,40 @@ class InvoiceTemplate(OrderedDict):
                     logger.debug("res_find=%s", res_find)
                     if k.startswith('date') or k.endswith('date'):
                         try:
-                            output[k] = self.parse_date(res_find[0])
+                            output[k] = self.parse_date(res_find[0].lower().replace('o','0').replace('jnu','jun'))
                         except:
                             output[k] = res_find[0]
                         if not output[k]:
                             logger.error("Date parsing failed on date '%s'", res_find[0])
                             return None
-                    elif k.startswith('amount'):
+                    elif k.startswith('amount'): #if multi match, get the largest one
                         if sum_field:
                             output[k] = 0
                             for amount_to_parse in res_find:
                                 output[k] += self.parse_number(amount_to_parse)
                         else:
-                            try:
-                                output[k] = self.parse_number(res_find[0])
-                            except:
+                            all_amount = []
+                            for amt in res_find:
+                                try:
+                                    all_amount.append(self.parse_number(amt))
+                                except:
+                                    pass
+                            if len(all_amount) > 0:
+                                output[k] = max(all_amount)
+                            else:
                                 output[k] = res_find[0]
+                    elif k == 'gst': #if multi match, get the smallest one
+                        all_amount = []
+                        for amt in res_find:
+                            try:
+                                all_amount.append(self.parse_number(amt))
+                            except:
+                                pass
+                        if len(all_amount) > 0:
+                            output[k] = min(all_amount)
+                        else:
+                            output[k] = res_find[0]
+
                     else:
                         res_find = list(set(res_find))
                         if len(res_find) == 1:
