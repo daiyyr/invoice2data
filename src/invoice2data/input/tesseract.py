@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import logging as logger
 
 def to_text(path):
     """Wraps Tesseract OCR.
@@ -28,7 +28,13 @@ def to_text(path):
     if not spawn.find_executable('convert'):
         raise EnvironmentError('imagemagick not installed.')
 
-    pages = convert_from_path(path, 500)
+    try:
+        pages = convert_from_path(path, 500)
+    except Exception as e:
+        logger.error('pdf2image failed processing ' + path)
+        logger.error(e.message)
+        return ''
+
     if(len(pages)==1):
         pages[0].save('out.jpg', 'JPEG')
     else:
@@ -49,25 +55,27 @@ def to_text(path):
             y_offset += im.size[1]
         new_im.save('out.jpg')
 
+    extracted_str = ''
+    try:
+        # convert = "convert -density 350 %s -depth 8 tiff:-" % (path)
+        convert = ['convert', '-density', '350', 'out.jpg', '-depth', '8', 'JPG:-']
+        p1 = subprocess.Popen(convert, stdout=subprocess.PIPE)
 
-    # convert = "convert -density 350 %s -depth 8 tiff:-" % (path)
-    convert = ['convert', '-density', '350', 'out.jpg', '-depth', '8', 'JPG:-']
-    p1 = subprocess.Popen(convert, stdout=subprocess.PIPE)
-
-    tess = ['tesseract', 'stdin', 'stdout']
-    p2 = subprocess.Popen(tess, stdin=p1.stdout, stdout=subprocess.PIPE)
-
-
-    # convert = ['convert', '-density', '350', path, '-depth', '8', 'png:-']
-    # p1 = subprocess.Popen(convert, stdout=subprocess.PIPE)
-
-    # tess = ['tesseract', 'stdin', 'stdout']
-    # p2 = subprocess.Popen(tess, stdin=p1.stdout, stdout=subprocess.PIPE)
+        tess = ['tesseract', 'stdin', 'stdout']
+        p2 = subprocess.Popen(tess, stdin=p1.stdout, stdout=subprocess.PIPE)
 
 
+        # convert = ['convert', '-density', '350', path, '-depth', '8', 'png:-']
+        # p1 = subprocess.Popen(convert, stdout=subprocess.PIPE)
 
-    out, err = p2.communicate()
+        # tess = ['tesseract', 'stdin', 'stdout']
+        # p2 = subprocess.Popen(tess, stdin=p1.stdout, stdout=subprocess.PIPE)
 
-    extracted_str = out
+        out, err = p2.communicate()
+        extracted_str = out
+    except Exception as e:
+        logger.error('tesseract failed processing ' + path + ', please check your RAM using')
+        logger.error(e.message)
+
 
     return extracted_str
