@@ -41,6 +41,16 @@
            ],
        },
        {
+            "name": "debug tesseract4",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "./pdf/witmenterprises/ak.pdf", "--input-reader", "tesseract4", "--debug", "&>", "output.txt"
+            ],
+        },
+       {
            "name": "debug pdfminer",
            "type": "python",
            "request": "launch",
