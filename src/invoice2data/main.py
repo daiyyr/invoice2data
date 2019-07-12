@@ -18,6 +18,7 @@ from extract.loader import read_templates
 from output import to_csv
 from output import to_json
 from output import to_xml
+from output import to_mysql
 
 
 logger = logging.getLogger(__name__)
@@ -30,7 +31,7 @@ input_mapping = {
     'gvision': gvision,
 }
 
-output_mapping = {'csv': to_csv, 'json': to_json, 'xml': to_xml, 'none': None}
+output_mapping = {'csv': to_csv, 'json': to_json, 'xml': to_xml, 'mysql':to_mysql, 'none': None}
 
 
 def extract_data(invoicefile, templates=None, input_module=pdftotext):
@@ -195,6 +196,13 @@ def create_parser():
         'input_files', type=argparse.FileType('r'), nargs='+', help='File or directory to analyze.'
     )
 
+    parser.add_argument(
+        '--dbpass',
+        dest='dbpass',
+        default=None,
+        help='Specify mysql db password.',
+    )
+
     return parser
 
 
@@ -242,8 +250,22 @@ def main(args=None):
                 shutil.move(f.name, join(args.move, filename))
         f.close()
 
+    re = None
     if output_module is not None:
-        output_module.write_to_file(output, args.output_name, args.output_date_format)
+        if args.dbpass is not None:
+            re = output_module.write_to_file(output, args.output_name, args.output_date_format, args.dbpass)
+        else:
+            output_module.write_to_file(output, args.output_name, args.output_date_format)
+
+    if args.dbpass is not None:
+        if re == 'succeed':
+            #move to successful
+            pass
+        elif re == 'link db failed':
+            pass
+        else:
+            #move to failed
+            pass
 
 
 if __name__ == '__main__':

@@ -167,6 +167,7 @@ class InvoiceTemplate(OrderedDict):
                 if k=='due_date' and v.endswith('days') and (output['date'] is not None):
                     duedays = v.replace('days', '')
                     try:
+                        logger.debug('try to get due date by adding days to [date]')
                         i = int(duedays)
                         output[k] = output['date']+ datetime.timedelta(days=i)
                         continue

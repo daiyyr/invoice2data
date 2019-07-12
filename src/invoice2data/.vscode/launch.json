@@ -1,13 +1,23 @@
 {"version": "0.2.0",
     "configurations": [
         {
+            "name": "to mysql",
+             "type": "python",
+             "request": "launch",
+            "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
+             "console": "integratedTerminal",
+             "args": [
+                "--dbpass", "onlyoffice", "--output-format", "mysql", "--template-folder", "template", "./pdf/gardenmagic.pdf"
+            ],
+        },
+        {
            "name": "pdftotext to csv",
             "type": "python",
             "request": "launch",
            "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
             "console": "integratedTerminal",
             "args": [
-               "--output-format", "csv", "--template-folder", "template", "./pdf/spark.pdf"
+               "--output-format", "csv", "--template-folder", "template", "./pdf/gardenmagic.pdf"
            ],
        },
        {
@@ -27,7 +37,7 @@
            "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
            "console": "integratedTerminal",
            "args": [
-            "--output-format", "csv", "./pdf/aps/666813.pdf","--template-folder", "template", "--input-reader", "pdftotext", "--debug", "&>", "output.txt"
+            "--output-format", "csv", "./pdf/gardenmagic.pdf","--template-folder", "template", "--input-reader", "pdftotext", "--debug", "&>", "output.txt"
            ],
        },
        {
