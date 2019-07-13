@@ -20,6 +20,7 @@ from output import to_json
 from output import to_xml
 from output import to_mysql
 
+from PyPDF2 import PdfFileReader, PdfFileWriter
 
 logger = logging.getLogger(__name__)
 
@@ -91,10 +92,43 @@ def extract_data(invoicefile, templates=None, input_module=pdftotext):
     logger.debug('END pdftotext result =============================')
 
     logger.debug('Testing {} template files'.format(len(templates)))
+
+    #get page count of invoicefile
+    pdf = PdfFileReader(open(invoicefile,'rb'))
+    try:
+        pageCount = pdf.getNumPages()
+    except Exception as e:
+        logger.error(e.message)
+        pass
     for t in templates:
         optimized_str = t.prepare_input(extracted_str)
 
         if t.matches_input(optimized_str):
+            if pageCount is not None and pageCount > 1:
+                #dealing with pages
+                confirmInTemplate = False
+                for k, v in t['fields'].items():
+                    if k == 'multiple_page' and v == 'True':
+                        confirmInTemplate = True
+                        break
+                if confirmInTemplate:
+                    try:
+                        pdfdirectory = os.path.dirname(invoicefile)
+                        pdfname = os.path.basename(invoicefile)
+                        for i in range(pdf.numPages):
+                            #split multi-page pdf file into multiple pdf files
+                            output = PdfFileWriter()
+                            output.addPage(pdf.getPage(i))
+                            objectfile = join(pdfdirectory, pdfname.replace('.pdf','').replace('.PDF','') + '_' + str(i) + '.pdf' )
+                            with open(objectfile, "wb") as outputStream:
+                                output.write(outputStream)
+                        os.remove(invoicefile)
+                        logger.warning('Seperate pdf into multiple files, process in next scanning loop')
+                        return 'pdf seperated'
+                    except Exception as e:
+                        logger.error(e.message)
+                        pass
+
             return t.extract(optimized_str, invoicefile)
 
     if not tried_tesseract:
@@ -243,9 +277,16 @@ def main(args=None):
     output = []
     for f in args.input_files:
         res = extract_data(f.name, templates=templates, input_module=input_module)
+        if res == 'pdf seperated':
+            continue
+        re = None
         if res:
             logger.info(res)
             output.append(res)
+            if args.dbpass is not None:
+                re = output_module.write_to_db(res, f.name, args.output_date_format, 
+                args.dbpass, args.azure_account, args.azure_key)
+
             if args.copy:
                 filename = args.filename.format(
                     date=res['date'].strftime('%Y-%m-%d'),
@@ -261,39 +302,40 @@ def main(args=None):
                 )
                 shutil.move(f.name, join(args.move, filename))
         f.close()
-
-    re = None
-    if output_module is not None:
         if args.dbpass is not None:
-            re = output_module.write_to_db(output, f.name, args.output_date_format, 
-            args.dbpass, args.azure_account, args.azure_key)
-        else:
-            output_module.write_to_file(output, args.output_name, args.output_date_format)
-
-    if args.dbpass is not None:
-        for f in args.input_files:
+            #move source pdf
             pdfdirectory = os.path.dirname(f.name)
             pdfpath = f.name
             pdfname = os.path.basename(f.name)
-            break
-        if re == 'succeed':
-            #move to successful
-            succeed_path = join(pdfdirectory, 'successful')
-            if not os.path.exists(succeed_path):
-                os.makedirs(succeed_path)
-            destinateFile = join(succeed_path, pdfname)
-            os.rename(pdfpath, destinateFile)
-            pass
-        elif re == 'link db failed':
-            pass
+            if re == 'succeed':
+                #move to successful
+                succeed_path = join(pdfdirectory, 'successful')
+                if not os.path.exists(succeed_path):
+                    os.makedirs(succeed_path)
+                destinateFile = join(succeed_path, pdfname)
+                os.rename(pdfpath, destinateFile)
+                pass
+            elif re == 'link db failed':
+                pass
+            else:
+                #move to failed
+                failed_path = join(pdfdirectory, 'failed')
+                if not os.path.exists(failed_path):
+                    os.makedirs(failed_path)
+                destinateFile = join(failed_path, pdfname)
+                os.rename(pdfpath, destinateFile)
+                pass
+
+
+    
+    if output_module is not None:
+        if args.dbpass is not None:
+            pass #for data base output, do it in loop of extracting
         else:
-            #move to failed
-            failed_path = join(pdfdirectory, 'failed')
-            if not os.path.exists(failed_path):
-                os.makedirs(failed_path)
-            destinateFile = join(failed_path, pdfname)
-            os.rename(pdfpath, destinateFile)
-            pass
+            output_module.write_to_file(output, args.output_name, args.output_date_format)
+
+
+        
 
 
 if __name__ == '__main__':
