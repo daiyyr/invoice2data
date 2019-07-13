@@ -15,6 +15,8 @@ try:
                 dbuser = line.replace('dbuser:','').replace('\n','').strip()
             elif 'dbpass:' in line:
                 dbpass = line.replace('dbpass:','').replace('\n','').strip()
+            elif 'dbname:' in line:
+                dbname = line.replace('dbname:','').replace('\n','').strip()
             elif 'azure_account:' in line:
                 azure_account = line.replace('azure_account:','').replace('\n','').strip()
             elif 'azure_key:' in line:

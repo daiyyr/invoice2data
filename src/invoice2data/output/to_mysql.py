@@ -8,7 +8,7 @@ from azure.storage.file import FileService
 from azure.storage.file import ContentSettings
 
 
-def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass="", azure_account="", azure_key=""):
+def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass="", dbname="", azure_account="", azure_key=""):
     """Insert extracted fields to mysql
 
     Parameters
@@ -34,7 +34,7 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass
         conn = MySQLdb.connect(host= dbhost,
                 user=dbuser,
                 passwd=dbpass,
-                db="edms_general")
+                db=dbname)
         x = conn.cursor()
     except Exception as e:
         logger.error("Connecting mysql error '%s'", e.message)

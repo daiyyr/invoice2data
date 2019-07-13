@@ -249,6 +249,12 @@ def create_parser():
         help='Specify mysql db password.',
     )
     parser.add_argument(
+        '--dbname',
+        dest='dbname',
+        default=None,
+        help='Specify mysql db name.',
+    )
+    parser.add_argument(
         '--azure_account',
         dest='azure_account',
         default=None,
@@ -297,7 +303,7 @@ def main(args=None):
             output.append(res)
             if args.dbpass is not None:
                 re = output_module.write_to_db(res, f.name, args.output_date_format, 
-                args.dbhost, args.dbuser, args.dbpass, 
+                args.dbhost, args.dbuser, args.dbpass, args.dbname,
                 args.azure_account, args.azure_key)
 
             if args.copy:
