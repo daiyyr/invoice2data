@@ -1,0 +1,24 @@
+issuer: Vodafone New Zealand Limited
+keywords:
+- www.vodafone.co.nz
+
+fields: 
+  invoice_number: 'Invoice\s*Number\s*(\w+)'
+  bc_number: 'Body Corporate.*?\n.*?\n\s*?(\w+)'
+  gst_number: 'GST\s*reg\s*no\:\s*(\d{1,3}\-\d\d\d\-\d\d\d)'
+  date: 'Statement\s*Date\s*(\d\d \w{3,9} \d\d)'
+  due_date: 'due\s*by\s*(\d\d \w{3,9} \d\d)'
+  amount: 'TOTAL\s*ACCOUNT\s*BALANCE\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+  gst: 'GST\s*on\s*Current\s*Charges\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
