@@ -1,0 +1,24 @@
+issuer: nsaTax Limited
+keywords:
+- nsatax.co.nz
+
+fields: 
+  invoice_number: 'Invoice\s*No\..*?\n.*?(\d{6,8})'
+  bc_number: '(?<!C\/\- )Body\s*Corporate\s*(\w+)'
+  gst_number: 'GST\s*No.*?\n.*?(\d{2,3} \d\d\d \d\d\d)'
+  date: 'Invoice Date.*?\n.*?(\d\d \w{3,9} \d\d\d\d)'
+  due_date: 'Due Date\s*\-\s*(\d\d \w{3,9} \d\d\d\d)'
+  amount: 'Amount\s*Due\:\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+  gst: 'GST\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+  multiple_page: 'True'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
