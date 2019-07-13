@@ -202,6 +202,18 @@ def create_parser():
         default=None,
         help='Specify mysql db password.',
     )
+    parser.add_argument(
+        '--azure_account',
+        dest='azure_account',
+        default=None,
+        help='Specify Azure account name for pdf uploading',
+    )
+    parser.add_argument(
+        '--azure_key',
+        dest='azure_key',
+        default=None,
+        help='Specify Azure account key for pdf uploading',
+    )
 
     return parser
 
@@ -253,18 +265,34 @@ def main(args=None):
     re = None
     if output_module is not None:
         if args.dbpass is not None:
-            re = output_module.write_to_file(output, args.output_name, args.output_date_format, args.dbpass)
+            re = output_module.write_to_db(output, f.name, args.output_date_format, 
+            args.dbpass, args.azure_account, args.azure_key)
         else:
             output_module.write_to_file(output, args.output_name, args.output_date_format)
 
     if args.dbpass is not None:
+        for f in args.input_files:
+            pdfdirectory = os.path.dirname(f.name)
+            pdfpath = f.name
+            pdfname = os.path.basename(f.name)
+            break
         if re == 'succeed':
             #move to successful
+            succeed_path = join(pdfdirectory, 'successful')
+            if not os.path.exists(succeed_path):
+                os.makedirs(succeed_path)
+            destinateFile = join(succeed_path, pdfname)
+            os.rename(pdfpath, destinateFile)
             pass
         elif re == 'link db failed':
             pass
         else:
             #move to failed
+            failed_path = join(pdfdirectory, 'failed')
+            if not os.path.exists(failed_path):
+                os.makedirs(failed_path)
+            destinateFile = join(failed_path, pdfname)
+            os.rename(pdfpath, destinateFile)
             pass
 
 

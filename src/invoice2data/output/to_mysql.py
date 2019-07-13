@@ -3,8 +3,12 @@ import sys
 import MySQLdb
 import logging as logger
 import datetime
+import uuid
+from azure.storage.file import FileService
+from azure.storage.file import ContentSettings
 
-def write_to_file(data, path, date_format="%Y-%m-%d", dbpass=""):
+
+def write_to_db(data, path, date_format="%Y-%m-%d", dbpass="", azure_account="", azure_key=""):
     """Insert extracted fields to mysql
 
     Parameters
@@ -12,7 +16,7 @@ def write_to_file(data, path, date_format="%Y-%m-%d", dbpass=""):
     data : dict
         Dictionary of extracted fields
     path : str
-        directory to save generated csv file
+        path of the original pdf file
     date_format : str
         Date format used in generated file
 
@@ -99,7 +103,18 @@ def write_to_file(data, path, date_format="%Y-%m-%d", dbpass=""):
             pass
         net = gross - gst
 
-        azurepathguid = ''
+        onlinefilename = str(uuid.uuid4()) + '.pdf'
+        file_service = FileService(protocol = 'https', endpoint_suffix = 'core.windows.net', 
+        account_name = azure_account, 
+        account_key = azure_key)
+        file_service.create_file_from_path(
+            'cinvoice',
+            None, # We want to create this blob in the root directory, so we specify None for the directory_name
+            onlinefilename,
+            path,
+            content_settings=ContentSettings(content_type='application/pdf'))
+        # file_service.get_file_to_path('cinvoice', None, onlinefilename, 'out-from-file-service.pdf')
+
         sqlstr = """
 INSERT INTO edms set
 `Document type` = 'invoice2data',
@@ -112,7 +127,7 @@ INSERT INTO edms set
 `Tax Total` = %s,
 `Invoice Total` = %s,
 `GST Number` = '%s',
-`defaultcoa` = null,
+`defaultcoa` = 0,
 `defaultcoastring` = null,
 `description` = '%s',
 GUID = '%s',
@@ -137,7 +152,7 @@ creditor_name = null
             gross,
             data[0]['gst_number'].replace("\'","\\\'") if 'gst_number' in data[0] and data[0]['gst_number'] is not None else '',
             description.replace("\'",""),
-            azurepathguid.replace("\'","\\\'")
+            onlinefilename.replace("\'","\\\'")
         )
         x.execute(sqlstr)
         conn.commit()

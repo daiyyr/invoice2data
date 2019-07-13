@@ -7,7 +7,11 @@
             "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
              "console": "integratedTerminal",
              "args": [
-                "--dbpass", "onlyoffice", "--output-format", "mysql", "--template-folder", "template", "./pdf/gardenmagic.pdf"
+                "--dbpass", "", 
+                "--azure_account", "", 
+                "--azure_key", "",
+                "--output-format", "mysql", 
+                "./pdf/testing2/1907131759 - BCA HF_436 - 93409.pdf"
             ],
         },
         {
@@ -17,7 +21,7 @@
            "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
             "console": "integratedTerminal",
             "args": [
-               "--output-format", "csv", "--template-folder", "template", "./pdf/gardenmagic.pdf"
+               "--output-format", "csv", "./pdf/gardenmagic.pdf"
            ],
        },
        {
@@ -27,7 +31,7 @@
            "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
            "console": "integratedTerminal",
            "args": [
-               "--input-reader", "tesseract", "--output-format", "csv", "--template-folder", "template", "./pdf/sitecare.pdf", "./pdf/sitecare2.pdf"
+               "--input-reader", "tesseract", "--output-format", "csv", "./pdf/sitecare.pdf", "./pdf/sitecare2.pdf"
            ],
        },
        {
@@ -37,7 +41,9 @@
            "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
            "console": "integratedTerminal",
            "args": [
-            "--output-format", "csv", "./pdf/gardenmagic.pdf","--template-folder", "template", "--input-reader", "pdftotext", "--debug", "&>", "output.txt"
+            "--output-format", "csv", 
+            "./pdf/testing2/1907131759 - BCA HF_436 - 93409.pdf",
+            "--input-reader", "pdftotext", "--debug", "&>", "output.txt"
            ],
        },
        {
@@ -67,7 +73,7 @@
            "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
            "console": "integratedTerminal",
            "args": [
-               "./pdf/sitecare2.pdf", "--input-reader", "pdfminer", "--template-folder", "template", "--debug", "&>", "output.txt"
+               "./pdf/sitecare2.pdf", "--input-reader", "pdfminer", "--debug", "&>", "output.txt"
            ],
        }
        ,
@@ -78,7 +84,7 @@
            "program": "/home/teemo/source/invoice2data/src/invoice2data/main.py",
            "console": "integratedTerminal",
            "args": [
-               "./pdf/sitecare2.pdf", "--input-reader", "gvision", "--template-folder", "template", "--debug", "&>", "output.txt"
+               "./pdf/sitecare2.pdf", "--input-reader", "gvision", "--debug", "&>", "output.txt"
             ],
         },
         {

@@ -3,7 +3,7 @@ import subprocess
 import sys
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
-directory = (dir_path + '/pdf/aps').replace("//", "/")
+directory = (dir_path + '/pdf/AucklandCouncil').replace("//", "/")
 all_files = ''
 parame = ['invoice2data','--output-format', 'csv', '--exclude-built-in-templates', '--template-folder', 'template']
 
