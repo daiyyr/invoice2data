@@ -38,6 +38,7 @@ while True:
                 "--dbhost", dbhost,
                 "--dbuser", dbuser,
                 "--dbpass", dbpass, 
+                "--dbname", dbname,
                 "--azure_account", azure_account, 
                 "--azure_key", azure_key,
                 "--output-format", "mysql" ]
