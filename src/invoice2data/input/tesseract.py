@@ -30,30 +30,30 @@ def to_text(path):
 
     try:
         pages = convert_from_path(path, 500)
+    
+        if(len(pages)==1):
+            pages[0].save('out.jpg', 'JPEG')
+        else:
+            imagefiles = []
+            i = 0
+            for page in pages:
+                page.save('out'+str(i)+'.jpg', 'JPEG')
+                imagefiles.append('out'+str(i)+'.jpg')
+                i += 1
+            images = map(Image.open, imagefiles)
+            widths, heights = zip(*(j.size for j in images))
+            new_width = max(widths)
+            new_height = sum(heights)
+            new_im = Image.new('RGB', (new_width, new_height))
+            y_offset = 0
+            for im in images:
+                new_im.paste(im, (0,y_offset))
+                y_offset += im.size[1]
+            new_im.save('out.jpg')
     except Exception as e:
         logger.error('pdf2image failed processing ' + path)
         logger.error(e.message)
         return ''
-
-    if(len(pages)==1):
-        pages[0].save('out.jpg', 'JPEG')
-    else:
-        imagefiles = []
-        i = 0
-        for page in pages:
-            page.save('out'+str(i)+'.jpg', 'JPEG')
-            imagefiles.append('out'+str(i)+'.jpg')
-            i += 1
-        images = map(Image.open, imagefiles)
-        widths, heights = zip(*(j.size for j in images))
-        new_width = max(widths)
-        new_height = sum(heights)
-        new_im = Image.new('RGB', (new_width, new_height))
-        y_offset = 0
-        for im in images:
-            new_im.paste(im, (0,y_offset))
-            y_offset += im.size[1]
-        new_im.save('out.jpg')
 
     extracted_str = ''
     try:
@@ -77,5 +77,11 @@ def to_text(path):
         logger.error('tesseract failed processing ' + path + ', please check your RAM using')
         logger.error(e.message)
 
-
+    import glob,os
+    pdfdirectory = os.path.dirname(path)
+    for i in glob.glob("*.jpg"):
+        try:
+            os.remove(i)
+        except:
+            pass
     return extracted_str
