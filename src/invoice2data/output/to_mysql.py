@@ -26,9 +26,8 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbpass="", azure_account="",
 
     Examples
     --------
-        >>> from invoice2data.output import to_csv
-        >>> to_csv.write_to_file(data, "/exported_csv/invoice.csv")
-        >>> to_csv.write_to_file(data, "invoice.csv")
+        re = output_module.write_to_db(res, f.name, args.output_date_format, 
+                args.dbpass, args.azure_account, args.azure_key)
 
     """
     try:
@@ -41,64 +40,30 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbpass="", azure_account="",
         logger.error("Connecting mysql error '%s'", e.message)
         return 'link db failed'
 
-    if data is None or len(data) == 0:
+    if data is None:
         return
-
-    """
-    first_row = []
-    for line in data:
-        for k, v in line.items():
-            exist = False
-            for column in first_row:
-                if column == k:
-                    exist = True
-                    break
-            if not exist:
-                first_row.append(k)
-
-    for line in data:
-        csv_items = []
-        for column in first_row:
-            exist = False
-            for k, v in line.items():
-                if column == k:
-                # first_row.append(k)
-                    if k.startswith('date') or k.endswith('date'):
-                        try:
-                            v = v.strftime('%d/%m/%Y')
-                        except:
-                            pass
-                    exist = True
-                    if isinstance(v, basestring):
-                        v = v.encode('utf-8')
-                    csv_items.append(v)
-                    break
-            if not exist:
-                csv_items.append('')
-        #writer.writerow(csv_items)
-    """        
 
     try:
         description = ''
-        if 'this_month_reading' in data[0]:
-            description += data[0]['this_month_reading'] + '; '
-        if 'last_month_reading' in data[0]:
-            description += data[0]['last_month_reading'] + '; '
-        if 'last_month_reading' in data[0]:
-            description += data[0]['last_month_reading'] + '; '
-        if 'water_usage_0_water_1_wastewater' in data[0]:
-            description += 'water usage: ' + data[0]['water_usage_0_water_1_wastewater'] + '; '
-        if 'fixed_charges' in data[0]:
-            description += 'fixed charges: ' + data[0]['fixed_charges'] + '; '
+        if 'this_month_reading' in data:
+            description += data['this_month_reading'] + '; '
+        if 'last_month_reading' in data:
+            description += data['last_month_reading'] + '; '
+        if 'last_month_reading' in data:
+            description += data['last_month_reading'] + '; '
+        if 'water_usage_0_water_1_wastewater' in data:
+            description += 'water usage: ' + data['water_usage_0_water_1_wastewater'] + '; '
+        if 'fixed_charges' in data:
+            description += 'fixed charges: ' + data['fixed_charges'] + '; '
 
         gst = 0
         try:
-            gst = float(data[0]['gst'])
+            gst = float(data['gst'])
         except:
             pass
         gross = 0
         try:
-            gross = float(data[0]['amount'])
+            gross = float(data['amount'])
         except:
             pass
         net = gross - gst
@@ -136,21 +101,21 @@ addTime = NOW(),
 creditor_id = null,
 creditor_name = null
 """ % (
-            data[0]['issuer'].replace("\'","\\\'") if data[0]['issuer'] is not None else '',
-            data[0]['invoice_number'].replace("\'","\\\'") if data[0]['invoice_number'] is not None else '',
-            data[0]['bc_number'].replace("\'","\\\'") if data[0]['bc_number'] is not None else '',
-            ("'"+data[0]['date'].strftime('%Y-%m-%d')+"'") \
-            if data[0]['date'] is not None 
-            and (type(data[0]['date']) is datetime.date or type(data[0]['date']) is datetime.datetime) \
+            data['issuer'].replace("\'","\\\'") if data['issuer'] is not None else '',
+            data['invoice_number'].replace("\'","\\\'") if data['invoice_number'] is not None else '',
+            data['bc_number'].replace("\'","\\\'") if data['bc_number'] is not None else '',
+            ("'"+data['date'].strftime('%Y-%m-%d')+"'") \
+            if data['date'] is not None 
+            and (type(data['date']) is datetime.date or type(data['date']) is datetime.datetime) \
             else 'null',
-            ("'"+data[0]['due_date'].strftime('%Y-%m-%d')+"'") \
-            if 'due_date' in data[0] and data[0]['due_date'] is not None 
-            and (type(data[0]['due_date']) is datetime.date or type(data[0]['due_date']) is datetime.datetime) \
+            ("'"+data['due_date'].strftime('%Y-%m-%d')+"'") \
+            if 'due_date' in data and data['due_date'] is not None 
+            and (type(data['due_date']) is datetime.date or type(data['due_date']) is datetime.datetime) \
             else 'null',
             net,
             gst,
             gross,
-            data[0]['gst_number'].replace("\'","\\\'") if 'gst_number' in data[0] and data[0]['gst_number'] is not None else '',
+            data['gst_number'].replace("\'","\\\'") if 'gst_number' in data and data['gst_number'] is not None else '',
             description.replace("\'",""),
             onlinefilename.replace("\'","\\\'")
         )
