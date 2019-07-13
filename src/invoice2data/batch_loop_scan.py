@@ -55,7 +55,7 @@ while True:
             parame['dbname'] = dbname
             parame['azure_account'] = azure_account
             parame['azure_key'] = azure_key
-            parame['output-format'] = 'mysql'
+            parame['output_format'] = 'mysql'
             runlog = open('run.log', 'a')
             runlog.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' start process ' + filename + '\n')
             runlog.close()
@@ -69,9 +69,9 @@ while True:
             orierr = sys.stderr
             sys.stdout = errorlog
             sys.stderr = errorlog
-            process = subprocess.Popen(parame0, stdout=errorlog, stderr=errorlog)
-            process.communicate()
-            # main.main(parame0)
+            # process = subprocess.Popen(parame0, stdout=errorlog, stderr=errorlog)
+            # process.communicate()
+            main.main2(parame)
             sys.stdout = oristd
             sys.stderr = orierr
             errorlog.close()

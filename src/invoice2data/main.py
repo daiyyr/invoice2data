@@ -272,6 +272,7 @@ def create_parser():
 
 def main(args=None):
     """Take folder or single file and analyze each."""
+
     if args is None:
         parser = create_parser()
         args = parser.parse_args()
@@ -359,3 +360,80 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+    # import sys
+    # main(sys.argv[1:])
+
+# if __name__ == 'main':
+#     import sys
+#     main(sys.argv[1:])
+
+
+
+
+def main2(args=None):
+    """Take folder or single file and analyze each."""
+
+    if args is None:
+        parser = create_parser()
+        args = parser.parse_args()
+
+    args['output_date_format'] = '%Y-%m-%d'
+    input_module = input_mapping['pdftotext']
+    output_module = output_mapping[args['output_format']]
+
+    templates = []
+    # Load templates from external folder if set.
+    # if args['template_folder']:
+    #     templates += read_templates(os.path.abspath(args['template_folder']))
+
+    # Load internal templates, if not disabled.
+    # if not args['exclude_built_in_templates']:
+    templates += read_templates()
+    output = []
+    for fs in args['input_files']:
+        f = open(fs, 'r') 
+        res = extract_data(f.name, templates=templates, input_module=input_module)
+        if res == 'pdf seperated':
+            continue
+        re = None
+        if res:
+            logger.info(res)
+            output.append(res)
+            if args['dbpass'] is not None:
+                re = output_module.write_to_db(res, f.name, args['output_date_format'], 
+                args['dbhost'], args['dbuser'], args['dbpass'], args['dbname'],
+                args['azure_account'], args['azure_key'])
+
+        f.close()
+        if args['dbpass'] is not None:
+            #move source pdf
+            pdfdirectory = os.path.dirname(f.name)
+            pdfpath = f.name
+            pdfname = os.path.basename(f.name)
+            if re == 'succeed':
+                #move to successful
+                succeed_path = join(pdfdirectory, 'successful')
+                if not os.path.exists(succeed_path):
+                    os.makedirs(succeed_path)
+                destinateFile = join(succeed_path, pdfname)
+                os.rename(pdfpath, destinateFile)
+                pass
+            elif re == 'link db failed':
+                pass
+            else:
+                #move to failed
+                failed_path = join(pdfdirectory, 'failed')
+                if not os.path.exists(failed_path):
+                    os.makedirs(failed_path)
+                destinateFile = join(failed_path, pdfname)
+                os.rename(pdfpath, destinateFile)
+                pass
+
+
+    
+    if output_module is not None:
+        if args['dbpass'] is not None:
+            pass #for data base output, do it in loop of extracting
+        else:
+            output_module.write_to_file(output, args['output_name'])
+
