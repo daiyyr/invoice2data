@@ -19,13 +19,15 @@ try:
                 azure_account = line.replace('azure_account:','').replace('\n','').strip()
             elif 'azure_key:' in line:
                 azure_key = line.replace('azure_key:','').replace('\n','').strip()
+            elif 'pdf_path:' in line:
+                directory = line.replace('pdf_path:','').replace('\n','').strip()
 
             line = fp.readline()
 except:
     pass
 
 # directory = ('/home/administrator/edms/failedTemp').replace("//", "/")
-directory = ('/home/teemo/source/invoice2data/src/invoice2data/pdf/testing2').replace("//", "/")
+# directory = ('/home/teemo/source/invoice2data/src/invoice2data/pdf/testing2').replace("//", "/")
 
 while True:
     for filename in os.listdir(directory):
