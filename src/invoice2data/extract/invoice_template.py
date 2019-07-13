@@ -171,7 +171,7 @@ class InvoiceTemplate(OrderedDict):
                         i = int(duedays)
                         output[k] = output['date']+ datetime.timedelta(days=i)
                         continue
-                    except ValueError:
+                    except Exception:
                         #not in '20days' format
                         i = 0
 
@@ -235,10 +235,13 @@ class InvoiceTemplate(OrderedDict):
 
                     else:
                         res_find = list(set(res_find))
-                        if len(res_find) == 1:
-                            output[k] = res_find[0]
+                        if len(res_find) > 1:
+                            resstr = ''
+                            for res in res_find:
+                                resstr += res + ';'
+                            output[k] = resstr
                         else:
-                            output[k] = res_find
+                            output[k] = res_find[0]
                 else:
                     output[k] = ''
                     logger.warning("regexp for field %s didn't match", k)
