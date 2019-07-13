@@ -71,7 +71,11 @@ while True:
             sys.stderr = errorlog
             # process = subprocess.Popen(parame0, stdout=errorlog, stderr=errorlog)
             # process.communicate()
-            main.main2(parame)
+            try:
+                main.main2(parame)
+            except Exception as e:
+                errorlog.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') 
+                + ' process ' + filename + ' error ' + e.message + '\n')
             sys.stdout = oristd
             sys.stderr = orierr
             errorlog.close()
