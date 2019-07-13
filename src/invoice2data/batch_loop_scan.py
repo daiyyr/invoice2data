@@ -2,6 +2,8 @@ import os
 import subprocess
 import time
 import datetime
+import main
+import sys
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 configfile = os.path.join(dir_path, 'run.config')
@@ -34,7 +36,9 @@ except:
 while True:
     for filename in os.listdir(directory):
         if filename.endswith(".pdf") or filename.endswith(".PDF"):
-            parame = ['invoice2data',
+            parame0 = [
+                'python',
+                'main.py',
                 "--dbhost", dbhost,
                 "--dbuser", dbuser,
                 "--dbpass", dbpass, 
@@ -42,16 +46,35 @@ while True:
                 "--azure_account", azure_account, 
                 "--azure_key", azure_key,
                 "--output-format", "mysql" ]
+            parame0.append(directory+ "/" +filename)
+
+            parame = {}
+            parame['dbhost'] = dbhost
+            parame['dbuser'] = dbuser
+            parame['dbpass'] = dbpass
+            parame['dbname'] = dbname
+            parame['azure_account'] = azure_account
+            parame['azure_key'] = azure_key
+            parame['output-format'] = 'mysql'
             runlog = open('run.log', 'a')
             runlog.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' start process ' + filename + '\n')
-            runlog.close()    
-            #subprocess.check_output(['ls','-l']) #all that is technically needed...
-            parame.append(directory+ "/" +filename)
+            runlog.close()
+            
+            input_files = []
+            input_files.append(directory+ "/" +filename)
+            parame['input_files'] = input_files
             #print(subprocess.check_output(parame))
             errorlog = open('run.error.log', 'a')
-            process = subprocess.Popen(parame, stdout=errorlog, stderr=errorlog)
-            errorlog.close()
+            oristd = sys.stdout
+            orierr = sys.stderr
+            sys.stdout = errorlog
+            sys.stderr = errorlog
+            process = subprocess.Popen(parame0, stdout=errorlog, stderr=errorlog)
             process.communicate()
+            # main.main(parame0)
+            sys.stdout = oristd
+            sys.stderr = orierr
+            errorlog.close()
             if os.path.exists(directory+ "/" +filename):
                 try:
                     failed_path = os.path.join(directory, 'failed')
