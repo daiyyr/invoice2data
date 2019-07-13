@@ -8,7 +8,7 @@ from azure.storage.file import FileService
 from azure.storage.file import ContentSettings
 
 
-def write_to_db(data, path, date_format="%Y-%m-%d", dbpass="", azure_account="", azure_key=""):
+def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass="", azure_account="", azure_key=""):
     """Insert extracted fields to mysql
 
     Parameters
@@ -31,8 +31,8 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbpass="", azure_account="",
 
     """
     try:
-        conn = MySQLdb.connect(host= "192.168.1.12",
-                user="root",
+        conn = MySQLdb.connect(host= dbhost,
+                user=dbuser,
                 passwd=dbpass,
                 db="edms_general")
         x = conn.cursor()
