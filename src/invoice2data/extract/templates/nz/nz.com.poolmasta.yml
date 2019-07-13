@@ -1,0 +1,22 @@
+issuer: Pool Masta NZ Ltd
+keywords:
+- poolmasta.nz
+
+fields: 
+  invoice_number: 'Invoice\s*Number\s*(\w+)'
+  bc_number: 'BC(\w+)'
+  static_gst_number: '079-995-347'
+  date: 'Invoice\s*Date.*?\n.*?(\d{1,2} \w\w\w \d\d\d\d)'
+  due_date: 'Due\s*Date\:\s*(\d{1,2} \w\w\w \d\d\d\d)'
+  amount: 'TOTAL\s*NZD\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+  gst: 'INCLUDES\s*GST\s*15\%\s*([\d\,]{1,10}\.\d\d)'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
