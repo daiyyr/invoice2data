@@ -1,0 +1,24 @@
+issuer: ADT Security Limited
+keywords:
+- ADT Fire Monitoring
+
+fields: 
+  invoice_number: 'Tax\s*Invoice\s*No\s*\:\s*(\w+)'
+  bc_number: '(?<!c\/\- )Body\s*Corporate\s*(\w+)'
+  gst_number: 'GST\s*Reg\.\s*No\.\s*(\d{1,3}\-\s*\d\d\d\-\s*\d\d\d)'
+  date: 'Date\s*\:\s*(\d\d\/\d\d\/\d\d\d\d)'
+  due_date: 'Payment\s*Due\s*Date\s*\:\s*(\d\d\/\d\d\/\d\d\d\d)'
+  amount: 'Total\s*Amount\s*\:\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+  gst: 'GST\s*\:\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
