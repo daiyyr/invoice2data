@@ -1,7 +1,6 @@
 issuer: GOURLEY HOLDINGS LTD
 keywords:
 - GOURLEY HOLDINGS LTD
-- 104-299-202
 
 fields:
   invoice_number: 'Tax Invoice No\:\s*(\d+)'
@@ -10,7 +9,7 @@ fields:
   gst_number: 'GST No\:\s*(\d\d\d\-\d\d\d\-\d\d\d)'
   date: '\s(\d+[a-zA-Z]{2} [a-zA-Z]+ \d{4})'
   due_date: '\s(\d+[a-zA-Z]{2} [a-zA-Z]+ \d{4})'
-  amount: 'All Totals to pay \$([\d\,]{1,10}\.\d\d)'
+  amount: 'All\s*Totals\s*to\s*pay\s*\$([\d\,]{1,10}\.\d\d)'
   gst: 'GST \$([\d\,]{1,10}\.\d\d)'
   overdue_amout: ''
 
