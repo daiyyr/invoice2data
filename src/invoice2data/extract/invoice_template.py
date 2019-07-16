@@ -214,24 +214,24 @@ class InvoiceTemplate(OrderedDict):
                             all_amount = []
                             for amt in res_find:
                                 try:
-                                    all_amount.append(self.parse_number(amt))
+                                    all_amount.append(self.parse_number(amt.replace(' ','').replace('\n', '').replace('\r', '')))
                                 except:
                                     pass
                             if len(all_amount) > 0:
                                 output[k] = max(all_amount)
                             else:
-                                output[k] = res_find[0]
+                                output[k] = res_find[0].replace(' ','').replace('\n', '').replace('\r', '')
                     elif k == 'gst': #if multi match, get the smallest one
                         all_amount = []
                         for amt in res_find:
                             try:
-                                all_amount.append(self.parse_number(amt))
+                                all_amount.append(self.parse_number(amt.replace(' ','').replace('\n', '').replace('\r', '')))
                             except:
                                 pass
                         if len(all_amount) > 0:
                             output[k] = min(all_amount)
                         else:
-                            output[k] = res_find[0]
+                            output[k] = res_find[0].replace(' ','').replace('\n', '').replace('\r', '')
 
                     else:
                         res_find = list(set(res_find))

@@ -115,7 +115,7 @@ creditor_name = null
             net,
             gst,
             gross,
-            data['gst_number'].replace("\'","\\\'") if 'gst_number' in data and data['gst_number'] is not None else '',
+            data['gst_number'].replace("\'","\\\'").replace(' ', '') if 'gst_number' in data and data['gst_number'] is not None else '',
             description.replace("\'",""),
             onlinefilename.replace("\'","\\\'")
         )
