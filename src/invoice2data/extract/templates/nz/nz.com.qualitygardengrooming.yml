@@ -1,0 +1,19 @@
+issuer: Quality Garden Grooming
+keywords:
+- Quality Garden Grooming
+
+fields:
+  invoice_number: 'INVOICE\s*NUMBER\s*\:\s*(\w+)'
+  bc_number: ''
+  gst_number: ''
+  date: 'Invoice\s*date\:\s*(\d\d\/\d\d\/\d\d\d\d)'
+  due_date: '3days'
+  amount: 'AMOUNT\s*DUE\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: ''
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%d/%m/%Y'
+    - '%d %b %Y'
