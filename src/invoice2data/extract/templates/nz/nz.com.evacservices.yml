@@ -1,0 +1,25 @@
+issuer: Evac Services Ltd
+keywords:
+- Evac Services
+
+fields:
+  invoice_number: 'Tax\s*Invoice\s*Number\s*(\w+)'
+  bc_number: 'Body\s*Corporate\s*(\w+)'
+  gst_number: 'GST\s*Number\s*\:\s*(\d{1,3}\-\d\d\d\-\d\d\d)'
+  date: '(\d\d\/\d\d\/\d\d)'
+  due_date: '20days'
+  amount: 'Total Due\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+  gst: 'GST\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%M %d'
