@@ -1,0 +1,25 @@
+issuer: Handmade Management Services
+keywords:
+- Handmade
+
+fields:
+  invoice_number: 'INVOICE\s*\#\s*(\w+)'
+  bc_number: 'BC\s*(\w+)'
+  gst_number: 'GST\s*\#\s*(\d{1,3}\-\d\d\d\-\d\d\d)'
+  date: '(\w{3,9}\s\d{1,2}\w\w)'
+  due_date: '20days'
+  amount: 'TOTAL\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: ''
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%M %d'
