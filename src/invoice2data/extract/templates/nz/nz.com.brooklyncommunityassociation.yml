@@ -1,0 +1,25 @@
+issuer: Brooklyn Community Association
+keywords:
+- Brooklyn Community Association
+
+fields:
+  invoice_number: 'Tax\s*Invoice\s*No\s*\:\s*([a-zA-Z0-9]+)'
+  bc_number: ''
+  gst_number: 'GST\s*Reg.*\s*.*\s+(\d{1,3} \d\d\d \d\d\d)'
+  date: 'Date\:\s*(\d\d\/\d\d\/\d\d\d\d)'
+  due_date: '7days'
+  amount: 'Balance\s*Due\s*\:\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+  gst: 'GST\s*\:\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%M %d'
