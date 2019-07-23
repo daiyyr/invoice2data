@@ -1,0 +1,26 @@
+issuer: ASSA ABLOY ENTRANCE SYSTEMS NZ LTD
+keywords:
+- ASSA ABLOY ENTRANCE SYSTEMS NZ LTD
+
+fields:
+  invoice_number: 'Invoice\s*Number\s*\:\s*(\d+)'
+  bc_number: 'BC (\w+)'
+  gst_number: 'GST\s*Number\s*(\d+)'
+  date: 'Date\s*\:\s*(\d\d\/\d\d\/\d\d\d\d)'
+  due_date: '14days'
+  amount: 'TOTAL\s*INC\s*GST\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: 'GST\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%m/ %y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%m-%y'

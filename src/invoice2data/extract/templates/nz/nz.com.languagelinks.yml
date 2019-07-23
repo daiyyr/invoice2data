@@ -1,0 +1,26 @@
+issuer: Language Links Ltd
+keywords:
+- Language Links Ltd
+
+fields:
+  invoice_number: 'Tax\s*Invoice\s*(\d+)'
+  bc_number: 'BC\s*(\w+)'
+  gst_number: '(\d{1,3}\-\d\d\d\-\d\d\d)'
+  date: 'Date\:\s*(\d\d\/\d\d\/\d\d\d\d)'
+  due_date: '20days'
+  amount: 'Balance\s*Due\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: 'GST\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%m/ %y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%m-%y'
