@@ -129,7 +129,9 @@ def extract_data(invoicefile, templates=None, input_module=pdftotext):
                         logger.error(e.message)
                         pass
 
-            return t.extract(optimized_str, invoicefile)
+            ret = t.extract(optimized_str, invoicefile)
+            if ret is not None and ret is not False:
+                return ret
 
     if not tried_tesseract:
         logger.debug('No template matched, now try tesseract ===========================')
@@ -435,5 +437,6 @@ def main2(args=None):
         if args['dbpass'] is not None:
             pass #for data base output, do it in loop of extracting
         else:
-            output_module.write_to_file(output, args['output_name'])
+            logger.warning(output)
+            output_module.write_to_file(output, args['output_name'], args['output_date_format'])
 
