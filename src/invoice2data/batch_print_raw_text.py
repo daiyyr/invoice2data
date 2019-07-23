@@ -3,9 +3,9 @@ import subprocess
 import sys
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
-directory = (dir_path + '/pdf/AucklandCouncil').replace("//", "/")
+directory = (dir_path + '/pdf/testing').replace("//", "/")
 all_files = ''
-parame = ['invoice2data','--output-format', 'csv', '--exclude-built-in-templates', '--template-folder', 'template']
+parame = ['invoice2data','--output-format', 'csv']
 
 for filename in os.listdir(directory):
     if filename.endswith(".pdf") or filename.endswith(".PDF"):
@@ -17,8 +17,11 @@ parame.append("--debug")
 
 subprocess.check_output(parame)
 
-#neither of following methods work. So just use: python batch_print_raw_text.py &> output.txt
+#Use: python batch_print_raw_text.py &> output.txt
 
+
+
+#Neither of following methods work. 
 # outputfile = 'output.txt'
 # open(outputfile, 'w').close() #clean file first
 
