@@ -174,6 +174,13 @@ class InvoiceTemplate(OrderedDict):
                     except Exception:
                         #not in '20days' format
                         i = 0
+                if k=='gst' and v=='15%' and (output['amount'] is not None):
+                    try:
+                        total_a = float(output['amount'])
+                        output[k] = round(total_a*0.15/1.15, 2)
+                        continue
+                    except Exception:
+                        pass
 
                 sum_field = False
                 if k.startswith('sum_amount') and type(v) is list:
@@ -198,6 +205,15 @@ class InvoiceTemplate(OrderedDict):
                 if res_find:
                     logger.debug("res_find=%s", res_find)
                     if k.startswith('date') or k.endswith('date'):
+                        if len(res_find) > 1:
+                            #set the oldest matched date as date
+                            all_date = []
+                            for redates in res_find:
+                                all_date.append(redates)
+                            if k == 'date':
+                                res_find[0] = min(all_date)
+                            elif k == 'due_date':
+                                res_find[0] = max(all_date)
                         try:
                             output[k] = self.parse_date(res_find[0].lower().replace('o','0').replace('jnu','jun'))
                         except:
