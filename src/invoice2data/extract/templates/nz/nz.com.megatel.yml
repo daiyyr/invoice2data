@@ -8,7 +8,7 @@ fields:
   gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
   date: 'Date\s*(\d\d\/\d\d\/\d\d\d\d)'
   due_date: 'Due\s*Date\s*(\d\d\/\d\d\/\d\d\d\d)'
-  amount: 'Total\s*amount\s*to\s*pay\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  amount: 'Total\s*amount\s*to\s*pay.*\$\s*([\d\,]{1,10}\.\d\d)'
   gst: 'Plus\s*GST\s*\$\s*([\d\,]{1,10}\.\d\d)'
 
 options:
