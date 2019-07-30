@@ -209,7 +209,11 @@ class InvoiceTemplate(OrderedDict):
                             #set the oldest matched date as date
                             all_date = []
                             for redates in res_find:
-                                all_date.append(redates)
+                                try:
+                                    redate00 = self.parse_date(redates)
+                                    all_date.append(redate00)
+                                except:
+                                    pass
                             if k == 'date':
                                 res_find[0] = min(all_date)
                             elif k == 'due_date':
