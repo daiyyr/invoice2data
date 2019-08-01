@@ -7,7 +7,7 @@ fields:
   invoice_number: '(TE\w+)\s+Your account name\:'
   bc_number: 'Your\s*account\s*name\:\s*BODY\s*CORPORATE\s*(\w+)'
   customer_number: 'Your account number\: (\d+)'
-  gst_number: 'GST number\: (\d{1,3}\-\d\d\d\-\d\d\d)'
+  gst_number: 'GST number\: (\d{2,3}\-\d\d\d\-\d\d\d)'
   date: 'Your bill \- (\d{1,2} [a-zA-Z]{3,9} \d\d\d\d)'
   due_date: ' due on (\d{1,2}\.\d\d\.\d\d)'
   amount: 'The total you need to pay is \$(\d{1,10}\.\d\d)'
