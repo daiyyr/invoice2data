@@ -1,13 +1,13 @@
-issuer: PRICE BAKER BERRIDGE
+issuer: QUADRANT MANAGEMENT SERVICES
 keywords:
-- PRICE BAKER BERRIDGE
+- QUADRANT MANAGEMENT SERVICES
 
 fields: 
-  invoice_number: '(\d+)\s*\/\s*\d+\s*\/\s*Clinton'
-  bc_number: 'BODY\s*CORPORATE\s*(\d+)'
-  gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
-  date: '(\d{1,2} \w{3,9} 201\d)'
-  due_date: '20days'
+  invoice_number: 'Tax\s*invoice\s*(\d+)'
+  bc_number: 'BC\s*(\w+)'
+  static_gst_number: '107-656-049'
+  date: '(\d\d\/\w\w\/\d\d\d\d)'
+  due_date: '(\d\d\/\w\w\/\d\d\d\d)'
   amount: '([\d\,]{1,10}\.\d\d)'
   gst: '15%'
 

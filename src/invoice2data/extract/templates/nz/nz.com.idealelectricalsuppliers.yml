@@ -1,15 +1,15 @@
-issuer: PRICE BAKER BERRIDGE
+issuer: Ideal Electrical Suppliers
 keywords:
-- PRICE BAKER BERRIDGE
+- Ideal Electrical Suppliers
 
-fields: 
-  invoice_number: '(\d+)\s*\/\s*\d+\s*\/\s*Clinton'
-  bc_number: 'BODY\s*CORPORATE\s*(\d+)'
+fields:
+  invoice_number: 'Reference\s*\:\s*(\w+)'
+  bc_number: ''
   gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
-  date: '(\d{1,2} \w{3,9} 201\d)'
+  date: '(\d{1,2}\/\d\d\/\d\d\d\d)'
   due_date: '20days'
-  amount: '([\d\,]{1,10}\.\d\d)'
-  gst: '15%'
+  amount: 'Total\s*\(inc\)s*\:\s*([\d\,]{1,10}\.\d\d)'
+  gst: 'GST\s*\:\s*([\d\,]{1,10}\.\d\d)'
 
 options:
   currency: NZD

@@ -1,17 +1,17 @@
 issuer: JJ Richards & Sons
 keywords:
-- JJ Richards & Sons
+- JJ Richards
 - ar.auckland@jjrichards.co.nz
 
 fields:
   invoice_number: '(?<=Invoice No\:)\s*(\d+)'
-  bc_number: ''
+  bc_number: 'BC\s+(\w+)'
   customer_number: 'Customer No:\s*(\d+)'
-  static_gst_number: '111-448-736'
+  gst_number: '\d{2,3}\-\d\d\d\-\d\d\d'
   date: '(?<=Issue Date\:)\s*\d{2}\/\d{2}\/\d{4}'
   due_date: '(?<=Due By)\s*\d{2}\/\d{2}\/\d{4}'
-  amount: '(?<=Total Amount Payable)\s+\$(\d{1,10}.\d\d)'
-  gst: '(?<=Total GST for this Invoice)\s*\$(\d{1,10}.\d\d)'
+  amount: '(?<=Total Amount Payable)\s+\$([\d\,]{1,10}\.[\d]{2})'
+  gst: 'Total\s*GST\s*for\s*this\s*Invoice\s*\$([\d\,]{1,10}\.[\d]{2})'
   overdue_amout: ''
 
 options:
