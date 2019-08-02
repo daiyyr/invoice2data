@@ -211,7 +211,8 @@ class InvoiceTemplate(OrderedDict):
                             for redates in res_find:
                                 try:
                                     redate00 = self.parse_date(redates)
-                                    all_date.append(redate00)
+                                    if redate00 is not None:
+                                        all_date.append(redate00)
                                 except:
                                     pass
                             if k == 'date':
