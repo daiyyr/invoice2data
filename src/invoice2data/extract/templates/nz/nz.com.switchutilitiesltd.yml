@@ -1,0 +1,26 @@
+issuer: Switch Utilities Ltd
+keywords:
+- switchutilities.co.nz
+
+fields: 
+  invoice_number: 'Invoice\s*number\s*(\w+)'
+  bc_number: 'BODY\s*CORPORATE\s*(\w+)'
+  gst_number: '\d{2,3}\-\d\d\d\-\d\d\d'
+  date: 'Issue\s*date\s*(\d{1,2} \w{3,9} 20\d\d)'
+  due_date: 'Due\s*if\s*paid\s*by\s*(\d{1,2}\/\d{1,2}\/20\d\d)'
+  amount: 'Due\s*if\s*paid\s*by\s*\d{1,2}\/\d{1,2}\/20\d\d\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: 'Due\s*if\s*paid\s*by\s*\d{1,2}\/\d{1,2}\/20\d\d\s*\$\s*[\d\,]{1,10}\.\d\d\s*Incl\s*GST\s*of\s*\$([\d\,]{1,10}\.\d\d)'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%m/ %y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%m-%y'

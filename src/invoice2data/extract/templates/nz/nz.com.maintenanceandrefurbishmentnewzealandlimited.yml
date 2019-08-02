@@ -1,0 +1,26 @@
+issuer: MAINTENANCE AND REFURBISHMENT NEW ZEALAND LIMITED
+keywords:
+- MAINTENANCE AND REFURBISHMENT NEW ZEALAND LIMITED
+
+fields: 
+  invoice_number: 'REF\.\s*NO\.\s*(.+)'
+  bc_number: 'BC\s+(\w+)'
+  gst_number: ''
+  date: 'DATE\s*(\d{1,2}\/\d\d\/20\d\d)'
+  due_date: '20days'
+  amount: 'TOTAL\s*incl\.\s*GST\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: ''
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%m/ %y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%m-%y'

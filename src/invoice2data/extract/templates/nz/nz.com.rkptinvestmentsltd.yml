@@ -1,0 +1,26 @@
+issuer: RKPT Investments Ltd
+keywords:
+- RKPT Investments Ltd
+
+fields: 
+  invoice_number: 'INVOICE\s*\#\s*(\w+)'
+  bc_number: ''
+  gst_number: '(\d{2,3}-\d\d\d\-\d\d\d)'
+  date: 'DUE\:\s*(\d\d\/\d\d\/\d\d\d\d)'
+  due_date: 'DUE\:\s*\d\d\/\d\d\/\d\d\d\d\s*(\d\d\/\d\d\/\d\d\d\d)'
+  amount: 'Account\s*balance\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: '\(15\.0\%\)\s*\$\s*([\d\,]{1,10}\.\d\d)'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%m/ %y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%m-%y'
