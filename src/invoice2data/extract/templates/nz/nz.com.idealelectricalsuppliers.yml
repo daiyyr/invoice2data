@@ -1,11 +1,12 @@
 issuer: Ideal Electrical Suppliers
 keywords:
-- Ideal Electrical Suppliers
+- Ideal Electrical
+- ideal.co.nz
 
 fields:
   invoice_number: 'Reference\s*\:\s*(\w+)'
   bc_number: ''
-  gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
+  gst_number: '(\d{2,3}[\-\~]\d\d\d[\-\~]\d\d\d)'
   date: '(\d{1,2}\/\d\d\/\d\d\d\d)'
   due_date: '20days'
   amount: 'Total\s*\(inc\)s*\:\s*([\d\,]{1,10}\.\d\d)'
