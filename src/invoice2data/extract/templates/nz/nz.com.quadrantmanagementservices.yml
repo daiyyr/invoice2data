@@ -3,7 +3,7 @@ keywords:
 - QUADRANT MANAGEMENT SERVICES
 
 fields: 
-  invoice_number: 'Tax\s*invoice\s*(\d+)'
+  invoice_number: 'Tax\s*[iI]nvoice\s*(\d+)'
   bc_number: 'BC\s*(\w+)'
   static_gst_number: '107-656-049'
   date: '(\d\d\/\w\w\/\d\d\d\d)'

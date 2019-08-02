@@ -3,13 +3,13 @@ keywords:
 - Heart Saver NZ Limited
 
 fields: 
-  invoice_number: 'Tax\s*Invoice\s*(\w+)'
+  invoice_number: 'Invoice\s*Number.*\n\s*(\w+)'
   bc_number: ''
   gst_number: '(\d{2,3}-\d\d\d\-\d\d\d)'
-  date: '(\d\d\-\w\w\w\-20\d\d)'
-  due_date: '7days'
-  amount: 'TOTAL\s*DUE\s*([\d\,]{1,10}\.\d\d)'
-  gst: 'TOTAL\s*GST\s*([\d\,]{1,10}\.\d\d)'
+  date: '(\d\d\/\d\d\/20\d\d)'
+  due_date: 'DUE\s*DATE\:\s*(\d\d\/\d\d\/20\d\d)'
+  amount: 'Total\s*inc\s*GST\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: 'GST\s*\$\s*([\d\,]{1,10}\.\d\d)'
 
 options:
   currency: NZD
