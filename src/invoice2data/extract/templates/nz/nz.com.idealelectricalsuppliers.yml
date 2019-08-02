@@ -9,7 +9,7 @@ fields:
   gst_number: '(\d{2,3}[\-\~]\d\d\d[\-\~]\d\d\d)'
   date: '(\d{1,2}\/\d\d\/\d\d\d\d)'
   due_date: '20days'
-  amount: 'Total\s*\(inc\)s*\:\s*([\d\,]{1,10}\.\d\d)'
+  amount: 'Total\s*\(inc\)s*\:\s*([\d\,]{1,10}\.?\d?\d?)'
   gst: 'GST\s*\:\s*([\d\,]{1,10}\.\d\d)'
 
 options:
