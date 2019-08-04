@@ -1,6 +1,6 @@
 issuer: Vodafone New Zealand Limited
 keywords:
-- www.vodafone.co.nz
+- vodafone.co.nz
 
 fields: 
   invoice_number: 'Invoice\s*Number\s*(\w+)'

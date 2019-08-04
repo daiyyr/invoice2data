@@ -1,0 +1,26 @@
+issuer: Mainline Electrical (WN) Ltd
+keywords:
+- mainline.co.nz
+
+fields:
+  invoice_number: 'TAX\s*INVOICE\s*NO\.\s*(\w+)'
+  bc_number: 'BC\s+(\w+)'
+  gst_number: '(\d{2,3}[\-\~]\d\d\d[\-\~]\d\d\d)'
+  date: 'INVOICE\s*DATE\s*\d{1,2}\/\d\d\/20\d\d.+?(\d{1,2}\/\d\d\/20\d\d)'
+  due_date: 'INVOICE\s*DATE\s*(\d{1,2}\/\d\d\/20\d\d)'
+  amount: 'Balance\s*Due\s*\$\s*([\d\,]{1,10}\.?\d?\d?)'
+  gst: 'GST\s*\$\s*([\d\,]{1,10}\.\d\d)'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%m/ %y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%m-%y'
