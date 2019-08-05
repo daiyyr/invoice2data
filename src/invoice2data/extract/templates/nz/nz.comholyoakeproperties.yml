@@ -1,0 +1,24 @@
+issuer: Holyoake Properties Ltd
+keywords:
+- Holyoake Properties Ltd
+
+fields:
+  invoice_number: 'Invoice\s*No\s*\.\:\s*(\w+)'
+  bc_number: ''
+  gst_number: '(\d{2,3}-\d\d\d\-\d\d\d)\s'
+  date: '(\d{1,2}\/\d\d\/20\d\d)'
+  due_date: '7days'
+  amount: 'Balance\s*Due\s*\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: 'GST\s*\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%dst %b %Y'
+    - '%D %b %Y'
+    - '%d %B %Y'
+    - '%d%m%y'
+    - '%d/%m/%Y'
+    - '%d %b %Y'
+    - '%b %d %Y'
