@@ -1,0 +1,23 @@
+issuer: Fivestar Print
+keywords:
+- Fivestar Print
+
+fields: 
+  invoice_number: 'Tax\s*Invoice\s*(.+)'
+  bc_number: ''
+  gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
+  date: '(\d{1,2}\/\d{1,2}\/20\d\d)'
+  due_date: '(\d{1,2}\/\d{1,2}\/20\d\d)'
+  amount: 'Total\s*\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: 'Total\s*GST\s*\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%B %d %Y'

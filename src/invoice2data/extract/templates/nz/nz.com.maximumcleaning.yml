@@ -1,0 +1,23 @@
+issuer: Maximum Cleaning
+keywords:
+- MAXIMUM CLEANING
+
+fields: 
+  invoice_number: '(\w+)\s*\d{1,2}\/\d{1,2}\/20\d\d'
+  bc_number: 'BC\s+(\w+)'
+  gst_number: ''
+  date: '(\d{1,2}\/\d{1,2}\/20\d\d)'
+  due_date: '0days'
+  amount: '([\d\,]{1,10}\.\d\d)'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%B %d %Y'
