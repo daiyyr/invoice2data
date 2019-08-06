@@ -1,0 +1,24 @@
+issuer: Red Lid Garden Bins & Bags
+keywords:
+- Red Lid Garden Bins
+
+fields:
+  invoice_number: 'Cust\s*\#\s*(\w+)'
+  bc_number: ''
+  gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
+  date: 'Date\s*(\d{1,2}\/\d\d\/20\d\d)'
+  due_date: 'DUE\s*(\d{1,2}\s*\w{3,9}\s*20\d\d)'
+  amount: 'Amount\s*Due\s*([\d\,]{1,10}\.\d\d)'
+  gst: ''
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%dst %b %Y'
+    - '%D %b %Y'
+    - '%d %B %Y'
+    - '%d%m%y'
+    - '%d/%m/%Y'
+    - '%d %b %Y'
+    - '%b %d %Y'

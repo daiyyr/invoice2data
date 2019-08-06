@@ -1,0 +1,24 @@
+issuer: Apex General Limited
+keywords:
+- Apex General Limited
+
+fields:
+  invoice_number: 'Invoice\s*No\s*\:\s*(\w+)'
+  bc_number: '(?<!C\/\- )Body\s*Corporate\s+(\w+)'
+  gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
+  date: 'Invoice\s*Date\:\s*(\d{1,2}\/\d\d\/20\d\d)'
+  due_date: 'Due\s*Date\:\s*(\d{1,2}\/\d\d\/20\d\d)'
+  amount: 'Total\s*Amount\s*Due\s*\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: ''
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%dst %b %Y'
+    - '%D %b %Y'
+    - '%d %B %Y'
+    - '%d%m%y'
+    - '%d/%m/%Y'
+    - '%d %b %Y'
+    - '%b %d %Y'
