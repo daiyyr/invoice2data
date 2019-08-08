@@ -1,0 +1,24 @@
+issuer: Parkers Cleaning Services Limited
+keywords:
+- Parkers Cleaning Services Limited
+
+fields: 
+  invoice_number: 'Invoice\:\s*(\w+)'
+  bc_number: '(?<!C\/\- )Body\s*Corp\s*No\.\s*(\w+)'
+  gst_number: 'GST\s*Number\s*(\d+)'
+  date: '(\d{1,2}\/\d{2}\/20\d\d)'
+  due_date: '(\d{1,2}\/\d{2}\/20\d\d)'
+  amount: 'AMOUNT\s*DUE\s*\:\s*\$\s*([\d\,]{1,10}\.\d{2})'
+  gst: 'GST\s*\:\s*\$\s*([\d\,]{1,10}\.\d{2})'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'

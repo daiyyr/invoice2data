@@ -1,15 +1,14 @@
 issuer: Otis Elevator Company Ltd
 keywords:
-- Otis Elevator Company Ltd
-- www.otis.com
+- otis.com
 
 fields:
   invoice_number: 'Invoice No\:\s+(\d+)'
   bc_number: '(?<!C\/\- )Body Corporate\s*(\w+)'
   customer_number: 'Contract No\:\s+(\w+)'
-  gst_number: ' GST No\.\s*(\d+)'
-  date: 'Invoice Date\s+(\d\d\-\w\w\w\-\d\d\d\d)'
-  due_date: 'Date Due\s+(\d\d\-\w\w\w\-\d\d\d\d)'
+  gst_number: ' GST\s*No\.\s*(\d+)'
+  date: 'Invoice\s*Date\s+(\d\d\-\w\w\w\-\d\d\d\d)'
+  due_date: 'Date\s*Due\s+(\d\d\-\w\w\w\-\d\d\d\d)'
   amount: 'Amount Due\s+NZ\$([\d\,\.]+)'
   gst: 'G\.S\.T\.\s+NZ\$([\d\,\.]+)'
   overdue_amout: ''

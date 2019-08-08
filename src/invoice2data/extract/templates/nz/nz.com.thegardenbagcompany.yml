@@ -1,0 +1,24 @@
+issuer: The Garden Bag Company
+keywords:
+- clippabags.co.nz
+
+fields: 
+  invoice_number: '\d\d\-\d\d\d\-\d\d\d\s+(\w+)'
+  bc_number: '(?<!C\/\- )Body\s*Corporate\s+(\w+)'
+  gst_number: '(\d{2,3}\-\s*\d\d\d\-\s*\d\d\d)\s'
+  date: '(\d{1,2}\/\d\d\/\d\d\d\d)'
+  due_date: '0days'
+  amount: 'Total\s*Owing\s*\$\s*([\d\,]{1,10}\.\d{2})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'

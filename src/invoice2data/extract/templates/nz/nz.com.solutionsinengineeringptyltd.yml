@@ -1,0 +1,24 @@
+issuer: SOLUTIONS IN ENGINEERING PTY LTD
+keywords:
+- SOLUTIONS IN ENGINEERING PTY LTD
+
+fields: 
+  invoice_number: '\d{1,2}\s*\w{3}\s*20\d\d\s+(\d+)'
+  bc_number: '(?<!C\/\- )Body\s*Corporate\s+(\w+)'
+  gst_number: 'GST\s*Number\s*(\d+)'
+  date: '(\d{1,2}\s*\w{3}\s*20\d\d)'
+  due_date: '(\d{1,2}\s*\w{3}\s*20\d\d)'
+  amount: 'Amount\s*Due\s*NZD\s*([\d\,]{1,10}\.\d{2})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
