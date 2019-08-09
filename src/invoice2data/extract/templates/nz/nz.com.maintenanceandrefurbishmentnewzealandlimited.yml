@@ -6,8 +6,8 @@ fields:
   invoice_number: 'REF\.\s*NO\.\s*(.+)'
   bc_number: 'BC\s+(\w+)'
   gst_number: ''
-  date: 'DATE\s*(\d{1,2}\/\d\d\/20\d\d)'
-  due_date: '20days'
+  date: 'DATE\s*(\d{1,2}\/\d{1,2}\/\d\d\d?\d?)'
+  due_date: '0days'
   amount: 'TOTAL\s*incl\.\s*GST\s*\$\s*([\d\,]{1,10}\.\d\d)'
   gst: ''
 

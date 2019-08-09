@@ -1,0 +1,23 @@
+issuer: Direct Fire Service & Maintenance
+keywords:
+- directfire.co.nz
+fields: 
+  invoice_number: 'Invoice\s*Ref\s*\:\s*(\w+)\s'
+  bc_number: '(?<!C\/\- )BC\s*\#\s*(\d+\s?\d+)\s+'
+  gst_number: '(\d{2,3}\-\s*\d\d\d\-\s*\d{2,3})\s'
+  date: 'Invoice\s*Date\s*(\d{1,2}\/\d{2}\/20\d\d)'
+  due_date: 'Due\s*Date\s*of\s*Payment\s*(\d{1,2}\/\d{2}\/20\d\d)'
+  amount: 'Claimed\s*Amount\s*\$\s*([\d\,]{1,10}\.\d{2})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
