@@ -3,12 +3,12 @@ keywords:
 - grandiflora@
 
 fields: 
-  invoice_number: 'Invoice\s*No\.\:\s*(\w+)'
+  invoice_number: '[Ii]nvoice\s*No\.\:\s*(\w+)'
   bc_number: '(?<!C\/\- )Body\s*Corporate\s+(\w+) (?!Ltd)'
   gst_number: 'GST\s*Reg\.\s*No\:\s*(\d+)'
   date: 'Date\s*\:\s*(\d{1,2}\/\d{2}\/20\d\d)'
   due_date: '20days'
-  amount: 'Balance\s*Due\s*\:\s*\$\s*([\d\,]{1,10}\.\d{2})'
+  amount: 'Total.*\$\s*([\d\,]{1,10}\.\d{2})'
   gst: '15%'
 
 options:
