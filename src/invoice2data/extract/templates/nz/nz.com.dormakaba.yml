@@ -10,8 +10,8 @@ fields:
   gst_number: 'registered for GST\s*([^.]{10,11})'
   date: '(?<=Date\:)\s+(\d{2}\/\d{2}\/\d{4})'
   due_date: 'Due Date\:\s*(\d{2}\/\d{2}\/\d{4})'
-  amount: '(?<=Amount due incl\.GST\:)\s*NZD\s*(\d{1,10}.\d\d)'
-  gst: '(?<=Total GST component\:)\s*NZD\s*(\d{1,10}.\d\d)'
+  amount: '(?<=Amount due incl\.GST\:)\s*NZD\s*([\d\,]{1,10}.\d\d)'
+  gst: '(?<=Total GST component\:)\s*NZD\s*([\d\,]{1,10}.\d\d)'
   overdue_amout: ''
 
 options:

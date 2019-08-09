@@ -10,7 +10,7 @@ fields:
   gst_number: ''
   date: 'Invoice Date.*?\n.*(\d{1,2} \w\w\w \d\d\d\d)'
   due_date: 'Due Date\:\s*(\d{1,2} \w\w\w \d\d\d\d)'
-  amount: 'Subtotal\s*(\d{1,10}.\d\d)'
+  amount: 'Subtotal\s*([\d\,]{1,10}.\d\d)'
   gst: ''
   overdue_amout: ''
 

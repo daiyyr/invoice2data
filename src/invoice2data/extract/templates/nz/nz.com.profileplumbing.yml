@@ -10,8 +10,8 @@ fields:
   gst_number: 'GST Number\:\s*(\d{2,3}-\d\d\d\-\d\d\d)'
   date: 'Invoice Date\:\s*(\d{1,2}[a-zA-Z]{2} \w\w\w \d\d\d\d)'
   due_date: 'Due Date\:\s*(\d{1,2}\w\w \w\w\w \d\d\d\d)'
-  amount: '(?<=Total)\s*\$(\d{1,10}.\d\d)'
-  gst: '(?<=GST Amount)\s*\$(\d{1,10}.\d\d)'
+  amount: '(?<=Total)\s*\$([\d\,]{1,10}.\d\d)'
+  gst: '(?<=GST Amount)\s*\$([\d\,]{1,10}.\d\d)'
   overdue_amout: ''
 
 options:

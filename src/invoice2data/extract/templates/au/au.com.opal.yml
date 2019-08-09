@@ -8,7 +8,7 @@ fields:
   opal_card_status: 'Opal card status\s+(\w+)'
   card_nickname: 'Card nickname\s+(\w+)'
   type_of_card: 'Type of card\s+(\w+)'
-  amount: 'Total fares \(incl. GST\)\s+-\$(\d{1,10}.\d\d)'
+  amount: 'Total fares \(incl. GST\)\s+-\$([\d\,]{1,10}.\d\d)'
   total_top_ups: 'Total top ups\s+(-?\$\d{1,10}.\d\d)'
   total_adjustments: 'Total adjustments\s+(-?\$\d{1,10}.\d\d)'
   activity_statement_balance: 'Activity statement\s+(-?\$\d{1,10}.\d\d)'
