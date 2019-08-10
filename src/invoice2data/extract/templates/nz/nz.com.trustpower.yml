@@ -1,0 +1,24 @@
+issuer: Trustpower
+keywords:
+- trustpower.co.nz
+
+fields: 
+  invoice_number: 'Tax\s*Invoice\s*No\:\s*(\w+)'
+  bc_number: 'BODY\s*CORPORATE\s*(\w+)'
+  gst_number: '(\d{2,3}[\-\_]\d\d\d[\-\_]\d{2,3})\s'
+  date: 'Tax\s*Invoice\s*Date\s*\:\s*(\d{1,2}\/\d\d\/20\d\d)'
+  due_date: 'due\s*on\s*(\d{1,2}\/\d\d\/20\d\d)'
+  amount: 'Total\s*due\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+  gst: 'Total\s*GST\s*for\s*this\s*invoice\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'

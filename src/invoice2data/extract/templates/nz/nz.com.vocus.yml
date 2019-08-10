@@ -1,18 +1,16 @@
 issuer: Vocus Communications
 keywords:
-- Vocus Communications
 - www.vocus.co.nz
 
 fields:
-  invoice_number: '(?<=Invoice number)\s*(\d+)'
-  bc_number: '(?<=BODY CORPORATE )\w+'
-  customer_number: 'SUL\d+'
-  gst_number: '(?<=GST no\. )\d\d\d\-\d\d\d\-\d\d\d'
-  date: '(?<=Issue date)\s+\d{1,2} .{3} \d{4}'
-  due_date: '(?<=Due if paid by\s)\d\d\/\d\d\/\d\d\d\d'
-  amount: '(?<=Due if paid by\s\d\d\/\d\d\/\d\d\d\d)\s+\$([\d\,]{1,10}.\d\d)'
-  gst: '(?<=Due if paid by\s\d\d\/\d\d\/\d\d\d\d)\s*\$\d+\.\d\d\s*Incl GST of \$([\d\,]{1,10}.\d\d)'
-  overdue_amout: '(?<=Due if paid after\s\d\d\/\d\d\/\d\d\d\d)\s+\$([\d\,]{1,10}.\d\d)'
+  invoice_number: 'Invoice\s*number\s*(\w+)'
+  bc_number: 'BODY\s*CORPORATE\s*(\w+)'
+  gst_number: 'GST\s*no\.\s*(\d{2,3}\-\d\d\d\-\d{2,3})\s'
+  date: 'Issue\s*date\s+(\d{1,2}\s*\w{3,9}\s*20\d{2})'
+  due_date: 'Due\s*if\s*paid\s*by\s(\d\d\/\d\d\/\d\d\d\d)'
+  amount: 'Due\s*if\s*paid\s*by\s\d\d\/\d\d\/\d\d\d\d\s+\$([\d\,]{1,10}.\d\d)'
+  gst: 'Due\s*if\s*paid\s*by\s\d\d\/\d\d\/\d\d\d\d\s*\$\d+\.\d\d\s*Incl\s*GST\s*of\s*\$([\d\,]{1,10}.\d\d)'
+  overdue_amout: 'Due\s*if\s*paid\s*after\s\d\d\/\d\d\/\d\d\d\d\s+\$([\d\,]{1,10}.\d\d)'
 
 options:
   currency: NZD

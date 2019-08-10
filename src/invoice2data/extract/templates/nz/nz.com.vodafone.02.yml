@@ -2,14 +2,13 @@ issuer: Vodafone New Zealand Limited
 keywords:
 - Vodafone
 - Tax Invoice
-- Internet Banking Details
 
 fields: 
   invoice_number: 'Invoice\s*Number\s*(\w+)'
   bc_number: ''
   static_gst_number: '70-710-455'
   date: 'Invoice\s*Date\s*(\d{1,2}\s*\w{3}\s*20\d\d)'
-  due_date: 'Due\s*Date\s*(\d{1,2}\s*\w{3}\s*20\d\d)'
+  due_date: '[dD]ue.*?(\d{1,2}\s*\w{3}\s*20\d\d)'
   amount: 'Total\s*\$\s*([\d\,]{1,10}\.\d{2})'
   gst: 'GST\s*at\s*Standard\s*Rate\s*\$\s*([\d\,]{1,10}\.\d{2})'
 
