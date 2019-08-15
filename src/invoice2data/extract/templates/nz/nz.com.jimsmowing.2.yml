@@ -8,7 +8,7 @@ fields:
   gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
   date: 'Invoice\s*Date\s*\:\s*(\w{3,9}\s*\d\d\s*\,\s*20\d\d)'
   due_date: 'Payment\s*Due\s*\:\s*(\w{3,9}\s*\d\d\s*\,\s*20\d\d)'
-  amount: 'Amount\s*Due\(NZD\)\s*\:\s*\$\s*([\d\,]{1,10}\.[\d]{2})'
+  amount: 'Amount\s*Due\s*\(NZD\)\s*\:\s*\$\s*([\d\,]{1,10}\.[\d]{2})'
   gst: ''
 
 options:
