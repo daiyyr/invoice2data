@@ -45,6 +45,8 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass
 
     try:
         description = ''
+        if 'description' in data:
+            description += data['description'] + '; '
         if 'this_month_reading' in data:
             description += data['this_month_reading'] + '; '
         if 'last_month_reading' in data:
