@@ -1,0 +1,25 @@
+issuer: ENERGYCO LIMITED
+keywords:
+- Energyco
+
+fields: 
+  invoice_number: '[iIlL]nvoice\s*number\s*(\w+)'
+  bc_number: 'BC\s*(\w+)'
+  gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
+  date: '(\d{1,2}\/\d\d\/20\d\d)'
+  due_date: '(\d{1,2}\/\d\d\/20\d\d)'
+  amount: 'Total\s*due\s*including\s*opening\s*balance\s*\$\s*([\d\,]{1,10}\.[\d]{2})'
+  gst: ''
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%m-%y'
