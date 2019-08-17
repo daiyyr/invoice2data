@@ -1,0 +1,26 @@
+issuer: Aqua Wash Services
+keywords:
+- AquaWashServices
+
+fields: 
+  invoice_number: 'INVOICE\s*NO.\s*(\w+)'
+  bc_number: 'BODY\s*CORPORATE\s*(\w+)'
+  gst_number: 'GST\s*NO\:\s*(\d{2,3}\s*\d{3}\s*\d{2,3})'
+  date: 'DATE\:\s*(\d{1,2}\/\d{2}\/20\d\d)'
+  due_date: '0days'
+  amount: 'TOTAL\s*\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: 'GST\s*\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%m/ %y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%m-%y'
