@@ -5,8 +5,8 @@ keywords:
 fields: 
   invoice_number: 'Invoice\s*Number\s*(\w+)'
   bc_number: 'BC(\w+)'
-  static_gst_number: '079-995-347'
-  date: 'Invoice\s*Date.*?\n.*?(\d{1,2} \w\w\w \d\d\d\d)'
+  gst_number: '\s(\d{2,3}\s*\d\d\d\s*\d\d\d)\s'
+  date: '(\d{1,2}\s*\w\w\w\s*20\d\d)'
   due_date: 'Due\s*Date\:\s*(\d{1,2} \w\w\w \d\d\d\d)'
   amount: 'TOTAL\s*NZD\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
   gst: 'INCLUDES\s*GST\s*15\%\s*([\d\,]{1,10}\.\d\d)'
