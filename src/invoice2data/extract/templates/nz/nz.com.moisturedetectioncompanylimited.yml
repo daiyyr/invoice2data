@@ -1,0 +1,25 @@
+issuer: Moisture Detection Company Limited
+keywords:
+- Moisture Detection Company Limited
+
+fields: 
+  invoice_number: 'Invoice\s*No\s*.\s*\:\s*(\w+)'
+  bc_number: 'Body\s*Corporate\s*(\w+)'
+  static_gst_number: '88-703-324'
+  date: 'Date\s*\:\s*(\d{1,2}\/\d{1,2}\/20\d\d)\s'
+  due_date: '7days'
+  amount: 'Balance\s*Due\s*\:\s*\$\s*([\d\,]{1,10}\.[\d]{2})'
+  gst: 'GST\s*\:\s*\$\s*([\d\,]{1,10}\.[\d]{2})'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%m-%y'

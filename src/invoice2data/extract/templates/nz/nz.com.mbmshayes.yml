@@ -1,0 +1,26 @@
+issuer: MB & MS Hayes
+keywords:
+- MB & MS HAYES
+
+fields: 
+  invoice_number: 'INV\s*Ref\s*\:\s*(\w+\s*\w+)\s'
+  bc_number: '\sBody\s*Corp\s*\#\s*(\w+)\s'
+  gst_number: '\s(\d{2,3}-\d\d\d\-\d\d\d)\s'
+  date: 'DATE\s*\:\s*(\d{1,2}\-\d{1,2}\-\d\d)\s'
+  due_date: 'before\s*(\d{1,2}\-\d{1,2}\-\d\d)\s'
+  amount: 'Balance\s*now\s*due\s*\$\s*([\d\,]{1,10})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%d-%m-%y'
+    - '%B %d'
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
