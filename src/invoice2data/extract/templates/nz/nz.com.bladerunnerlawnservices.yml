@@ -1,0 +1,28 @@
+issuer: Blade Runner Lawn Services
+keywords:
+- Blade Runner Lawn
+
+fields: 
+  invoice_number: '\#\s*(\w+)'
+  bc_number: '\sBC(\d+)\s'
+  gst_number: 'GST\s*No\:\s*(\d{2,3}\s*\d\d\d\s*\d\d\d)\s'
+  date: '[dD]ate\s*\:*\s*(\d{1,2}\s*\d{1,2}\s*20\d\d)\s'
+  due_date: '0days'
+  amount: '\$\s*([\d\,]{1,10}\.[\d]{2})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%d %b %Y'
+    - '%B %d'
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%b-%Y'
+    - '%d-%m-%y'

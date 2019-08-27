@@ -1,6 +1,7 @@
 issuer: Grimshaw
 keywords:
 - grimshaw.co.nz
+- dispute
 
 fields: 
   invoice_number: 'INVOICE\s*NUMBER\s*?.*?\s*(\d+)'
