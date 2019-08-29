@@ -45,6 +45,7 @@ while True:
                 "--dbname", dbname,
                 "--azure_account", azure_account, 
                 "--azure_key", azure_key,
+                "--pdf_path", directory,
                 "--output-format", "mysql" ]
             parame0.append(directory+ "/" +filename)
 
@@ -55,6 +56,7 @@ while True:
             parame['dbname'] = dbname
             parame['azure_account'] = azure_account
             parame['azure_key'] = azure_key
+            parame['pdf_path'] = directory
             parame['output_format'] = 'mysql'
             runlog = open('run.log', 'a')
             runlog.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' start process ' + filename + '\n')

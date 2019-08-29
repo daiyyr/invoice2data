@@ -269,6 +269,14 @@ def create_parser():
         help='Specify Azure account key for pdf uploading',
     )
 
+    parser.add_argument(
+        '--pdf_path',
+        dest='pdf_path',
+        default=None,
+        help='Specify directory to save succeed/failed pdf',
+    )
+    
+
     return parser
 
 
@@ -307,7 +315,7 @@ def main(args=None):
             if args.dbpass is not None:
                 re = output_module.write_to_db(res, f.name, args.output_date_format, 
                 args.dbhost, args.dbuser, args.dbpass, args.dbname,
-                args.azure_account, args.azure_key)
+                args.azure_account, args.azure_key, args.pdf_path)
 
             if args.copy:
                 filename = args.filename.format(
@@ -404,7 +412,7 @@ def main2(args=None):
             if args['dbpass'] is not None:
                 re = output_module.write_to_db(res, f.name, args['output_date_format'], 
                 args['dbhost'], args['dbuser'], args['dbpass'], args['dbname'],
-                args['azure_account'], args['azure_key'])
+                args['azure_account'], args['azure_key'], args['pdf_path'])
 
         f.close()
         if args['dbpass'] is not None:

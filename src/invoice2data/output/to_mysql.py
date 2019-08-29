@@ -6,9 +6,11 @@ import datetime
 import uuid
 from azure.storage.file import FileService
 from azure.storage.file import ContentSettings
+from shutil import copyfile
+import os
 
 
-def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass="", dbname="", azure_account="", azure_key=""):
+def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass="", dbname="", azure_account="", azure_key="", pdf_path=""):
     """Insert extracted fields to mysql
 
     Parameters
@@ -71,16 +73,19 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass
         net = gross - gst
 
         onlinefilename = str(uuid.uuid4()) + '.pdf'
-        file_service = FileService(protocol = 'https', endpoint_suffix = 'core.windows.net', 
-        account_name = azure_account, 
-        account_key = azure_key)
-        file_service.create_file_from_path(
-            'cinvoice',
-            None, # We want to create this blob in the root directory, so we specify None for the directory_name
-            onlinefilename,
-            path,
-            content_settings=ContentSettings(content_type='application/pdf'))
-        # file_service.get_file_to_path('cinvoice', None, onlinefilename, 'out-from-file-service.pdf')
+        if azure_account == 'nextcloud' and azure_key == 'nextcloud':
+            copyfile(path, os.path.join(pdf_path,'upload',onlinefilename))
+        else:
+            file_service = FileService(protocol = 'https', endpoint_suffix = 'core.windows.net', 
+            account_name = azure_account, 
+            account_key = azure_key)
+            file_service.create_file_from_path(
+                'cinvoice',
+                None, # We want to create this blob in the root directory, so we specify None for the directory_name
+                onlinefilename,
+                path,
+                content_settings=ContentSettings(content_type='application/pdf'))
+            # file_service.get_file_to_path('cinvoice', None, onlinefilename, 'out-from-file-service.pdf')
 
         sqlstr = """
 INSERT INTO edms set
