@@ -1,0 +1,28 @@
+issuer: Valuation Consultants Ltd
+keywords:
+- Valuation Consultants Ltd
+
+fields: 
+  invoice_number: 'Invoice\s*\#.?\s*\:*\s*(\w+)'
+  bc_number: '\sBody\s*Corp\s+(\w+)\s'
+  gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)\s'
+  date: '[Dd]ate\s*(\d{1,2}\/\d{2}\/20\d\d)\s'
+  due_date: '7days'
+  amount: 'Balance.*?\$\s*([\d\,]{1,10}\.[\d]{2})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%B %d'
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%b-%Y'
+    - '%d-%m-%y'
+
