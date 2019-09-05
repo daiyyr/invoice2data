@@ -2,6 +2,7 @@ issuer: Watercare Services Limited
 keywords:
 - Watercare Services Limited
 - www.watercare.co.nz
+- 'GST'
 
 fields:
   invoice_number: 'Account\s*number\:\s+(\d+\-\d+)'

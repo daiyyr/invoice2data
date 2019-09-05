@@ -6,9 +6,9 @@ fields:
   invoice_number: 'Tax Invoice No\:\s*(\d+)'
   bc_number: 'Body Corporate No.\s*(\w+)'
   gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
-  date: '\s(\d+[a-zA-Z]{2} [a-zA-Z]+ \d{4})'
-  due_date: '\s(\d+[a-zA-Z]{2} [a-zA-Z]+ \d{4})'
-  amount: 'All\s*Totals\s*to\s*[pP]ay\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  date: '\s(\d{1,2}[a-zA-Z]{2}\s*[a-zA-Z]{3,9}\s*20\d{2})'
+  due_date: '0days'
+  amount: 'T[oO][tT][aA][lL].*?\s*\$?\s*([\d\,]{1,10}\.\d\d)'
   gst: 'GST \$([\d\,]{1,10}\.\d\d)'
   overdue_amout: ''
 
