@@ -334,12 +334,20 @@ def main(args=None):
         f.close()
         if args.dbpass is not None:
             #move source pdf
-            pdfdirectory = os.path.dirname(f.name)
+            pdfdirectory = os.path.dirname(f.name) #failedTemp
             pdfpath = f.name
             pdfname = os.path.basename(f.name)
             if re == 'succeed':
+
                 #move to successful
-                succeed_path = join(pdfdirectory, 'successful')
+                #succeed_path = join(pdfdirectory, 'successful')
+                #move to public successful folder where clients can access
+                succeed_path = os.path.abspath(os.path.join(pdfdirectory, os.pardir))
+                succeed_path = join(succeed_path, 'successful')
+
+                from datetime import date
+                succeed_path = join(succeed_path, date.today().strftime('%d-%m-%Y'))
+
                 if not os.path.exists(succeed_path):
                     os.makedirs(succeed_path)
                 destinateFile = join(succeed_path, pdfname)
