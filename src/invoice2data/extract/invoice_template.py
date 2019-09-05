@@ -220,7 +220,7 @@ class InvoiceTemplate(OrderedDict):
                             elif k == 'due_date':
                                 res_find[0] = max(all_date)
                         try:
-                            output[k] = self.parse_date(res_find[0].lower().replace('o','0').replace('jnu','jun'))
+                            output[k] = self.parse_date(res_find[0].lower().replace('o','0').replace('jnu','jun').replace('0ct','Oct').replace('0CT','OCT'))
                         except:
                             output[k] = res_find[0]
                         if not output[k]:
