@@ -1,0 +1,29 @@
+issuer: Letterbox Warehouse
+keywords:
+- letterboxwarehouse@xtra.co.nz
+
+fields: 
+  invoice_number: 'Invoice\s*No.?\s*\:?\s*(\w+)'
+  bc_number: '(?<!c\/\-)BC\s*(\w+)'
+  gst_number: 'GST\s*Reg\s*No.?\s*\:?\s*(\d{2,3}\s*\d\d\d\s*\d\d\d)\s'
+  date: '[Dd]ate\s*\:?\s*(\d{1,2}\/\d{2}\/20\d\d)\s'
+  due_date: '0days'
+  amount: 'Total.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%d.%m.%y'
+    - '%B %d'
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%b-%Y'
+    - '%d-%m-%y'
+

@@ -1,0 +1,28 @@
+issuer: Auckland Lock Services
+keywords:
+- Auckland Lock Services
+
+fields: 
+  invoice_number: 'account\s*[Nn]umber.?\s*\:?\s*(\w+)'
+  bc_number: '(?<!C\/\-)\sBC\s*(\d+)'
+  gst_number: 'GST.*?(\d{2,3}-\d\d\d\-\d\d\d)\s'
+  date: 'Date.*?(\d{1,2}\/\d{2}\/20\d\d)\s'
+  due_date: 'due.*?(\d{1,2}\/\d{2}\/20\d\d)\s'
+  amount: 'Total.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%d.%m.%y'
+    - '%B %d'
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%b-%Y'
+    - '%d-%m-%y'

@@ -1,0 +1,28 @@
+issuer: Auckland Gates
+keywords:
+- aucklandgates.co.nz
+
+fields: 
+  invoice_number: 'JOB\s*\#.*?\n\s*(\w+)'
+  bc_number: '(?<!C\/\-)\sBody Corporate\s+(.*)'
+  gst_number: 'GST.*?(\d{2,3}\-\d{3}\-\d{3})\s'
+  date: '\s(\d{1,2}\/\d{2}\/20\d\d)\s'
+  due_date: '0days'
+  amount: 'BALANCE.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%d.%m.%y'
+    - '%B %d'
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'
+    - '%d-%b-%Y'
+    - '%d-%m-%y'
