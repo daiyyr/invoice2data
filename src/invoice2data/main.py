@@ -351,7 +351,7 @@ def main(args=None):
                 if not os.path.exists(succeed_path):
                     os.makedirs(succeed_path)
                 destinateFile = join(succeed_path, pdfname)
-                os.rename(pdfpath, destinateFile)
+                shutil.move(pdfpath, destinateFile)
                 pass
             elif re == 'link db failed':
                 pass
@@ -441,7 +441,7 @@ def main2(args=None):
                 if not os.path.exists(succeed_path):
                     os.makedirs(succeed_path)
                 destinateFile = join(succeed_path, pdfname)
-                os.rename(pdfpath, destinateFile)
+                shutil.move(pdfpath, destinateFile)
                 pass
             elif re == 'link db failed':
                 pass
