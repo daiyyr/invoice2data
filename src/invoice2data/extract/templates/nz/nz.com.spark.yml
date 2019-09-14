@@ -1,7 +1,6 @@
 issuer: Spark New Zealand Limited
 keywords:
 - Spark New Zealand
-- www.spark.co.nz
 
 fields:
   invoice_number: '(TE\w+)\s+Your account name\:'

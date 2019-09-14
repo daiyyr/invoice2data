@@ -1,14 +1,14 @@
 issuer: Grimshaw
 keywords:
 - grimshaw.co.nz
-- dispute
+- DISPUTE
 
 fields: 
   invoice_number: 'INVOICE\s*NUMBER\s*.*?\s*(\d+)'
-  bc_number: '\sBC\s*(\w+)\s'
+  bc_number: '\sBC\s*(\d+)\s'
   gst_number: 'GST\s*\:\s*(\d{2,3}\s*\d\d\d\s*\d\d\d)\s'
-  date: '\s(\d{1,2}\/\d{1,2}\/20\d\d)\s'
-  due_date: '\s(\d{1,2}\/\d{1,2}\/20\d\d)\s'
+  date: 'DATE[\s|\S]*?(\d{1,2}\/\d{1,2}\/20\d\d)\s'
+  due_date: 'Due.*?\n.*?(\d{1,2}\/\d{1,2}\/20\d\d)\s'
   amount: '\$\s*([\d\,]{1,10}\.\d{2})'
   gst: '15%'
 
