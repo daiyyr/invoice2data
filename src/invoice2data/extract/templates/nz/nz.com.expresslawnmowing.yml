@@ -1,6 +1,6 @@
 issuer: Express Lawn Mowing
 keywords:
-- 'Express Lawn Mowing'
+- 'Express\s*Lawn\s*Mowing'
 
 fields: 
   invoice_number: 'Invoice\s*Number.*?\n.*?(\d{7})'
