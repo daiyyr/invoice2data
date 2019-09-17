@@ -8,6 +8,7 @@ from azure.storage.file import FileService
 from azure.storage.file import ContentSettings
 from shutil import copyfile
 import os
+import re
 
 
 def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass="", dbname="", azure_account="", azure_key="", pdf_path=""):
@@ -109,7 +110,7 @@ creditor_id = null,
 creditor_name = null
 """ % (
             data['issuer'].replace("\'","\\\'") if data['issuer'] is not None else '',
-            data['invoice_number'].replace("\'","\\\'") if data['invoice_number'] is not None else '',
+            re.sub(r'[\W_]+', '', data['invoice_number']) if data['invoice_number'] is not None else '',
             data['bc_number'].replace("\'","\\\'") if data['bc_number'] is not None else '',
             ("'"+data['date'].strftime('%Y-%m-%d')+"'") \
             if data['date'] is not None 
