@@ -406,7 +406,10 @@ def main2(args=None):
 
     # Load internal templates, if not disabled.
     # if not args['exclude_built_in_templates']:
-    templates += read_templates()
+    if 'template_folder' in args:
+        templates += read_templates(os.path.abspath(args['template_folder']))
+    else:
+        templates += read_templates()
     output = []
     for fs in args['input_files']:
         f = open(fs, 'r') 

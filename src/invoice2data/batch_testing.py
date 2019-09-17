@@ -46,6 +46,8 @@ parame['dbpass'] = None
 parame['output_format'] = 'csv'
 parame['input_files'] = all_files
 parame['output_name'] = os.path.join(dir_path, 'output.csv')
+parame['template_folder'] = 'extract/templates/nz'
+
 main.main2(parame)
 
 #Use: python batch_print_raw_text.py &> output.txt

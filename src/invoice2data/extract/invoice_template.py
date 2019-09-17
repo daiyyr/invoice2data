@@ -95,14 +95,20 @@ class InvoiceTemplate(OrderedDict):
             logger.debug('Matched template %s', self['template_name'])
             return True
         else:
+            allKeyWordsMatch = True
             for keyword in self['keywords']:
                 try:
                     res_val = re.findall(keyword, optimized_str)
                     if res_val:
-                        logger.debug('Matched template %s', self['template_name'])
-                        return True
+                        pass
+                    else:
+                        allKeyWordsMatch = False
                 except:
-                    pass
+                    allKeyWordsMatch = False
+            if allKeyWordsMatch:
+                logger.debug('Reg Matched template %s', self['template_name'])
+                return True
+
 
 
     def parse_number(self, value):
