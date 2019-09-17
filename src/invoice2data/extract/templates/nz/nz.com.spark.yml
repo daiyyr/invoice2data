@@ -3,7 +3,7 @@ keywords:
 - Spark New Zealand
 
 fields:
-  invoice_number: '(TELA.+)\s'
+  invoice_number: '(TELA\w+)'
   bc_number: 'BODY\s*CORPORATE\s*(\w+)'
   customer_number: 'Your account number\: (\d+)'
   gst_number: '\s(\d{2,3}\-\d\d\d\-\d\d\d)\s'
