@@ -58,6 +58,7 @@ while True:
             parame['azure_key'] = azure_key
             parame['pdf_path'] = directory
             parame['output_format'] = 'mysql'
+            parame['template_folder'] = 'extract/templates/nz'
             runlog = open('run.log', 'a')
             runlog.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' start process ' + filename + '\n')
             runlog.close()
