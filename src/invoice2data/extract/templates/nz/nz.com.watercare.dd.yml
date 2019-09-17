@@ -1,0 +1,28 @@
+issuer: Watercare Services Limited
+keywords:
+- Watercare Services Limited
+- www.watercare.co.nz
+- 'direct'
+
+fields:
+  invoice_number: 'Account\s*number\:\s+(\d+\-\d+)'
+  bc_number: '[^\-]\sBody\s*Corporate\s+(\w+)'
+  gst_number: '56\-892\-397'
+  date: 'Invoice\s*date\:[\w\s]+?(\d{1,2}\s*\w\w\w\s*\d\d\d\d)'
+  due_date: 'Due\s*date\:[\w\s]+?(\d{1,2}\s*\w\w\w\s*\d\d\d\d)'
+  amount: 'amount.*?\$?\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+  gst: '15\%.*?\$?\s*([\d\,]{1,10}\.\d\d)'
+  this_month_reading: 'This\s*\w*? reading\s*(\d{1,2}\-\w\w\w\-\d\d\s*\d{1,10}\s*\w{6,8})'
+  last_month_reading: 'Last\s*\w*? reading\s*(\d{1,2}\-\w\w\w\-\d\d\s*\d{1,10}\s*\w{6,8})'
+  water_usage_0_water_1_wastewater: '[\d\,]{1,10}\.\d\d\s*kL\s*\$[\d\,]{1,10}\.\d{1,5}\/kL\s*\$\s*[\d\,]{1,10}\.\d{1,2}'
+  fixed_charges: '\d\d\s*days\s*\$[\d\,]{1,10}\.\d{1,5}\s*pa\s*\$\s*\d{1,10}\.\d{1,2}'
+  filename: ''
+
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%d/%m/%Y'
+    - '%d %b %Y'
+    - '%d-%b-%y'

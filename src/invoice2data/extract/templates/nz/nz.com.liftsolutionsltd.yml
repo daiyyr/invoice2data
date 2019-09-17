@@ -6,8 +6,8 @@ fields:
   invoice_number: 'Invoice\s*[Nn]umber.?\s*\:?\s*(\w+)'
   bc_number: '(?<!C\/\-)\sBody\s*Corporate\s*(\d+)'
   gst_number: 'GST.*?\s*\:?\s*(\d{2,3}-\d\d\d\-\d\d\d)\s'
-  date: '(\d{1,2}..\s*\w{3}\s*20\d\d)\s'
-  due_date: '14days'
+  date: '(\d{1,2}.?.?\s*\w{3,9}\s*20\d\d)\s'
+  due_date: '21days'
   amount: 'Total.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
   gst: '15%'
 

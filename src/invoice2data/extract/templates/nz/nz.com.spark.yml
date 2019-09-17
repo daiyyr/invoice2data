@@ -3,14 +3,14 @@ keywords:
 - Spark New Zealand
 
 fields:
-  invoice_number: '(TE\w+)\s+Your account name\:'
-  bc_number: 'Your\s*account\s*name\:\s*BODY\s*CORPORATE\s*(\w+)'
+  invoice_number: '(TELA.+)\s'
+  bc_number: 'BODY\s*CORPORATE\s*(\w+)'
   customer_number: 'Your account number\: (\d+)'
-  gst_number: 'GST number\: (\d{2,3}\-\d\d\d\-\d\d\d)'
-  date: 'Your bill \- (\d{1,2} [a-zA-Z]{3,9} \d\d\d\d)'
-  due_date: ' due on (\d{1,2}\.\d\d\.\d\d)'
-  amount: 'The total you need to pay is \$(\d{1,10}\.\d\d)'
-  gst: 'This invoice includes GST of \$(\d{1,10}\.\d\d)'
+  gst_number: '\s(\d{2,3}\-\d\d\d\-\d\d\d)\s'
+  date: 'Your\s*bill\s*\-\s*(\d{1,2}\s*[a-zA-Z]{3,9}\s*20\d\d)'
+  due_date: 'due\s*on\s*(\d{1,2}\.\d\d\.\d\d)'
+  amount: 'need\s*to\s*pay\s*is\s*\$?([\d\,]{1,10}\.\d\d)'
+  gst: 'GST\s*of\s*\$?([\d\,]{1,10}\.\d\d)'
   overdue_amout: ''
 
 options:

@@ -3,7 +3,7 @@ keywords:
 - mercury.co.nz
 
 fields: 
-  invoice_number: 'Account\s*number.?\s*\:?\s*(\S+)'
+  invoice_number: 'Invoice\s*number.*?(\w+)'
   bc_number: '(?<!c\/\-)Body\s*Cor?porate\s*No\s*(\w+)'
   static_gst_number: '71 048 870'
   date: '(\d{1,2}\s*\w{3,9}\s*20\d\d)\s'
