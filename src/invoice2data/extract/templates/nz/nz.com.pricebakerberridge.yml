@@ -3,7 +3,7 @@ keywords:
 - PRICE BAKER BERRIDGE
 
 fields: 
-  invoice_number: '(\d+)\s*\/\s*\d+\s*\/\s*Clinton'
+  invoice_number: '(\d+)\s*in\s*the\s*particulars'
   bc_number: 'BODY\s*CORPORATE\s*(\d+)'
   gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
   date: '\s(\d{1,2}\s*\w{3,9}\s*20\d\d)\s'

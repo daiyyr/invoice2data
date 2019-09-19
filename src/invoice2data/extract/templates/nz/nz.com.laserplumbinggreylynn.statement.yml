@@ -1,16 +1,17 @@
 issuer: Laser Plumbing Grey Lynn
 keywords:
 - Laser Plumbing Grey Lynn
-- 'TAX\s*INVOICE\s*NO'
+- 'Inv#'
+- 'STATEMENT'
 
 fields: 
-  invoice_number: 'TAX\s*INVOICE\s*NO\s*\.\s*(\w+)'
+  invoice_number: 'Inv\#.*?(\w+)'
   bc_number: ''
   gst_number: 'GST\s*\#\s*(\d{2,3}\-\s*\d\d\d\-\s*\d\d\d)'
-  date: '(\d{1,2}\/\d\d\/\d\d\d\d)'
+  date: '(\d{1,2}\/\d\d\/20\d\d)'
   due_date: '7days'
-  amount: 'Balance\s*Due\s*\$\s*([\d\,]{1,10}\.[\d]{2})'
-  gst: 'GST\s*\$\s*([\d\,\s]{1,10}\.[\d]{2})'
+  amount: '\$\s*([\d\,]{1,10}\.[\d]{2})'
+  gst: ''
 
 options:
   currency: NZD

@@ -3,7 +3,7 @@ keywords:
 - thorburn.co.nz
 
 fields: 
-  invoice_number: 'Tax\s*Invoice\s*NO.\s*(\w+)'
+  invoice_number: 'Tax\s*Invoice\s*[Nn][oO].*?(\w+)'
   bc_number: '\sBody\s*Corporate\s+(\w+)\s'
   gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
   date: '\s(\d{1,2}\s*\w{3}\s*20\d\d)\s'

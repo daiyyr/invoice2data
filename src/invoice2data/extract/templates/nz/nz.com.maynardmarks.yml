@@ -6,7 +6,7 @@ fields:
   invoice_number: 'Invoice\s*Number.*?\n.*?\n?.*?(I\d{5,7})'
   bc_number: '(?<!c\/\-)Body\s*Corporate\s*(\w+)\s(?!\s*Ltd)'
   gst_number: 'GST\s*\:?\s*(\d{2,3}\s*\d{3}\s*\d{3})\s'
-  date: 'Date.*?\n.*?(\d{1,2}\s*\w{3,9}\s*20\d\d)\s'
+  date: 'Date.*?\n.*?\n?.*?(\d{1,2}\s*\w{3,9}\s*20\d\d)\s'
   due_date: '7days'
   amount: 'Due.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
   gst: 'GST.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'

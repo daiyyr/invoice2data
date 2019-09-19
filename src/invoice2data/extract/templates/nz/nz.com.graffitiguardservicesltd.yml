@@ -1,0 +1,29 @@
+issuer: Graffiti Guard Services Ltd
+keywords:
+- 'Graffiti Guard Services Ltd'
+
+fields: 
+  invoice_number: 'Invoice\s*\#.*?(\w+)'
+  bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*(\d+)\s(?!\s*Ltd)'
+  gst_number: '\s(\d{2,3}\-\d{3}\-\d{3})\s'
+  date: 'As\s*At.*?\n.*?(\d{1,2}\s*\w{3}\s*20\d\d)\s'
+  due_date: '20days'
+  amount: 'DUE.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
+  gst: ''  
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%d-%b-%y'
+    - '%d.%m.%Y'
+    - '%B %d'
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%Y'
+    - '%d-%m-%y'
+
