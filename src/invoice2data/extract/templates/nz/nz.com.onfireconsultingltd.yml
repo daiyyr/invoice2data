@@ -1,9 +1,9 @@
 issuer: OnFire Consulting Ltd
 keywords:
-- OnFire Consulting Ltd
+- 'OnFire\s*Consulting\s*Ltd'
 
 fields: 
-  invoice_number: '[Nn]umber.*?\n\s*(\w+)'
+  invoice_number: '[Nn]umber.*?\n\s*(\d+)'
   bc_number: '(?<!C\/\-)\sBody Corporate\s+(.*)'
   gst_number: 'GST\#\s*(\d+)\s'
   date: '\s(\d{1,2}\s*\w{3}\s*20\d\d)\s'

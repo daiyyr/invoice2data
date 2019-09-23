@@ -1,11 +1,11 @@
 issuer: MERCURY NZ LTD
 keywords:
 - 'mercury\.co\.nz'
-- 'Invoice\s*number'
+- 'INVOICE\s*DATE\s*\d{1,2}\s*\w{3,9}\s*20\d\d'
 
 fields: 
-  invoice_number: 'Invoice\s*number.*?(\w+)'
-  bc_number: '(?<!c\/\-)Body\s*Cor?porate\s*N?o?\s*(\w+)'
+  invoice_number: 'INVOICE\s*DATE\s*\d{1,2}\s*\w{3,9}\s*20\d\d'
+  bc_number: '(?<!C\/o)\sBody\s*Cor?porate\s*N?o?\s*(\w+)'
   static_gst_number: '71 048 870'
   date: '(\d{1,2}\s*\w{3,9}\s*20\d\d)\s'
   due_date: '(\d{1,2}\s*\w{3,9}\s*20\d\d)\s'
