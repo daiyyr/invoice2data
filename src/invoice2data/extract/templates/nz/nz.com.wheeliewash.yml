@@ -6,9 +6,9 @@ fields:
   invoice_number: '(INV\-\w+)'
   bc_number: ''
   gst_number: '(\d{2,3}-\d\d\d\-\d\d\d)\s'
-  date: '(\d{1,2}\s*\w{3}\s*20\d\d)'
-  due_date: 'Due\s*Date\:\s*(\d{1,2}\s*\w{3}\s*20\d\d)'
-  amount: 'TOTAL\s*NZD\s*([\d\,]{1,10}\.\d\d)'
+  date: '(\d{1,2}\s*\w{3,9}\s*20\d\d)'
+  due_date: 'Due.*?(\d{1,2}\s*\w{3,9}\s*20\d\d)'
+  amount: 'Due.*?\n?.*?([\d\,]{1,10}\.\d\d)'
   gst: '15\%\s*([\d\,]{1,10}\.\d\d)'
 
 options:
