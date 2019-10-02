@@ -1,6 +1,6 @@
 issuer: John Noel Mowing
 keywords:
-- 'John\s*Noel\s*Mowing'
+- '37\-704\-865'
 
 fields: 
   invoice_number: 'Invoice\s*No.*?(\w+)'
