@@ -1,12 +1,12 @@
-issuer: ALSCO
+issuer: Hiflo Pumps
 keywords:
-- 'alsco.co.nz'
+- 'hiflopumps.co.nz'
 
 fields: 
-  invoice_number: 'TAX\s*INVOICE.*?\n?.*?\n?.*?(\w{2,5}\d{6,8})'
-  bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*(\d+)\s(?!\s*Ltd)'
-  gst_number: 'GST\s*\:?\s*(\d{2,3}\s*\d{3}\s*\d{3})\s'
-  date: 'Date.*?(\w{1,3}\s*\w{1,3}\s*20\d\d)\s'
+  invoice_number: 'Tax\s*Invoice.*?(\w+)'
+  bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*\/?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*\#?\s*(\d+)\s(?!\s*Ltd)'
+  gst_number: '[^\d](\d{2,3}\-\d{3}\-\d{3})\s'
+  date: 'Date.*?(\d{1,2}.\d{2}.20\d\d)\s'
   due_date: '20days'
   amount: 'Total.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
   gst: 'GST.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'  
