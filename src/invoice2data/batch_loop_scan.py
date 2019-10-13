@@ -25,10 +25,10 @@ try:
                 azure_key = line.replace('azure_key:','').replace('\n','').strip()
             elif 'pdf_path:' in line:
                 directory = line.replace('pdf_path:','').replace('\n','').strip()
-            elif 'pdf_path2:' in line:
-                directory2 = line.replace('pdf_path2:','').replace('\n','').strip()
-            elif 'pdf_path3:' in line:
-                directory3 = line.replace('pdf_path3:','').replace('\n','').strip()
+            elif 'pdf_2_path:' in line:
+                directory2 = line.replace('pdf_2_path:','').replace('\n','').strip()
+            elif 'pdf_3_path:' in line:
+                directory3 = line.replace('pdf_3_path:','').replace('\n','').strip()
 
             line = fp.readline()
 except:
