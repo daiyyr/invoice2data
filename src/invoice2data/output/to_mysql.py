@@ -75,7 +75,7 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass
 
         onlinefilename = str(uuid.uuid4()) + '.pdf'
         if azure_account == 'nextcloud' and azure_key == 'nextcloud':
-            uploadfolder = os.path.join(pdf_path,'upload')
+            uploadfolder = os.path.join(os.path.abspath(os.path.join(pdf_path, os.pardir)),'upload')
             if not os.path.exists(uploadfolder):
                 os.makedirs(uploadfolder)
             copyfile(path, os.path.join(uploadfolder,onlinefilename))
