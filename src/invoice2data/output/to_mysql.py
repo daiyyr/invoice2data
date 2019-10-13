@@ -75,7 +75,10 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass
 
         onlinefilename = str(uuid.uuid4()) + '.pdf'
         if azure_account == 'nextcloud' and azure_key == 'nextcloud':
-            copyfile(path, os.path.join(pdf_path,'upload',onlinefilename))
+            uploadfolder = os.path.join(pdf_path,'upload')
+            if not os.path.exists(uploadfolder):
+                os.makedirs(uploadfolder)
+            copyfile(path, os.path.join(uploadfolder,onlinefilename))
         else:
             file_service = FileService(protocol = 'https', endpoint_suffix = 'core.windows.net', 
             account_name = azure_account, 
