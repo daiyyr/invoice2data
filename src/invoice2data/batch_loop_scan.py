@@ -95,7 +95,8 @@ while True:
                 except Exception:
                     pass
     if directory2 is not None:
-        for filename in os.listdir(directory2):
+        directory = directory2
+        for filename in os.listdir(directory):
             if filename.endswith(".pdf") or filename.endswith(".PDF"):
                 parame0 = [
                     'python',
@@ -108,7 +109,7 @@ while True:
                     "--azure_key", azure_key,
                     "--pdf_path", directory,
                     "--output-format", "mysql" ]
-                parame0.append(directory2+ "/" +filename)
+                parame0.append(directory+ "/" +filename)
 
                 parame = {}
                 parame['dbhost'] = dbhost
@@ -125,7 +126,7 @@ while True:
                 runlog.close()
                 
                 input_files = []
-                input_files.append(directory2+ "/" +filename)
+                input_files.append(directory+ "/" +filename)
                 parame['input_files'] = input_files
                 #print(subprocess.check_output(parame))
                 errorlog = open('run.error.log', 'a')
@@ -143,16 +144,17 @@ while True:
                 sys.stdout = oristd
                 sys.stderr = orierr
                 errorlog.close()
-                if os.path.exists(directory2+ "/" +filename):
+                if os.path.exists(directory+ "/" +filename):
                     try:
                         failed_path = os.path.join(directory, 'failed')
                         if not os.path.exists(failed_path):
                             os.makedirs(failed_path)
-                        os.rename(directory2+ "/" +filename, failed_path+ "/" +filename)
+                        os.rename(directory+ "/" +filename, failed_path+ "/" +filename)
                     except Exception:
                         pass
     if directory3 is not None:
-        for filename in os.listdir(directory3):
+        directory = directory3
+        for filename in os.listdir(directory):
             if filename.endswith(".pdf") or filename.endswith(".PDF"):
                 parame0 = [
                     'python',
@@ -165,7 +167,7 @@ while True:
                     "--azure_key", azure_key,
                     "--pdf_path", directory,
                     "--output-format", "mysql" ]
-                parame0.append(directory3+ "/" +filename)
+                parame0.append(directory+ "/" +filename)
 
                 parame = {}
                 parame['dbhost'] = dbhost
@@ -182,7 +184,7 @@ while True:
                 runlog.close()
                 
                 input_files = []
-                input_files.append(directory3+ "/" +filename)
+                input_files.append(directory+ "/" +filename)
                 parame['input_files'] = input_files
                 #print(subprocess.check_output(parame))
                 errorlog = open('run.error.log', 'a')
@@ -200,12 +202,12 @@ while True:
                 sys.stdout = oristd
                 sys.stderr = orierr
                 errorlog.close()
-                if os.path.exists(directory3+ "/" +filename):
+                if os.path.exists(directory+ "/" +filename):
                     try:
                         failed_path = os.path.join(directory, 'failed')
                         if not os.path.exists(failed_path):
                             os.makedirs(failed_path)
-                        os.rename(directory3+ "/" +filename, failed_path+ "/" +filename)
+                        os.rename(directory+ "/" +filename, failed_path+ "/" +filename)
                     except Exception:
                         pass
     time.sleep(2) #Delays for 2 seconds
