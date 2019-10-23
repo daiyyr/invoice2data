@@ -29,6 +29,10 @@ try:
                 directory2 = line.replace('pdf_2_path:','').replace('\n','').strip()
             elif 'pdf_3_path:' in line:
                 directory3 = line.replace('pdf_3_path:','').replace('\n','').strip()
+            elif 'pdf_4_path:' in line:
+                directory4 = line.replace('pdf_4_path:','').replace('\n','').strip()
+            elif 'pdf_5_path:' in line:
+                directory5 = line.replace('pdf_5_path:','').replace('\n','').strip()
 
             line = fp.readline()
 except:
@@ -95,8 +99,7 @@ while True:
                 except Exception:
                     pass
     if directory2 is not None:
-        directory = directory2
-        for filename in os.listdir(directory):
+        for filename in os.listdir(directory2):
             if filename.endswith(".pdf") or filename.endswith(".PDF"):
                 parame0 = [
                     'python',
@@ -107,9 +110,9 @@ while True:
                     "--dbname", dbname,
                     "--azure_account", azure_account, 
                     "--azure_key", azure_key,
-                    "--pdf_path", directory,
+                    "--pdf_path", directory2,
                     "--output-format", "mysql" ]
-                parame0.append(directory+ "/" +filename)
+                parame0.append(directory2+ "/" +filename)
 
                 parame = {}
                 parame['dbhost'] = dbhost
@@ -118,7 +121,7 @@ while True:
                 parame['dbname'] = dbname
                 parame['azure_account'] = azure_account
                 parame['azure_key'] = azure_key
-                parame['pdf_path'] = directory
+                parame['pdf_path'] = directory2
                 parame['output_format'] = 'mysql'
                 parame['template_folder'] = 'extract/templates/nz'
                 runlog = open('run.log', 'a')
@@ -126,7 +129,7 @@ while True:
                 runlog.close()
                 
                 input_files = []
-                input_files.append(directory+ "/" +filename)
+                input_files.append(directory2+ "/" +filename)
                 parame['input_files'] = input_files
                 #print(subprocess.check_output(parame))
                 errorlog = open('run.error.log', 'a')
@@ -144,17 +147,16 @@ while True:
                 sys.stdout = oristd
                 sys.stderr = orierr
                 errorlog.close()
-                if os.path.exists(directory+ "/" +filename):
+                if os.path.exists(directory2+ "/" +filename):
                     try:
-                        failed_path = os.path.join(directory, 'failed')
+                        failed_path = os.path.join(directory2, 'failed')
                         if not os.path.exists(failed_path):
                             os.makedirs(failed_path)
-                        os.rename(directory+ "/" +filename, failed_path+ "/" +filename)
+                        os.rename(directory2+ "/" +filename, failed_path+ "/" +filename)
                     except Exception:
                         pass
     if directory3 is not None:
-        directory = directory3
-        for filename in os.listdir(directory):
+        for filename in os.listdir(directory3):
             if filename.endswith(".pdf") or filename.endswith(".PDF"):
                 parame0 = [
                     'python',
@@ -165,9 +167,9 @@ while True:
                     "--dbname", dbname,
                     "--azure_account", azure_account, 
                     "--azure_key", azure_key,
-                    "--pdf_path", directory,
+                    "--pdf_path", directory3,
                     "--output-format", "mysql" ]
-                parame0.append(directory+ "/" +filename)
+                parame0.append(directory3+ "/" +filename)
 
                 parame = {}
                 parame['dbhost'] = dbhost
@@ -176,7 +178,7 @@ while True:
                 parame['dbname'] = dbname
                 parame['azure_account'] = azure_account
                 parame['azure_key'] = azure_key
-                parame['pdf_path'] = directory
+                parame['pdf_path'] = directory3
                 parame['output_format'] = 'mysql'
                 parame['template_folder'] = 'extract/templates/nz'
                 runlog = open('run.log', 'a')
@@ -184,7 +186,7 @@ while True:
                 runlog.close()
                 
                 input_files = []
-                input_files.append(directory+ "/" +filename)
+                input_files.append(directory3+ "/" +filename)
                 parame['input_files'] = input_files
                 #print(subprocess.check_output(parame))
                 errorlog = open('run.error.log', 'a')
@@ -202,12 +204,12 @@ while True:
                 sys.stdout = oristd
                 sys.stderr = orierr
                 errorlog.close()
-                if os.path.exists(directory+ "/" +filename):
+                if os.path.exists(directory3+ "/" +filename):
                     try:
-                        failed_path = os.path.join(directory, 'failed')
+                        failed_path = os.path.join(directory3, 'failed')
                         if not os.path.exists(failed_path):
                             os.makedirs(failed_path)
-                        os.rename(directory+ "/" +filename, failed_path+ "/" +filename)
+                        os.rename(directory3+ "/" +filename, failed_path+ "/" +filename)
                     except Exception:
                         pass
     time.sleep(2) #Delays for 2 seconds
