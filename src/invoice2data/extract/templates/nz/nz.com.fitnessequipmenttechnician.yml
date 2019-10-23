@@ -3,7 +3,7 @@ keywords:
 - Fitness Equipment Technician
 
 fields:
-  invoice_number: 'Invoice No\s*\:\s*(\w+)'
+  invoice_number: 'Invoice\s*No\s*\:?\s*(\w+)'
   bc_number: 'Body\s*Corp\s+(\w+)'
   gst_number: ''
   date: '(\w{3}\s*\d{1,2}\s*20\d\d)'
