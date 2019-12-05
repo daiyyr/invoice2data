@@ -4,7 +4,7 @@ keywords:
 
 fields: 
   invoice_number: 'Tax\s*Invoice\:\s*(\w+)'
-  bc_number: ''
+  bc_number: '\sBody\s*Corporate\s+(\d+)'
   static_gst_number: '094-922-216'
   date: 'Date\:\s*(\d\d\/\d\d\/\d\d\d\d)'
   due_date: '20days'
