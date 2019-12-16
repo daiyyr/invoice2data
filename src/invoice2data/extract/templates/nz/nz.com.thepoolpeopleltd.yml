@@ -7,8 +7,8 @@ fields:
   bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*(\d+)\s(?!\s*Ltd)'
   gst_number: '\s(\d{2,3}\-\d{3}\-\d{3})\s'
   date: 'Date.*?(\d{1,2}\.\d{2}\.20\d\d)\s'
-  due_date: '90days'
-  amount: 'Due.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
+  due_date: '0days'
+  amount: 'Total.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
   gst: 'GST.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'  
 
 options:

@@ -7,6 +7,11 @@ import sys
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 configfile = os.path.join(dir_path, 'run.config')
+directory2 = None
+directory3 = None
+directory4 = None
+directory5 = None
+
 try:
     with open(configfile) as fp:
         line = fp.readline()

@@ -238,7 +238,7 @@ class InvoiceTemplate(OrderedDict):
                         try:
                             output[k] = self.parse_date(res_find[0].lower().replace('o','0').replace('jnu','jun')
                             .replace('0ct','Oct').replace('0CT','OCT').replace('0ber','ober')
-                            .replace('0vem','ovem')
+                            .replace('0vem','ovem').replace('N0v','Nov').replace('n0v','nov')
                             )
                         except:
                             output[k] = res_find[0]

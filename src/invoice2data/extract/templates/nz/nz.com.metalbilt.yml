@@ -1,0 +1,29 @@
+issuer: Metalbilt
+keywords:
+- 'metalbilt.co.nz'
+
+fields:
+  invoice_number: 'TAX\sINVOICE.*\n\s*\n?\s*[^\d]?(\d+)'
+  bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[ni]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?\s*[Bb]?[Cc]? +(\d+)\s(?!\s*Ltd)'
+  gst_number: '\s(\d{2,3}\-\d{3}\-\d{3})\s'
+  date: '[^\d](\d{1,2}\/\d{2}\/20\d\d)\s'
+  due_date: '[^\d](\d{1,2}\/\d{2}\/20\d\d)\s'
+  amount: 'Total\s*NZD.*\s\$([\d\,]{1,10}\.[\d]{2})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%d-%b-%y'
+    - '%d.%m.%Y'
+    - '%B %d'
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%Y'
+    - '%d-%m-%y'
+

@@ -1,0 +1,29 @@
+issuer: ILG Insurance Brokers Limited
+keywords:
+- 'ILG\s*Insurance\s*Brokers\s*Limited'
+
+fields:
+  invoice_number: '\d{1,2}\/\d{2}\/20\d\d.*\n?.*[^\d](\d{5,7})'
+  bc_number: '(?<![cC]\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[ni]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?\s*[Ll]?[Ii]?[Mm]?[Ii]?[Tt]?[Ee]?[Dd]?\s*[Bb]?[Cc]? +(\w+)\s(?!\s*Ltd)'
+  gst_number: '\s+(\d{2,3}\-\d{3}\-\d{3})\s'
+  date: '(\d{1,2}\/\d{2}\/20\d\d).*\n?.*\d{5,7}'
+  due_date: '7days'
+  amount: '[^\d]([\d\,]{1,10}\.[\d]{2})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%d-%b-%y'
+    - '%d.%m.%Y'
+    - '%B %d'
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%Y'
+    - '%d-%m-%y'
+
