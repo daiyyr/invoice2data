@@ -1,13 +1,13 @@
-issuer: Tebbutt Plumbing Limited
+issuer: Bunnings
 keywords:
-- 'Tebbutt\s*Plumbing\s*Limited'
+- 'bunnings.co.nz'
 
 fields:
-  invoice_number: '(INV\-\w+)'
+  invoice_number: '[Ii]nvoice\s*[Nn]o\s*\:?\s*(\w+)'
   bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[ni]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?\s*[Bb]?[Cc]? *(\d+)\s(?!\s*Ltd)'
-  gst_number: '[^\d](\d{2,3}\-\d{3}\-\d{3})\s'
-  date: 'Date.*[^\d](\d{1,2}\w\w\s*\w{3}\s*20\d\d)[^\d]'
-  due_date: 'Due.*[^\d](\d{1,2}\w\w\s*\w{3}\s*20\d\d)[^\d]'
+  gst_number: 'GST\s*[Nn]?[Oo]?.?\s*[^\d](\d{2,3}\-\d{3}\-\d{3})\s'
+  date: 'D[Aa][Tt][Ee].*[^\d](\d{1,2}\/\d{1,2}\/20\d\d)[^\d]'
+  due_date: '20days'
   amount: 'Total.*\s\$?([\d\,]{1,10}\.[\d]{2})'
   gst: '15%'
 

@@ -9,7 +9,7 @@ fields:
   date: 'Account\s*Date.*\n.*\n?.*\s(\d{1,2}\s*\w{3}\s*20\d\d)\s'
   due_date: '\s(\d{1,2}\s*\w{3}\s*20\d\d)\s'
   amount: 'Discounted\s*Amount.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
-  gst: 'GST.*After.*([\d\,]{1,10}\.[\d]{2})'
+  gst: 'GST.*After.*[^\d]([\d\,]{1,10}\.[\d]{2})'
 
 options:
   currency: NZD
