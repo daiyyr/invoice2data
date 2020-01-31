@@ -1,2 +1,2 @@
-issuer,invoice_number,bc_number,gst_number,date,due_date,amount,gst,this_month_reading,last_month_reading,water_usage_0_water_1_wastewater,fixed_charges,filename,currency
-Watercare Services Limited,2080443-01,178333,56-892-397,13/12/2019,03/01/2020,220.16,28.72,12-Dec-19                                  19890               Actual,13-Nov-19                                  19835               Actual,43.18   kL      $2.704/kL                  $ 116.76;55.00   kL      $1.555/kL                    $ 85.52;,29 days         $225.000        pa           $ 17.88,/home/administrator/invoice2data/src/invoice2data/pdf/testing/BCA HF_1211 - N20191218120719_Watercare_Bill_2080443-01_2019_Dec_13.pdf,NZD
+issuer,invoice_number,bc_number,gst_number,date,due_date,amount,gst,currency
+Clayton Property Maintenance,1870,094432,80-023-882,31/01/2020,31/01/2020,266.49,36.06,NZD

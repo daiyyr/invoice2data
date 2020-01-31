@@ -11,6 +11,7 @@ setup(
             'templates/es/*.yml',
             'templates/fr/*.yml',
             'templates/nl/*.yml',
-            'templates/ch/*.yml'],
+            'templates/ch/*.yml',
+	    'templates/nz/*.yml'],
     },
 )
