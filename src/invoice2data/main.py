@@ -95,6 +95,7 @@ def extract_data(invoicefile, templates=None, input_module=pdftotext):
 
     #get page count of invoicefile
     pdf = PdfFileReader(open(invoicefile,'rb'))
+    pageCount = None
     try:
         pageCount = pdf.getNumPages()
     except Exception as e:
