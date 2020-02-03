@@ -7,8 +7,8 @@ fields:
   invoice_number: 'Invoice\s*No\:\s*(\w+)'
   bc_number: '(?<!C\/\- )Body\s*Corporate\s*(\w+)'
   gst_number: '43 898 051'
-  date: 'Invoice\s*Date\:\s*(\d{1,2} \w{3,9} \d\d\d\d)'
-  due_date: 'Due\s*Date\:\s*(\d{1,2} \w{3,9} \d\d\d\d)'
+  date: '\s(\d{1,2}\s*\w{3,9}\s*20\d\d)\s'
+  due_date: '[dD]ue\s*D?a?t?e?\:?\s*(\d{1,2}\s*\w{3,9}\s*20\d\d)'
   amount: 'Total Amount Due\s*\$([\d\,]{1,10}\.\d\d)'
   gst: 'GST\s*([\d\,]{1,10}\.\d\d)'
 

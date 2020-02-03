@@ -1,6 +1,8 @@
 issuer: Body Corporate Administration Ltd
 keywords:
 - 'Body Corporate Administration Ltd'
+- 'INV\d{4,7}'
+- 'try_to_exclude_this_template'
 
 fields: 
   invoice_number: 'INVOICE\s*NO.*?(\w+)'

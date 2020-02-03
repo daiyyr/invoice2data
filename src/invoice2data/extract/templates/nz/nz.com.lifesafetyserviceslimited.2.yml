@@ -1,13 +1,13 @@
 issuer: LIFE SAFETY SERVICES LIMITED
 keywords:
-- 'LIFE\s*SAFETY\s*SERVICES\s*LIMITED'
+- 'Life\s*Safety\s*Services\s*Limited'
 
 fields: 
-  invoice_number: 'Quote\s*[Nn]o.*?(\w+)'
+  invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.\s*(\w+)'
   bc_number: '(?<!C\/\-)\sBody\s*Cor?porate\s*\#\s*(\d+)\s(?!\s*Ltd)'
   gst_number: '(\d{2,3}\-\d{3}\-\d{3})'
-  date: '[Dd]ate.*?(\d{1,2}\s*\w{3,9}\s*20\d\d)\s'
-  due_date: '30days'
+  date: '[^\d](\d{1,2}\/\d{1,2}\/20\d\d)\s'
+  due_date: '0days'
   amount: 'Total.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
   gst: '15%'
 

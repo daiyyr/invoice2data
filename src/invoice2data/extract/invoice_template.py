@@ -231,9 +231,9 @@ class InvoiceTemplate(OrderedDict):
                                         all_date.append(redate00)
                                 except:
                                     pass
-                            if k == 'date':
+                            if k == 'date' and len(all_date)>0:
                                 res_find[0] = min(all_date)
-                            elif k == 'due_date':
+                            elif k == 'due_date' and len(all_date)>0:
                                 res_find[0] = max(all_date)
                         try:
                             output[k] = self.parse_date(res_find[0].lower().replace('o','0').replace('jnu','jun')

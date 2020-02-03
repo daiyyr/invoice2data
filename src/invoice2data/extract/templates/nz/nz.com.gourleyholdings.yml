@@ -3,7 +3,7 @@ keywords:
 - GOURLEY HOLDINGS LTD
 
 fields:
-  invoice_number: 'Tax Invoice No\:\s*(\d+)'
+  invoice_number: 'T?a?x?\s*Invoice\s*No\:?\s*(\d+)'
   bc_number: 'Body Corporate No.\s*(\w+)'
   gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
   date: '\s(\d{1,2}[a-zA-Z]{2}\s*[a-zA-Z]{3,9}\s*20\d{2})'
