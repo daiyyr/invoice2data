@@ -1,6 +1,6 @@
 issuer: Spark New Zealand Limited
 keywords:
-- Spark New Zealand
+- 'Spark\s*New\s*Zealand'
 
 fields:
   invoice_number: '(TELA\w+)'
@@ -9,7 +9,7 @@ fields:
   gst_number: '\s(\d{2,3}\-\d\d\d\-\d\d\d)\s'
   date: 'Your\s*bill\s*\-\s*(\d{1,2}\s*[a-zA-Z]{3,9}\s*20\d\d)'
   due_date: 'due\s*on\s*(\d{1,2}\.\d\d\.\d\d)'
-  amount: 'need\s*to\s*pay\s*is\s*\$?([\d\,]{1,10}\.\d\d)'
+  amount: 'need\s*to\s*pay\s*is\:?\s*.*?\$?([\d\,]{1,10}\.\d\d)'
   gst: 'GST\s*of\s*\$?([\d\,]{1,10}\.\d\d)'
   overdue_amout: ''
 

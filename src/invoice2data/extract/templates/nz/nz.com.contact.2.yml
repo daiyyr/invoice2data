@@ -1,7 +1,7 @@
 issuer: Contact
 keywords:
 - 'contactenergy.co.nz'
-- '[\d\,]{1,10}\.[\d]{2}.*of\s*GST'
+- 'GST\s*on\s*your\s*current\s*discounted\s*amount\s*is\s*\$\s*[\d\,]{1,10}\.[\d]{2}'
 
 fields:
   invoice_number: 'Invoice\s*[Nn]umber\:?\s*(\d+)'
@@ -10,7 +10,7 @@ fields:
   date: 'date\s*(\d{1,2}[^\d]\w{3}[^\d]20\d\d)[^\d]'
   due_date: 'paid\s*by\s*(\d{1,2}[^\d]\w{3}[^\d]\d\d\d?\d?)[^\d]'
   amount: '[Ii]f\s*[Pp]aid\s*[Bb]y.*\$\s*([\d\,]{1,10}\.[\d]{2})'
-  gst: '([\d\,]{1,10}\.[\d]{2}).*of\s*GST'
+  gst: 'GST\s*on\s*your\s*current\s*discounted\s*amount\s*is\s*\$\s*([\d\,]{1,10}\.[\d]{2})'
 
 options:
   currency: NZD

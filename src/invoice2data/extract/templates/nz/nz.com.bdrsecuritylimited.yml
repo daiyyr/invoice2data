@@ -1,0 +1,30 @@
+issuer: BDR Security Limited
+keywords:
+- 'BDR\s*Security\s*Limited'
+
+fields:
+  invoice_number: '(INV\-\w+)'
+  bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[Nn]?[Ii]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *\#? *(\d+)[^\d](?!\s*Ltd)'
+  gst_number: '(\d{2,3}\-\d{3}\-\d{3})\s'
+  date: '[^\d](\d{1,2}[^\d]+\w{3,9}[^\d]+20\d\d)[^\d]'
+  due_date: '[Dd][Uu][Ee]\s*[Dd]?[Aa]?[Tt]?[Ee]?.*[^\d](\d{1,2}[^\d]+\w{3,9}[^\d]+20\d\d)[^\d]'
+  amount: '[aA][Mm][Oo][Uu][Nn][Tt]\s*[Dd][Uu][Ee].*\s\$?([\d\,]{1,10}\.[\d]{2})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%d-%b-%y'
+    - '%d-%m-%y'
+    - '%d.%m.%Y'
+    - '%B %d'
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%Y'
+
+
