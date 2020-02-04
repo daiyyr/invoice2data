@@ -1,0 +1,30 @@
+issuer: Barry Jeffery
+keywords:
+- 'Barry\s*JEFFERY'
+
+fields:
+  invoice_number: ' (\w{3,9} +\d{1,2}[^\d]+20\d\d)[^\d]'
+  bc_number: '[^\d]\d{6}[^\d]'
+  gst_number: 'GST\s*[Nn]?[Oo]?.*\s*[^\d](\d{2,3}\-\d{3}\-\d{3})\s'
+  date: '(\w{3,9} +\d{1,2}[^\d]+20\d\d)[^\d]'
+  due_date: '0days'
+  amount: 'Total\s*[Dd][Uu][Ee].*\s\$?([\d\,]{1,10}\.[\d]{2})'
+  gst: '0%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%d-%b-%y'
+    - '%d-%m-%y'
+    - '%d.%m.%Y'
+    - '%B %d'
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%Y'
+
+

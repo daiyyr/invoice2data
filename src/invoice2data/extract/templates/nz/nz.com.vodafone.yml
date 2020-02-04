@@ -1,6 +1,7 @@
 issuer: Vodafone New Zealand Limited
 keywords:
-- vodafone.co.nz
+- 'vodafone\.co\.nz'
+- 'Invoice\s*Number'
 
 fields: 
   invoice_number: 'Invoice\s*Number\s*(\w+)'
