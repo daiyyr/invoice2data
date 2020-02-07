@@ -11,6 +11,7 @@ import logging as logger
 from collections import OrderedDict
 from .plugins import lines, tables
 import datetime
+import calendar
 
 OPTIONS_DEFAULT = {
     'remove_whitespace': False,
@@ -111,6 +112,14 @@ class InvoiceTemplate(OrderedDict):
 
 
 
+
+    def add_months(self, sourcedate, months):
+        month = sourcedate.month - 1 + months
+        year = sourcedate.year + month // 12
+        month = month % 12 + 1
+        day = min(sourcedate.day, calendar.monthrange(year,month)[1])
+        return datetime.date(year, month, day)
+
     def parse_number(self, value):
         assert (
             value.count(self.options['decimal_separator']) < 2
@@ -190,6 +199,19 @@ class InvoiceTemplate(OrderedDict):
                     except Exception:
                         #not in '20days' format
                         i = 0
+                if k=='due_date' and (v.endswith('th') or v.endswith('st') or v.endswith('nd')) and (output['date'] is not None):
+                    duedays = v.replace('th', '').replace('st', '').replace('nd', '')
+                    try:
+                        logger.debug('try to get due date by adding days to [date]')
+                        i = int(duedays)
+                        FollowingMonth = self.add_months(output['date'], 1)
+                        dueDateInFollowingMonth = datetime.datetime(year=FollowingMonth.year, month=FollowingMonth.month, day=i)
+                        output[k] = dueDateInFollowingMonth
+                        continue
+                    except Exception as e:
+                        logger.error(e)
+                        #not in '20th' format
+                        i = 0
                 if k=='gst' and v=='15%' and (output['amount'] is not None):
                     try:
                         total_a = float(output['amount'])
@@ -221,25 +243,33 @@ class InvoiceTemplate(OrderedDict):
                 if res_find:
                     logger.debug("res_find=%s", res_find)
                     if k.startswith('date') or k.endswith('date'):
-                        if len(res_find) > 1:
+                        try:
                             #set the oldest matched date as date
                             all_date = []
                             for redates in res_find:
                                 try:
-                                    redate00 = self.parse_date(redates)
-                                    if redate00 is not None:
-                                        all_date.append(redate00)
+									if isinstance(redates, tuple):
+										for redate00 in redates:
+											try:
+												redate000 = self.parse_date(redate00.lower().replace('o','0').replace('jnu','jun')
+															.replace('0ct','Oct').replace('0CT','OCT').replace('0ber','ober')
+															.replace('0vem','ovem').replace('N0v','Nov').replace('n0v','nov'))
+												if redate000 is not None:
+													all_date.append(redate000)
+											except:
+												pass
+									else:
+										redate00 = self.parse_date(redates.lower().replace('o','0').replace('jnu','jun')
+													.replace('0ct','Oct').replace('0CT','OCT').replace('0ber','ober')
+													.replace('0vem','ovem').replace('N0v','Nov').replace('n0v','nov'))
+										if redate00 is not None:
+											all_date.append(redate00)
                                 except:
                                     pass
                             if k == 'date' and len(all_date)>0:
-                                res_find[0] = min(all_date)
+                                output[k] = min(all_date)
                             elif k == 'due_date' and len(all_date)>0:
-                                res_find[0] = max(all_date)
-                        try:
-                            output[k] = self.parse_date(res_find[0].lower().replace('o','0').replace('jnu','jun')
-                            .replace('0ct','Oct').replace('0CT','OCT').replace('0ber','ober')
-                            .replace('0vem','ovem').replace('N0v','Nov').replace('n0v','nov')
-                            )
+                                output[k] = max(all_date)
                         except:
                             output[k] = res_find[0]
                         if not output[k]:
@@ -254,9 +284,16 @@ class InvoiceTemplate(OrderedDict):
                             all_amount = []
                             for amt in res_find:
                                 try:
-                                    all_amount.append(self.parse_number(amt.replace(' ','').replace('\n', '').replace('\r', '')))
+									if isinstance(amt, tuple):
+										for amt0 in amt:
+											try:
+												all_amount.append(self.parse_number(amt0.replace(' ','').replace('\n', '').replace('\r', '')))
+											except:
+												pass
+									else:
+										all_amount.append(self.parse_number(amt.replace(' ','').replace('\n', '').replace('\r', '')))
                                 except:
-                                    pass
+									pass
                             if len(all_amount) > 0:
                                 output[k] = max(all_amount)
                             else:
@@ -275,13 +312,18 @@ class InvoiceTemplate(OrderedDict):
 
                     else:
                         res_find = list(set(res_find))
-                        if len(res_find) > 1:
-                            resstr = ''
-                            for res in res_find:
-                                resstr += res + ';'
-                            output[k] = resstr
-                        else:
-                            output[k] = res_find[0]
+                        resstr = ''
+			for res in res_find:
+                            # make sure this do not affact regular bc number 
+                            if not isinstance(res_find[0], str) and not isinstance(res_find[0], int) and len(res_find[0]) > 1 and len(max(res_find[0], key=len)) > 1:
+                                for res00 in res_find[0]:
+                                    if res00 is not None and res00 != '' and res00 not in resstr:
+                                        resstr += res00 + ';'
+                                if len(resstr) > 0:
+                                    resstr = resstr[:-1]
+                                output[k] = resstr
+                            else:		
+                                output[k] = res_find[0]
                 else:
                     output[k] = ''
                     logger.warning("regexp for field %s didn't match", k)

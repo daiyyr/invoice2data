@@ -1,6 +1,6 @@
 issuer: Metro Mowing Services West Limited
 keywords:
-- Metro Mowing Services West Limited
+- 'Metro\s*Mowing\s*Services\s*West\s*Limited'
 
 fields:
   invoice_number: 'Invoice Number\s*(INV\-\w+)'

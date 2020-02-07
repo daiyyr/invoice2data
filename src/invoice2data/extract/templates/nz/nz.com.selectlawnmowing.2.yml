@@ -1,16 +1,15 @@
 issuer: Select Lawn Mowing
 keywords:
-- 'Select\s*Lawn\s*Mowing'
-- 'INVOICE\s*NUMBER'
+- 'AVCENA\s*Ltd\s*t.a\s*Select\s*Lawn\s*Mowing'
 
 fields:
-  invoice_number: 'INVOICE\s*NUMBER.*\n.*[^\w](\w+)'
+  invoice_number: '(INV\-\w+)'
   bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[ni]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?\s*[Bb]?[Cc]? +(\d+)\s(?!\s*Ltd)'
   gst_number: '\s(\d{2,3}\-\d{3}\-\d{3})\s'
-  date: '[^\d](\d{1,2}\/\d{2}\/20\d\d)[^\d]'
-  due_date: '[^\d](\d{1,2}\/\d{2}\/20\d\d)[^\d]'
-  amount: 'TOTAL.*\s\$?([\d\,]{1,10}\.[\d]{2})'
-  gst: ''
+  date: '[^\d](\d{1,2}[^\d]+\w{3,9}[^\d]+20\d\d)[^\d]'
+  due_date: '[Dd][Uu][Ee]\s*[Dd]?[Aa]?[Tt]?[Ee]?.*[^\d](\d{1,2}[^\d]+\w{3,9}[^\d]+20\d\d)[^\d]'
+  amount: 'Amount\s*Due.*\s\$?([\d\,]{1,10}\.[\d]{2})'
+  gst: '15%'
 
 options:
   currency: NZD

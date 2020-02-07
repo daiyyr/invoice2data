@@ -1,0 +1,30 @@
+issuer: Coldair Services Ltd
+keywords:
+- 'Coldair\s*Services\s*Ltd'
+
+fields:
+  invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\:\s*(INV\-\w+)'
+  bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[Nn]?[Ii]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *\#? *(\d+)[^\d](?!\s*Ltd)'
+  gst_number: 'GST\s*[Nn]?[Oo]?.*\s*[^\d](\d{2,3}\-\d{3}\-\d{3})[^\d]'
+  date: '[Dd][Aa][Tt][Ee].*[^\d](\d{1,2}[^\d]+\w{3,9}[^\d]+20\d\d)[^\d]'
+  due_date: '[Dd][Uu][Ee]\s*[Dd]?[Aa]?[Tt]?[Ee]?.*[^\d](\d{1,2}[^\d]+\w{3,9}[^\d]+20\d\d)[^\d]'
+  amount: 'Total.*\s\$?([\d\,]{1,10}\.[\d]{2})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%d-%b-%y'
+    - '%d-%m-%y'
+    - '%d.%m.%Y'
+    - '%B %d'
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%Y'
+
+
