@@ -270,6 +270,8 @@ class InvoiceTemplate(OrderedDict):
                                 output[k] = min(all_date)
                             elif k == 'due_date' and len(all_date)>0:
                                 output[k] = max(all_date)
+                            else:
+                                output[k] = None
                         except:
                             output[k] = res_find[0]
                         if not output[k]:
@@ -314,16 +316,17 @@ class InvoiceTemplate(OrderedDict):
                         res_find = list(set(res_find))
                         resstr = ''
 			for res in res_find:
-                            # make sure this do not affact regular bc number 
-                            if not isinstance(res_find[0], str) and not isinstance(res_find[0], int) and len(res_find[0]) > 1 and len(max(res_find[0], key=len)) > 1:
-                                for res00 in res_find[0]:
+                            # make sure this do not affact regular bc number
+                            if isinstance(res, tuple):
+                                for res00 in res:
                                     if res00 is not None and res00 != '' and res00 not in resstr:
                                         resstr += res00 + ';'
-                                if len(resstr) > 0:
-                                    resstr = resstr[:-1]
-                                output[k] = resstr
-                            else:		
-                                output[k] = res_find[0]
+                            else:
+                                if res is not None and res != '' and res not in resstr:
+                                    resstr += res + ';'
+                        if len(resstr) > 0:
+                            resstr = resstr[:-1]
+                        output[k] = resstr
                 else:
                     output[k] = ''
                     logger.warning("regexp for field %s didn't match", k)

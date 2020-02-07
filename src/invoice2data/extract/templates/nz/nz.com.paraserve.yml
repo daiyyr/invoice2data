@@ -1,13 +1,13 @@
-issuer: Natural Habitats
+issuer: Paraserve Services Ltd
 keywords:
-- 'natural\s*habitats'
+- 'paraserve.com'
 
 fields:
-  invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\w+)|(INV\-\w+)'
+  invoice_number: '(IN\d+)'
   bc_number: '(?<!C\/\-)\s?B[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[Nn]?[Ii]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *[\#\.]? *(\d+)[^\d](?!\s*Ltd)'
-  gst_number: 'G\.?S\.?T\.?\s*[Nn]?[Oo]?.*?\n?.*?\n?.*?[^\d](\d{2,3}[\-\s]\d{3}[\-\s]\d{3})[^\d]|GST\s*Number.*?\n?.*?\n?.*?[^\d](\d{8,9})'
-  date: '[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+\w{3,9}[^\d]+20\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+\d{1,2}[^\d]+20\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\w{3,9}[^\d]+\d{1,2}[^\d]+20\d\d)[^\d]'
-  due_date: '[Dd][Uu][Ee]\s*?[Dd]?[Aa]?[Tt]?[Ee]?.*?[^\d](\d{1,2}[^\d]+?\w{3,9}[^\d]+?20\d\d)[^\d]|[Dd][Uu][Ee]\s*[Dd]?[Aa]?[Tt]?[Ee]?.*?\n?.*?\n?.*?[^\d](\d{1,2}[^\d]+?\d{1,2}[^\d]+?20\d\d)[^\d]|[Dd][Uu][Ee].*?\n?.*?[^\d](\w{3,9}[^\d]\d{1,2}[^\d]20\d\d)[^\d]'
+  gst_number: 'G\.?[Ss]\.?[Tt]\.?\s*[Nn]?[Oo]?.*?\n?.*?\n?.*?[^\d](\d{2,3}[\-\s]\d{3}[\-\s]\d{3})[^\d]|GST\s*No.*?\n?.*?\n?.*?[^\d](\d{8,9})'
+  date: '[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+\w{3,9}[^\d]+\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+\d{1,2}[^\d]+20\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\w{3,9}[^\d]+\d{1,2}[^\d]+20\d\d)[^\d]'
+  due_date: '20th'
   amount: '[aA][Mm][Oo][Uu][Nn][Tt]\s*[Dd][Uu][Ee].*\s\$?([\d\,]{1,10}\.[\d]{2})|[Tt][Oo][Tt][Aa][Ll]\s*[Dd][Uu][Ee].*\s\$?([\d\,]{1,10}\.[\d]{2})|[Bb][Aa][Ll][Aa][Nn][Cc][Ee]\s*[Dd][Uu][Ee].*\s\$?([\d\,]{1,10}\.[\d]{2})|[Tt][Oo][Tt][Aa][Ll]\s*\:?\s*\$?\s*([\d\,]{1,10}\.[\d]{2})|[Aa][Mm][Oo][Uu][Nn][Tt]\s*\:?\s*\$?\s*([\d\,]{1,10}\.[\d]{2})|[tT][oO][tT][aA][lL]\s*NZD.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
   gst: '15%'
 

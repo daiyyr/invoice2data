@@ -1,6 +1,6 @@
-issuer: Natural Habitats
+issuer: Greater Electrical Limited
 keywords:
-- 'natural\s*habitats'
+- 'GREATER\s*ELECTRICAL\s*LIMITED'
 
 fields:
   invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\w+)|(INV\-\w+)'

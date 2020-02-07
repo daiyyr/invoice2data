@@ -1,6 +1,8 @@
 issuer: Green Acres
 keywords:
 - greenacres
+- 'Invoice\s*\#\s+\w+\s*\w+'
+- 'Total\s*Inc\s*GST\s*\$\s*[\d\,]{1,10}\.[\d]{2}'
 
 fields: 
   invoice_number: 'Invoice\s*\#\s+(\w+\s*\w+)'

@@ -1,6 +1,6 @@
-issuer: Natural Habitats
+issuer: Trim It Nz
 keywords:
-- 'natural\s*habitats'
+- 'Trim\s*It\s*NZ'
 
 fields:
   invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\w+)|(INV\-\w+)'

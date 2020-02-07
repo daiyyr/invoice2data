@@ -1,6 +1,6 @@
 issuer: MAINTENANCE AND REFURBISHMENT NEW ZEALAND LIMITED
 keywords:
-- MAINTENANCE AND REFURBISHMENT NEW ZEALAND LIMITED
+- 'MAINTENANCE AND REFURBISHMENT NEW ZEALAND LIMITED'
 
 fields: 
   invoice_number: 'REF\.\s*NO\.\s*(.+)'
@@ -8,8 +8,8 @@ fields:
   gst_number: ''
   date: 'DATE\s*(\d{1,2}\/\d{1,2}\/\d\d\d?\d?)'
   due_date: '0days'
-  amount: 'TOTAL\s*incl\.\s*GST\s*\$\s*([\d\,]{1,10}\.\d\d)'
-  gst: ''
+  amount: 'TOTAL.*?\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: '0%'
 
 options:
   currency: NZD

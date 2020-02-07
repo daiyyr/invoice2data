@@ -1,6 +1,7 @@
 issuer: ALSCO
 keywords:
 - 'alsco.co.nz'
+- 'TAX\s*INVOICE.*?\n?.*?\n?.*?(\w{2,5}\d{6,8})'
 
 fields: 
   invoice_number: 'TAX\s*INVOICE.*?\n?.*?\n?.*?(\w{2,5}\d{6,8})'

@@ -4,11 +4,11 @@ keywords:
 - Andrews Property Services
 
 fields: 
-  invoice_number: 'APS Ref\s*(\w+)'
+  invoice_number: 'APS\s*Ref\s*(\w+)|Tax\s*Invoice.*?(\d+)'
   bc_number: ''
   gst_number: 'GST\s*Number\:\s*(\d{1,3}\-\d\d\d\-\d\d\d)'
   date: '(\w{1,2}\/\w\w\/\w\w\w\w)'
-  due_date: '(\w{1,2}\/\w\w\/\w\w\w\w)'
+  due_date: '20th'
   amount: '([\d\,]{1,10}\.\d\d)'
   gst: '([\d\,]{1,10}\.\d\d)'
 
