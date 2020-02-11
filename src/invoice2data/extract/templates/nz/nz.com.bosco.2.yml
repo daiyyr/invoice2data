@@ -1,16 +1,16 @@
 issuer: Bosco Connect Limited
 keywords:
-- Bosco Connect Limited
+- 'Bosco\s*Connect\s*Limited'
 - '0431'
 
 fields:
-  invoice_number: 'Tax\s*Invoice\s*(\w+)'
+  invoice_number: 'Tax\s*[iI]nvoice\s*(\w+)'
   bc_number: '(?<!C\/\- )Body\s*Corporate\s+(\w+)\s(?!\s*Ltd)'
   gst_number: 'GST\s*\#\s*(\d{2,3}.\d\d\d.\d\d\d)'
   date: 'DATE\:\s*(\d{1,2} \w{3,9} 20\d\d)'
   due_date: 'Due\s*Date\:\s*(\d{1,2} \w{3,9} \d\d\d\d)'
   amount: '(?<!SUB)TOTAL\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
-  gst: 'GST\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+  gst: 'GST.*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
 
 options:
   currency: NZD

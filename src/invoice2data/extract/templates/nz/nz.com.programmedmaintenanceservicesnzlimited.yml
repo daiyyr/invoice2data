@@ -1,11 +1,11 @@
-issuer: Xxxxxx Yyyyyy Zzzzzzz
+issuer: Programmed Maintenance Services Nz Limited
 keywords:
-- 'Xxxxxx\s*Yyyyyy\s*Zzzzzzz'
+- 'Programmed\s*Maintenance\s*Services'
 
 fields:
-  invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\d+)|(INV\-\w+)'
-  bc_number: '(?<!C\/\-)\s?B[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[Nn]?[Ii]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *[\#\.\:]? *(\d+)[^\d](?!\s*Ltd)'
-  gst_number: 'G\.?[Ss]\.?[Tt]\.?\s*[Nn]?[Oo]?.*?\n?.*?\n?.*?[^\d](\d{2,3}[\-\s]\d{3}[\-\s]\d{3})[^\d]|GST\s*[Nn\#][oO]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?.*?\n?.*?\n?.*?[^\d](\d{8,9})'
+  invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\w+)|(INV\-\w+)'
+  bc_number: '(?<!C\/\-)\s?B[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[Nn]?[Ii]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *[\#\.\-]? *(\d+)[^\d](?!\s*Ltd)'
+  gst_number: 'G\.?[Ss]\.?[Tt]\.?\s*[Nn]?[Oo]?.*?\n?.*?\n?.*?[^\d](\d{2,3}[\-\s\.]\d{3}[\-\s\.]\d{3})[^\d]|GST\s*Number.*?\n?.*?\n?.*?[^\d](\d{8,9})'
   date: '[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+?\w{3,9}[^\d]+?20\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+?\d{1,2}[^\d]+?2?0?\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\w{3,9}[^\d]+?\d{1,2}[^\d]+?20\d\d)[^\d]'
   due_date: '[Dd][Uu][Ee]\s*?[Dd]?[Aa]?[Tt]?[Ee]?.*?[^\d](\d{1,2}[^\d]+?\w{3,9}[^\d]+?20\d\d)[^\d]|[Dd][Uu][Ee]\s*[Dd]?[Aa]?[Tt]?[Ee]?.*?\n?.*?\n?.*?[^\d](\d{1,2}[^\d]+?\d{1,2}[^\d]+?2?0?\d\d)[^\d]|[Dd][Uu][Ee].*?\n?.*?[^\d](\w{3,9}[^\d]\d{1,2}[^\d]20\d\d)[^\d]'
   amount: '[aA][Mm][Oo][Uu][Nn][Tt]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2})|[Tt][Oo][Tt][Aa][Ll]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2})|[Bb][Aa][Ll][Aa][Nn][Cc][Ee]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2})|[Tt][Oo][Tt][Aa][Ll]\s*\:?\s*\$?\s*([\d\,]{1,10}\.[\d]{2})|[Aa][Mm][Oo][Uu][Nn][Tt]\s*\:?\s*\$?\s*([\d\,]{1,10}\.[\d]{2})|[tT][oO][tT][aA][lL]\s*NZD.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'

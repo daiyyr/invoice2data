@@ -1,6 +1,6 @@
 issuer: Bosco Connect Limited
 keywords:
-- Bosco Connect Limited is proud to be owned by Mercury NZ Limited
+- 'Bosco\s*Connect\s*Limited\s*is\s*proud\s*to\s*be\s*owned\s*by\s*Mercury\s*NZ\s*Limited'
 
 fields:
   invoice_number: 'Reference\:\s*(\w+)'

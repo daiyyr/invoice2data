@@ -1,6 +1,6 @@
-issuer: Xxxxxx Yyyyyy Zzzzzzz
+issuer: Hornabrook Macdonald Lawyers
 keywords:
-- 'Xxxxxx\s*Yyyyyy\s*Zzzzzzz'
+- 'Hornabrook\s*Macdonald\s*Lawyers'
 
 fields:
   invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\d+)|(INV\-\w+)'

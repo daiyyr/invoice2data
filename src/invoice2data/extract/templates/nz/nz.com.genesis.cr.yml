@@ -1,7 +1,8 @@
 issuer: Genesis
 keywords:
 - 'genesisenergy.co.nz'
-- 'Discounted\s*Amount'
+- 'Closing\s*Balance'
+- 'No\s*payment\s*is\s*required\s*for\s*this\s*account'
 
 fields:
   invoice_number: 'Statement\s*[Nn]umber\:?.*\n.*\n?.*\n?.*\s(\d{8,10})'
@@ -9,8 +10,8 @@ fields:
   gst_number: '\s(\d{2,3}\-\d{3}\-\d{3})\s'
   date: 'Account\s*Date.*\n.*\n?.*\s(\d{1,2}\s*\w{3}\s*20\d\d)\s'
   due_date: '\s(\d{1,2}\s*\w{3}\s*20\d\d)\s'
-  amount: 'Discounted\s*Amount.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
-  gst: 'GST.*After.*[^\d]([\d\,]{1,10}\.[\d]{2})'
+  amount: 'Current\s*Charges.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
+  gst: '15%'
 
 options:
   currency: NZD
