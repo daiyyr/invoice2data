@@ -2,6 +2,7 @@ issuer: dormakaba Service
 keywords:
 - dormakaba Service
 - www.dormakaba.co.nz
+- 'Number\:\s*(\d+\w+\-\d+)'
 
 fields:
   invoice_number: 'Number\:\s*(\d+\w+\-\d+)'
