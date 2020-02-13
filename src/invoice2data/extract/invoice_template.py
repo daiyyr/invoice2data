@@ -253,7 +253,7 @@ class InvoiceTemplate(OrderedDict):
 											try:
 												redate000 = self.parse_date(redate00.lower().replace('o','0').replace('jnu','jun')
 															.replace('0ct','Oct').replace('0CT','OCT').replace('0ber','ober')
-															.replace('0vem','ovem').replace('N0v','Nov').replace('n0v','nov'))
+															.replace('0vem','ovem').replace('N0v','Nov').replace('n0v','nov').replace('feburary','february'))
 												if redate000 is not None:
 													all_date.append(redate000)
 											except:
@@ -261,7 +261,7 @@ class InvoiceTemplate(OrderedDict):
 									else:
 										redate00 = self.parse_date(redates.lower().replace('o','0').replace('jnu','jun')
 													.replace('0ct','Oct').replace('0CT','OCT').replace('0ber','ober')
-													.replace('0vem','ovem').replace('N0v','Nov').replace('n0v','nov'))
+													.replace('0vem','ovem').replace('N0v','Nov').replace('n0v','nov').replace('feburary','february'))
 										if redate00 is not None:
 											all_date.append(redate00)
                                 except:

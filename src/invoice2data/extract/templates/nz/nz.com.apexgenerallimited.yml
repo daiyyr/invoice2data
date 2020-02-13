@@ -4,12 +4,12 @@ keywords:
 
 fields:
   invoice_number: 'Invoice\s*No\s*\:\s*(\w+)'
-  bc_number: '(?<!C\/\- )Body\s*Corporate\s+(\w+)'
+  bc_number: '(?<!C\/\-)\s?B[oO][Dd][Yy]\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[Nn]?[Ii]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *[\#\.\:]? *(\d+)[^\d](?!\s*Ltd)'
   gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
   date: 'Invoice\s*Date\:\s*(\d{1,2}\/\d\d\/20\d\d)'
-  due_date: 'Due\s*Date\:\s*(\d{1,2}\/\d\d\/20\d\d)'
-  amount: 'Total\s*Amount\s*Due\s*\:\s*\$\s*([\d\,]{1,10}\.\d\d)'
-  gst: ''
+  due_date: '0days'
+  amount: 'Total\s*Amount\s*Due\s*\:.*?\$\s*([\d\,]{1,10}\.\d\d)'
+  gst: '15%'
 
 options:
   currency: NZD

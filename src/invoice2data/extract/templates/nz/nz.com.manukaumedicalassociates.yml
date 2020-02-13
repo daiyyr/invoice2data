@@ -1,6 +1,7 @@
 issuer: Manukau Medical Associates
 keywords:
 - 'Manukau\s*Medical\s*Associates'
+- 'Invoice\s*Number.*?\n.*?20\d\d\s*(\d+)'
 
 fields: 
   invoice_number: 'Invoice\s*Number.*?\n.*?20\d\d\s*(\d+)'

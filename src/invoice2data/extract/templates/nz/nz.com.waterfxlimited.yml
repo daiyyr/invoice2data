@@ -1,12 +1,12 @@
 issuer: Water FX Limited
 keywords:
-- Water FX Limited
+- 'Water\s*FX\s*Limited'
 
 fields: 
   invoice_number: '(INV\-\d+)'
   bc_number: 'BC(\w+)'
   gst_number: '\d{2,3}\-\d\d\d\-\d\d\d'
-  date: '(\d{1,2}\s*\w{3}\s*201\d)'
+  date: '(\d{1,2}\s*\w{3}\s*20\d\d)'
   due_date: 'Du\s*e\s*Date\:\s*(\d{1,2}\s*\w{3}\s*\d\d\d\d)'
   amount: 'Amount\s*Due\s*\$\s*([\d\,]{1,10}\.\d\d)'
   gst: 'GST\s*15\%\s*\$\s*([\d\,]{1,10}\.\d\d)'

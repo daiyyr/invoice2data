@@ -1,12 +1,13 @@
 issuer: Trevor Hanley
 keywords:
-- Trevor Hanley
+- 'Trevor\s*Hanley'
+
 
 fields: 
   invoice_number: 'Invoice\s*No\s*\:\s*(\w+)'
   bc_number: 'Body\s*Corporate\s*(\w+)'
   gst_number: 'GST\s*No.\s*(\d{2,3}\s*\d\d\d\s*\d\d\d)'
-  date: 'Invoice\s*Date\:\s*(\d{1,2}\s*\w\w\s*\w{3,9}\s*20\d\d)\s'
+  date: '[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+?\w{3,9}[^\d]+?20\d\d)[^\d]|Date.*?\n?.*?[^\d](\d{1,2}\/\d{1,2}\/\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\w{3,9}[^\d]+?\d{1,2}[^\d]+?20\d\d)[^\d]'
   due_date: '0days'
   amount: 'TOTAL\s*.*\s*\$\s*([\d\,]{1,10}\.[\d]{2})'
   gst: ''
