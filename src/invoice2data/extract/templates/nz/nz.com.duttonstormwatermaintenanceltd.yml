@@ -1,6 +1,6 @@
-issuer: Xxxxxx Yyyyyy Zzzzzzz
+issuer: Dutton Stormwater Maintenance Ltd
 keywords:
-- 'Xxxxxx\s*Yyyyyy\s*Zzzzzzz'
+- 'Dutton\s*Stormwater\s*Maintenance\s*Ltd'
 
 fields:
   invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\d+)|(INV\-\w+)'

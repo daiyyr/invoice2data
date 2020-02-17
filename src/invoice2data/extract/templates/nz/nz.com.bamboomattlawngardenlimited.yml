@@ -1,10 +1,10 @@
-issuer: Xxxxxx Yyyyyy Zzzzzzz
+issuer: Bam Boo Matt Lawn Garden Limited
 keywords:
-- 'Xxxxxx\s*Yyyyyy\s*Zzzzzzz'
+- 'Bam\s*Boo\s*Matt\s*Lawn\s*.\s*Garden\s*Limited'
 
 fields:
   invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\d+)|(INV\-\w+)'
-  bc_number: '(?<!C\/\-)\s?B[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[Nn]?[Ii]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *[\#\.\:\-]? *(\d{5,7})[^\d](?!\s*Ltd)'
+  bc_number: '(?<!C\/\-)\s?B[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *[\#\.\:\-]? *(\d{5,7})[^\d](?!\s*Ltd)'
   gst_number: 'G\.?[Ss]\.?[Tt]\.?\s*[Nn]?[Oo]?.*?\n?.*?\n?.*?[^\d](\d{2,3}[\-\s]\d{3}[\-\s]\d{3})[^\d]|GST\s*R?e?g?\s*[Nn\#][oO]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?.*?\n?.*?\n?.*?[^\d](\d{8,9})'
   date: '[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+?\w{3,9}[^\d]+?20\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+?\d{1,2}[^\d]+?2?0?\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\w{3,9}[^\d]+?\d{1,2}[^\d]+?20\d\d)[^\d]'
   due_date: '[Dd][Uu][Ee]\s*?[Dd]?[Aa]?[Tt]?[Ee]?.*?[^\d](\d{1,2}[^\d]+?\w{3,9}[^\d]+?20\d\d)[^\d]|[Dd][Uu][Ee]\s*[Dd]?[Aa]?[Tt]?[Ee]?.*?\n?.*?\n?.*?[^\d](\d{1,2}[^\d]+?\d{1,2}[^\d]+?2?0?\d\d)[^\d]|[Dd][Uu][Ee].*?\n?.*?[^\d](\w{3,9}[^\d]\d{1,2}[^\d]20\d\d)[^\d]'

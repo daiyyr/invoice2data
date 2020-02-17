@@ -3,12 +3,12 @@ keywords:
 - grammarelectrical.co.nz
 
 fields: 
-  invoice_number: 'TAX\s*INVOICE\s*NO.\s*(\w+)'
+  invoice_number: 'TAX\s*INVOICE\s*NO.\s*(\w+)|RECEIPT\s*NO.\s*(\w+)'
   bc_number: '\sBody\s*Corp\s+(\w+)\s'
   gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
   date: '\s(\d{1,2}\/\d{2}\/20\d\d)\s'
   due_date: '\s(\d{1,2}\/\d{2}\/20\d\d)\s'
-  amount: 'Balance\s*Due\s*\$\s*([\d\,]{1,10}\.\d{2})'
+  amount: 'Balance\s*Due\s*\$\s*([\d\,]{1,10}\.\d{2})|Total\s*\$\s*([\d\,]{1,10}\.\d{2})'
   gst: '15%'
 
 options:

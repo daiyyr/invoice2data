@@ -1,6 +1,6 @@
-issuer: Xxxxxx Yyyyyy Zzzzzzz
+issuer: Total Plan Cleaning Services Limited
 keywords:
-- 'Xxxxxx\s*Yyyyyy\s*Zzzzzzz'
+- 'Total\s*Plan\s*Cleaning\s*Services\s*Limited'
 
 fields:
   invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\d+)|(INV\-\w+)'
