@@ -3,11 +3,11 @@ keywords:
 - 'boppoolservices'
 
 fields:
-  invoice_number: '[Ii]nvoice\s*[Nn]o\s*\.?\:?\s*(\w+)'
+  invoice_number: '[Ii]nvoice\s*[Nn]o\s*\.?\:?.*?\s*(\w+)'
   bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[ni]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?\s*[Bb]?[Cc]? *(\d+)\s(?!\s*Ltd)'
-  gst_number: 'GST\s*[Nn]?[Oo]?.?\:?\s*[^\d](\d{2,3}\-\d{3}\-\d{3})\s'
+  static_gst_number: '51-335-325'
   date: '[^\d](\d{1,2}\/\d{1,2}\/20\d\d)[^\d]'
-  due_date: '20days'
+  due_date: '20th'
   amount: 'BALANCE\s*DUE.*\s\$?([\d\,]{1,10}\.[\d]{2})'
   gst: '15%'
 

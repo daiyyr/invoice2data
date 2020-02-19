@@ -6,7 +6,7 @@ fields:
   invoice_number: '\#\s*(\w+)'
   bc_number: '\sBC(\d+)\s'
   gst_number: 'GST\s*No\:\s*(\d{2,3}\s*\d\d\d\s*\d\d\d)\s'
-  date: '[dD]ate\s*\:*\s*(\d{1,2}\s*\d{1,2}\s*20\d\d)\s'
+  date: '[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+?\w{3,9}[^\d]+?20\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+?\d{1,2}[^\d]+?2?0?\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\w{3,9}[^\d]+?\d{1,2}[^\d]+?20\d\d)[^\d]'
   due_date: '0days'
   amount: '\$\s*([\d\,]{1,10}\.[\d]{2})'
   gst: '15%'

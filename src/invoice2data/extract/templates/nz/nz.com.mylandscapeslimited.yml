@@ -3,11 +3,11 @@ keywords:
 - 'MY\s*Landscapes\s*Limited'
 
 fields:
-  invoice_number: '(INV\d+)'
+  invoice_number: '(INV\w*\d+)'
   bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[ni]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?\s*[Bb]?[Cc]? *(\d+)\s(?!\s*Ltd)'
-  gst_number: 'GST\s*[Nn]?[Oo]?.*\n.*\n?.*[^\d](\d{2,3}\d{3}\d{3})\s'
-  date: '[^\d](\d{1,2}\s*\w{3,9})\s'
-  due_date: '[^\d](\d{1,2}\s*\w{3,9})\s'
+  gst_number: 'GST\s*[Nn]?[Oo]?.*?\n.*?\n?.*?(\d{2,3}\d{3}\d{3})\s'
+  date: '[^\d](\d{1,2} *[a-zA-Z]{3,9})\s'
+  due_date: '7days'
   amount: 'Total\s*NZD.*\s\$?([\d\,]{1,10}\.[\d]{2})'
   gst: '15%'
 
