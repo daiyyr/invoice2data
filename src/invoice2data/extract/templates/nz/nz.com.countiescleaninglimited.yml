@@ -1,6 +1,7 @@
 issuer: Counties Cleaning Limited
 keywords:
-- Counties Cleaning Limited
+- 'Counties\s*Cleaning\s*Limited'
+- 'INV\-\w+'
 
 fields: 
   invoice_number: 'INV\-\w+'
