@@ -3,7 +3,7 @@ keywords:
 - firesecurity.co.nz
 
 fields: 
-  invoice_number: 'Invoice\s*No.?\s*\:?\s*(\w+)'
+  invoice_number: 'Invoice\s*No.?\s*\:?\s*(\w+)|Quote\s*No\.?\s*(\d+)'
   bc_number: '(?<!c\/\-)BC\s*(\w+)'
   gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)\s'
   date: '[Dd]ate\s*\:?\s*(\d{1,2}\/\d{2}\/20\d\d)\s'
