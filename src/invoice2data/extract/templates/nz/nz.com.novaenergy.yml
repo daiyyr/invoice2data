@@ -3,12 +3,12 @@ keywords:
 - Nova Energy
 
 fields:
-  invoice_number: '(\d+)\s*Standard'
+  invoice_number: '(\d+)\s*Standard|Tax\s*Invoice.*?\n?.*?(\d{7,9})'
   bc_number: '(?<!c\/\-)Body\s*Corporate\s?.*?\s?(\d+)'
   gst_number: '\s(\d{2,3}\-\d\d\d\-\d\d\d)\s'
   date: 'Invoice\s*date\s*\n.+?(\d{1,2}\s*[a-zA-Z]{3,9}\s*20\d\d)'
   due_date: 'by\s*(\d{1,2}\s*[a-zA-Z]{3,9}\s*20\d\d)'
-  amount: 'of\s*GST.*\s*\$\s*([\d\,]{1,10}\.\d\d)'
+  amount: 'of\s*GST.*\s*(\-?\$\s*[\d\,]{1,10}\.\d\d)'
   gst: 'inc\s*\$([\d\,]{1,10}\.\d\d)\s*of\s*GST'
 
 options:

@@ -9,7 +9,7 @@ fields:
   invoice_number: 'Invoice\s*no.*\n.*?\s(\w+)\s*\d{1,2}\s+\w{3}\s+\d{2}'
   bc_number: ''
   static_gst_number: '70-710-455'
-  date: 'Invoice\s*date\s*\n.*(\d{1,2}\s+\w{3}\s+\d{2})'
+  date: 'Invoice\s*date\s*\n.*?(\d{1,2}\s+\w{3}\s+\d{2})'
   due_date: '[dD]ue.*?(\d{1,2}\s*\w{3}\s*2?0?\d\d)'
   amount: '[Tt]otal.*?\s*\$\s*([\d\,]{1,10}\.\d{2})'
   gst: '15%'

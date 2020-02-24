@@ -1,12 +1,12 @@
 issuer: Ready Mark Ltd
 keywords:
-- 'Ready Mark Ltd'
+- 'Ready\s*Mark\s*Ltd'
 
 fields: 
   invoice_number: 'Tax\s*Invoice.*?(\w+)'
   bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*(\d+)\s(?!\s*Ltd)'
   gst_number: '\s(\d{2,3}\-\d{3}\-\d{3})\s'
-  date: 'Date.*?(\d{1,2}\/\d{2}\/\d\d)\s'
+  date: '[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+?\w{3,9}[^\d]+?20\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+?\d{1,2}[^\d]+?2?0?\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\w{3,9}[^\d]+?\d{1,2}[^\d]+?20\d\d)[^\d]'
   due_date: '7days'
   amount: 'Due.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
   gst: 'GST.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'  
