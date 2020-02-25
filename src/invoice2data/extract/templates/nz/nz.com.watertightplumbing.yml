@@ -8,7 +8,7 @@ fields:
   gst_number: '\s(\d{2,3}\-\d\d\d\-\d\d\d)\s'
   date: '\s(\d{1,2}[a-zA-Z]{0,2}\s*\w\w\w\s*20\d\d)'
   due_date: 'Due\s*Date\:?\s*(\d{1,2}\w{0,2}\s*\w\w\w\s*20\d\d)'
-  amount: 'DUE.*?\$?\s*([\d\,]{1,10}.\d\d)'
+  amount: '[aA][Mm][Oo][Uu][Nn][Tt]\s*[Dd][Uu][Ee].*\s\$?([\d\,]{1,10}\.[\d]{2})|[Tt][Oo][Tt][Aa][Ll]\s*[Dd][Uu][Ee].*\s\$?([\d\,]{1,10}\.[\d]{2})|[Bb][Aa][Ll][Aa][Nn][Cc][Ee]\s*[Dd][Uu][Ee].*\s\$?([\d\,]{1,10}\.[\d]{2})|[Tt][Oo][Tt][Aa][Ll].*?\:?\s*\$?\s*([\d\,]{1,10}\.[\d]{2})|[Aa][Mm][Oo][Uu][Nn][Tt]\s*\:?\s*\$?\s*([\d\,]{1,10}\.[\d]{2})|[tT][oO][tT][aA][lL]\s*NZD.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
   gst: 'GST.*?\$?\s*([\d\,]{1,10}.\d\d)'
 
 options:

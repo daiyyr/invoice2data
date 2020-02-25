@@ -3,7 +3,7 @@ keywords:
 - 'Express\s*Lawn\s*Mowing'
 
 fields: 
-  invoice_number: 'Invoice\s*Number.*?\n.*?(\d{7})'
+  invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*.*?\n?.*?\n?.*?\n?.*?(\d{6,8})|I[Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\w+\d+)|(INV\-\w+)'
   bc_number: '(?<!C\/\-)\sBody\s*Corporate\s*(\d+)\s(?!\s*Ltd)'
   gst_number: '\s(\d{2,3}\-\d{3}\-\d{3})\s'
   date: '(\d{1,2}\/\d{2}\/20\d\d)\s'
