@@ -1,6 +1,7 @@
 issuer: Otis Elevator Company Ltd
 keywords:
 - otis.com
+- 'Invoice No\:\s+(\d+)'
 
 fields:
   invoice_number: 'Invoice No\:\s+(\d+)'
