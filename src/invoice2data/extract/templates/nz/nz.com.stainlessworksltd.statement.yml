@@ -1,16 +1,16 @@
 issuer: AUCKLAND INDEPENDENTLY QUALIFIED PERSONS 2012 LTD
 keywords:
 - 'AUCKLAND\s*INDEPENDENTLY\s*QUALIFIED\s*PERSONS'
-- 'Invoice\s*No.*?(\w+)'
+- 'STATEMENT'
 
 fields: 
-  invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\d{3,20})|I[Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*([a-zA-Z]+\d+)|(INV\-\w+)'
+  invoice_number: '(\d{1,2}\/\d{2}\/20\d\d)\s'
   bc_number: '(?<!C\/\-)\s?B[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[Nn]?[Ii]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *[\#\.\:\-]? *(\d{5,7})[^\d](?!\s*Ltd)'
   gst_number: 'G\.?[Ss]\.?[Tt]\.?\s*[Nn]?[Oo]?.*?\n?.*?\n?.*?[^\d](\d{2,3}[\-\s]\d{3}[\-\s]\d{3})[^\d]|G[Ss][tT]\s*R?e?g?\s*[Nn\#][oO]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?.*?\n?.*?\n?.*?[^\d](\d{8,9})'
   date: '(\d{1,2}\/\d{2}\/20\d\d)\s'
   due_date: '20days'
   amount: 'BALANCE.*?\$?\s*([\d\,]{1,10}\.?[\d]{0,2})'
-  gst: '15%'
+  gst: '0%'
 
 options:
   currency: NZD
