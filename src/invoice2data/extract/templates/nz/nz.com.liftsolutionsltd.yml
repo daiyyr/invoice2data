@@ -1,6 +1,6 @@
 issuer: Lift Solutions Ltd
 keywords:
-- Lift Solutions Ltd
+- 'Lift\s*Solutions\s*Ltd'
 
 fields: 
   invoice_number: 'Invoice\s*[Nn]umber.?\s*\:?\s*(\w+)'

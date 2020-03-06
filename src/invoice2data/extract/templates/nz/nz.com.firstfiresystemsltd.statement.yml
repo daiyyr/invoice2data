@@ -1,15 +1,15 @@
 issuer: First Fire Systems Ltd
 keywords:
 - 'firstfire.co.nz'
-- 'Quote\s*No.*?(\w+)'
+- 'STATEMENT'
 
 fields: 
-  invoice_number: 'Quote\s*No.*?(\w+)'
+  static_invoice_number: 'STATEMENT'
   bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*(\d+)\s(?!\s*Ltd)'
   gst_number: '\s(\d{2,3}\-\d{3}\-\d{3})\s'
-  date: 'Date.*?(\d{1,2}\/\d{2}\/20\d\d)\s'
-  due_date: '20days'
-  amount: '\$\s*([\d\,]{1,10}\.[\d]{2})'
+  date: 'As\s*At.*?\n?.*?\n?.*?(\d{1,2}\s*\w{3}\s*20\d\d)\s'
+  due_date: '0days'
+  amount: 'BALANCE\s*DUE\s*NZD\s*.*?([\d\,]{1,10}\.[\d]{2})'
   gst: '15%'
 
 options:

@@ -1,15 +1,15 @@
 issuer: Body Corporate Administration Ltd
 keywords:
-- 'Body Corporate Administration Ltd'
-- 'INV\d{4,7}'
-- 'try_to_exclude_this_template'
+- '47[ \-]787[ \-]440'
+- 'Body\s*Corporate\s*Administration\s*Ltd'
+
 
 fields: 
   invoice_number: 'INVOICE\s*NO.*?(\w+)'
   bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO][Rr][Pp][Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*(\d+)\s(?!\s*Ltd)'
   gst_number: 'GST.*\n?.*\n?.*?(\d{2,3}\s*\d{3}\s*\d{3})\s'
-  date: '\s(\d{1,2}\/\d{2}\/20\d\d)\s'
-  due_date: '0days'
+  date: '\s(\d{1,2}[\.\/]\d{2}[\/\.]20\d\d)\s'
+  due_date: '10th'
   amount: 'Total.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
   gst: 'GST.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'  
 
