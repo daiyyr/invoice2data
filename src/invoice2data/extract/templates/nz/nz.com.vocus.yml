@@ -1,6 +1,9 @@
 issuer: Vocus Communications
 keywords:
 - www.vocus.co.nz
+- 'Invoice\s*number\s*(\w+)'
+- 'Due\s*if\s*paid\s*by\s\d\d\/\d\d\/\d\d\d\d\s+\$([\d\,]{1,10}.\d\d)'
+- 'Issue\s*date\s+(\d{1,2}\s*\w{3,9}\s*20\d{2})'
 
 fields:
   invoice_number: 'Invoice\s*number\s*(\w+)'

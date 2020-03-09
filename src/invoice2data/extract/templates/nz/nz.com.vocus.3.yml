@@ -2,6 +2,7 @@ issuer: Vocus Communications
 keywords:
 - www.vocus.co.nz
 - direct debited
+- 'Invoice\s*number\s*(\w+)'
 
 fields:
   invoice_number: 'Invoice\s*number\s*(\w+)'
