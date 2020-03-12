@@ -1,6 +1,7 @@
 issuer: Connect Technologies NZ Limited
 keywords:
 - 'Connect\s*Technologies\s*NZ\s*Limited'
+- 'Tax\s*[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*.*?(\d+)'
 
 fields:
   invoice_number: 'Tax\s*[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*.*?(\d+)'
