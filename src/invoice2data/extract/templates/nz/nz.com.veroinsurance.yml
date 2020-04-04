@@ -1,6 +1,7 @@
 issuer: Vero Insurance
 keywords:
 - 'Vero\s*Insurance'
+- 'Claim\s*\.?\:?\s*(\d+)|(INV\-\w+)'
 
 fields:
   invoice_number: 'Claim\s*\.?\:?\s*(\d+)|(INV\-\w+)'

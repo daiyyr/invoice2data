@@ -1,6 +1,9 @@
 issuer: Maynard Marks
 keywords:
 - 'Maynard Marks'
+- 'Invoice\s*Number.*?\n.*?\n?.*?(I\d{5,7})'
+- 'Date.*?\n.*?\n?.*?(\d{1,2}\s*\w{3,9}\s*20\d\d)\s'
+- 'GST.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
 
 fields: 
   invoice_number: 'Invoice\s*Number.*?\n.*?\n?.*?(I\d{5,7})'

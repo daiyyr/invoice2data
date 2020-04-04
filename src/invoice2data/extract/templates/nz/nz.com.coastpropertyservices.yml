@@ -1,10 +1,11 @@
 issuer: Coast Property Services
 keywords:
-- Coast Property Services
+- 'Coast\s*Property\s*Services'
+- 'Reece\s*Lee\s*T.As'
 
 fields: 
-  invoice_number: 'Inv\:\s*(\w+)'
-  bc_number: ''
+  invoice_number: 'Inv\:?\s*(\w+\d+)'
+  bc_number: '(?<!C\/\-)\s?B[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[Nn]?[Ii]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *[\#\.\:\-]? *(\d{5,7})[^\d](?!\s*Ltd)'
   gst_number: ''
   date: '(\d{1,2}\/\d{1,2}\/\d\d)'
   due_date: '5days'

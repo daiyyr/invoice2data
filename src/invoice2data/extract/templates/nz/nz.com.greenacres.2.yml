@@ -8,7 +8,7 @@ fields:
   gst_number: 'GST\s*\#\s*\:.*(\d{2,3}\-\d\d\d\-\d\d\d)'
   date: '[Dd][Aa][Tt][Ee].*[^\d](\d{1,2}[^\d]+\d{1,2}[^\d]+\d\d)[^\d]'
   due_date: '0days'
-  amount: 'Total\s*NZD.*\$\s*([\d\,]{1,10}\.[\d]{2})'
+  amount: '[aA][Mm][Oo][Uu][Nn][Tt]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2})|[Tt][Oo][Tt][Aa][Ll]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2})|[Bb][Aa][Ll][Aa][Nn][Cc][Ee]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2})|[T][Oo][Tt][Aa][Ll].*?\$?\s*([\d\,]{1,10}\.[\d]{2})|[Aa][Mm][Oo][Uu][Nn][Tt]\s*\:?\s*\$?\s*([\d\,]{1,10}\.[\d]{2})|[T][oO][tT][aA][lL]\s*NZD.*?\$?\s*([\d\,]{1,10}\.[\d]{2})|GST\s*Inclusive.*?\$?\s*([\d\,]{1,10}\.[\d]{2})|[iI][Nn][Vv][Oo][Ii][cC][Ee]\s*[Tt][oO][tT][aA][lL].*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
   gst: '15%'
 
 options:

@@ -3,13 +3,13 @@ keywords:
 - Nova Energy
 
 fields:
-  invoice_number: '(\d+)\s*Standard|Tax\s*Invoice.*?\n?.*?(\d{7,9})'
+  invoice_number: '(\d+)\s*Standard|Tax\s*Invoice.*?\n?.*?(\d{7,9})|TAX\s*INVOICE\s*No\s*\:?\s*(\d{4,9})'
   bc_number: '(?<!c\/\-)Body\s*Corporate\s?.*?\s?(\d+)'
   gst_number: '\s(\d{2,3}\-\d\d\d\-\d\d\d)\s'
-  date: 'Invoice\s*date\s*\n.+?(\d{1,2}\s*[a-zA-Z]{3,9}\s*20\d\d)'
+  date: '[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[ \/thTHndNDrR\-\.]+?\w{3,9}[ \/thTHndNDrR\-\.\,]+?20\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[ \/thTHndNDrR\.\-]+?\d{1,2}[ \/thTHndNDrR\.\-\,]+?2?0?\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\w{3,9}[ \/thTHndNDrR\.\-]+?\d{1,2}[ \/thTHndNDrR\.\-\,]+?20\d\d)[^\d]'
   due_date: 'by\s*(\d{1,2}\s*[a-zA-Z]{3,9}\s*20\d\d)'
-  amount: 'of\s*GST.*\s*(\-?\$\s*[\d\,]{1,10}\.\d\d)'
-  gst: 'inc\s*\$([\d\,]{1,10}\.\d\d)\s*of\s*GST'
+  amount: 'of\s*GST.*\s*(\-?\$\s*[\d\,]{1,10}\.\d\d)|Total\s*for\s*this\s*account.*?(\-?\$\s*[\d\,]{1,10}\.\d\d)'
+  gst: '15%'
 
 options:
   currency: NZD
