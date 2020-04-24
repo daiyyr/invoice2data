@@ -1,0 +1,24 @@
+issuer: Auckland Council
+keywords:
+- Auckland Council
+- aucklandcouncil.govt.nz
+- 'Debit\s*Note'
+
+fields: 
+  invoice_number: 'Debit\s*Note\:\s*(\w+)'
+  bc_number: '(?<!C\/\- )Body\s*Corporate\s*(\w+)'
+  gst_number: 'GST\s*Number\:\s*(\d{1,3}\-\d\d\d\-\d\d\d)'
+  date: 'Date\:\s*(\w{1,2} \w{3,9} \w\w\w\w)'
+  due_date: 'Payment\s*is\s*due\:\s*(\w{1,2} \w{3,9} \w\w\w\w)'
+  amount: 'Amount\s*Due\s*\$([\d\,]{1,10}\.\d\d)'
+  gst: ''
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
