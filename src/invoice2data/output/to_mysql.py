@@ -113,7 +113,7 @@ creditor_id = null,
 creditor_name = null
 """ % (
             data['issuer'].replace("\'","\\\'") if data['issuer'] is not None else '',
-            re.sub(r'[\W_]+', '', data['invoice_number']) if data['invoice_number'] is not None else '',
+            (data['invoice_number'].replace(u'\u2212', '-').decode('utf-8','ignore').encode("utf-8").replace("\'","\\\'") + "/" + data['date'].strftime('%d%m%Y')) if data['invoice_number'] is not None else '',
             data['bc_number'].replace("\'","\\\'") if data['bc_number'] is not None else '',
             ("'"+data['date'].strftime('%Y-%m-%d')+"'") \
             if data['date'] is not None 
