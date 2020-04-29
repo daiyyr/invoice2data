@@ -442,11 +442,18 @@ def main2(args=None):
 
                 from datetime import date
                 succeed_path = join(succeed_path, date.today().strftime('%d-%m-%Y'))
-
-                if not os.path.exists(succeed_path):
-                    os.makedirs(succeed_path)
-                destinateFile = join(succeed_path, pdfname)
-                shutil.move(pdfpath, destinateFile)
+                try:
+                    if not os.path.exists(succeed_path):
+                        os.makedirs(succeed_path)
+                    destinateFile = join(succeed_path, pdfname)
+                    shutil.move(pdfpath, destinateFile)
+                except:
+                    succeed_path = join(pdfdirectory, 'failedToMove')
+                    succeed_path = join(succeed_path, date.today().strftime('%d-%m-%Y'))
+		    if not os.path.exists(succeed_path):
+                        os.makedirs(succeed_path)
+                    destinateFile = join(succeed_path, pdfname)
+                    shutil.move(pdfpath, destinateFile)
                 pass
             elif re == 'link db failed':
                 pass

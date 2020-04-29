@@ -97,7 +97,7 @@ while True:
             errorlog.close()
             if os.path.exists(directory+ "/" +filename):
                 try:
-                    failed_path = os.path.join(directory, 'failed')
+                    failed_path = os.path.join(directory, 'failed2')
                     if not os.path.exists(failed_path):
                         os.makedirs(failed_path)
                     os.rename(directory+ "/" +filename, failed_path+ "/" +filename)
@@ -154,7 +154,7 @@ while True:
                 errorlog.close()
                 if os.path.exists(directory2+ "/" +filename):
                     try:
-                        failed_path = os.path.join(directory2, 'failed')
+                        failed_path = os.path.join(directory2, 'failed2')
                         if not os.path.exists(failed_path):
                             os.makedirs(failed_path)
                         os.rename(directory2+ "/" +filename, failed_path+ "/" +filename)
@@ -211,7 +211,7 @@ while True:
                 errorlog.close()
                 if os.path.exists(directory3+ "/" +filename):
                     try:
-                        failed_path = os.path.join(directory3, 'failed')
+                        failed_path = os.path.join(directory3, 'failed2')
                         if not os.path.exists(failed_path):
                             os.makedirs(failed_path)
                         os.rename(directory3+ "/" +filename, failed_path+ "/" +filename)
