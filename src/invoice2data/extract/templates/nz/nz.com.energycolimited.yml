@@ -3,13 +3,13 @@ keywords:
 - Energyco
 
 fields: 
-  invoice_number: '[iIlL]nvoice\s*number\s*(\w+)'
+  invoice_number: '[iIlL]nvoice\s*number\s*(\w+)|INVOICE\s*NO.*?\n?.*?(\w*\d{4,6})'
   bc_number: 'BC\s*(\w+)'
   gst_number: '(\d{2,3}\-\d\d\d\-\d\d\d)'
   date: '(\d{1,2}\/\d\d\/20\d\d)'
   due_date: '(\d{1,2}\/\d\d\/20\d\d)'
-  amount: 'Total\s*due\s*including\s*opening\s*balance\s*\$\s*([\d\,]{1,10}\.[\d]{2})'
-  gst: ''
+  amount: 'Total\s*due\s*including\s*opening\s*balance\s*\$\s*([\d\,]{1,10}\.[\d]{2})|Total\s*\$([\d\,]{1,10}\.[\d]{2})'
+  gst: '15%'
 
 options:
   currency: NZD

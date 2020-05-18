@@ -1,6 +1,6 @@
 issuer: PATTLEDELAMOREPARTNERSLTD
 keywords:
-- PATTLEDELAMOREPARTNERSLTD
+- 'PATTLE\s*DELAMORE\s*PARTNERS\s*LTD'
 
 fields: 
   invoice_number: 'Invoice\s*No\s*\:\s*(\w+)'
