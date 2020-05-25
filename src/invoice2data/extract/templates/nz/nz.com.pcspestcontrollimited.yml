@@ -1,6 +1,6 @@
 issuer: Pcs Pest Control Limited
 keywords:
-- 'PCS\s*Pest\s*Control\s*Limited'
+- 'PCS\s*.?\s*Pest\s*Control\s*Limited'
 
 fields:
   invoice_number: '(INV\-\w+)'

@@ -2,6 +2,7 @@ issuer: Your Green Acres Franchisee
 keywords:
 - 'Your\s*Green\s*Acres\s*Franchisee'
 
+
 fields:
   invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\#?\.?\:?\s*(\w+)|(INV\-\w+)'
   bc_number: '(?<!C\/\-)\s?B[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[Nn]?[Ii]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *\#? *(\d+)[^\d](?!\s*Ltd)'
