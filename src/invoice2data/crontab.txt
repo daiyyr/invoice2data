@@ -1,0 +1,1 @@
+21     *     *     *     *         cd /home/administrator/invoice2data/src/invoice2data && /home/administrator/invoice2data/src/invoice2data/run.sh
