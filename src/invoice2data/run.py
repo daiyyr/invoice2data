@@ -16,7 +16,7 @@ with open(runtimefile, 'r+') as f:
 	t = f.read().replace('\n', '')
 	if len(t) > 0:
 		last_time = int(t)
-	if time_seconds - last_time < 60 * 65:
+	if time_seconds - last_time < 60 * 22:
 		with open(configfile) as fp:
         		line = fp.readline()
         		while line:

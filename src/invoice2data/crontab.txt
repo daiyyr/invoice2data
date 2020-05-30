@@ -1,1 +1,3 @@
 21     *     *     *     *         cd /home/administrator/invoice2data/src/invoice2data && /home/administrator/invoice2data/src/invoice2data/run.sh
+41     *     *     *     *         cd /home/administrator/invoice2data/src/invoice2data && /home/administrator/invoice2data/src/invoice2data/run.sh
+1     *     *     *     *         cd /home/administrator/invoice2data/src/invoice2data && /home/administrator/invoice2data/src/invoice2data/run.sh
