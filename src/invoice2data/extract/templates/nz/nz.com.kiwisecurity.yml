@@ -1,6 +1,6 @@
-issuer: Resolution Architecture Ltd
+issuer: Kiwi Security
 keywords:
-- 'Resolution\s*Architecture\s*Ltd'
+- 'Kiwi\s*Security'
 
 fields:
   invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\d{3,20})|I[Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*([a-zA-Z]+\d+)|(INV\-\w+)'

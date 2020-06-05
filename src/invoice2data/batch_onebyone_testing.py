@@ -1,24 +1,52 @@
 import os
 import subprocess
 import sys
+import main
+import shutil
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 directory = (dir_path + '/pdf/testing').replace("//", "/")
-all_files = ''
+succeed_path = os.path.join(directory, 'succeed')
+if not os.path.exists(succeed_path):
+    os.makedirs(succeed_path)
+all_files = []
 parame = ['invoice2data','--output-format', 'csv']
+firstpdf = ''
 
 for filename in sorted(os.listdir(directory)):
     if filename.endswith(".pdf") or filename.endswith(".PDF"):
         #subprocess.check_output(['ls','-l']) #all that is technically needed...
-        all_files += "\"" + directory+ "/" +filename + '\" '
+        all_files.append(directory+ "/" +filename)
         parame.append(directory+ "/" +filename)
+        firstpdf = filename
         break
 
 parame.append("--debug")
 
-subprocess.check_output(parame)
+#run main directly
+dir_path = os.path.dirname(os.path.realpath(__file__))
+configfile = os.path.join(dir_path, 'run.config')
+
+parame = {}
+parame['dbpass'] = None
+parame['output_format'] = 'csv'
+parame['input_files'] = all_files
+parame['output_name'] = os.path.join(dir_path, 'output.csv')
+parame['template_folder'] = 'extract/templates/nz'
+
+try:
+    re = main.main2(parame)
+    if re:
+        shutil.move(os.path.join(directory, firstpdf), os.path.join(succeed_path, firstpdf))
+    else:
+        pass
+except Exception as e:
+    print(e)
 
 #Use: python batch_print_raw_text.py &> output.txt
+
+# subprocess.check_output(parame)
+
 
 
 

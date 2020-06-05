@@ -474,4 +474,4 @@ def main2(args=None):
         else:
             logger.warning(output)
             output_module.write_to_file(output, args['output_name'], args['output_date_format'])
-
+    return res

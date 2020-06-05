@@ -1,9 +1,10 @@
 issuer: GREEN GORILLA
 keywords:
-- greengorilla.co.nz
+- 'greengorilla.co.nz'
+- 'Tax\s*Invoice\s*(\w+)'
 
 fields: 
-  invoice_number: 'Tax Invoice\s*(\w+)'
+  invoice_number: 'Tax\s*Invoice\s*(\w+)'
   bc_number: 'BODY CORPORATE\s*(\w+)'
   static_gst_number: '104-802-325'
   date: 'Invoice Date\s*(\d{1,2}\/\d\d\/\d\d)'

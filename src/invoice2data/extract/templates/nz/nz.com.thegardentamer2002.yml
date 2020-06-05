@@ -1,6 +1,6 @@
-issuer: Resolution Architecture Ltd
+issuer: The Garden Tamer 2002
 keywords:
-- 'Resolution\s*Architecture\s*Ltd'
+- 'The\s*Garden\s*Tamer\s*.2002.'
 
 fields:
   invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\d{3,20})|I[Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*([a-zA-Z]+\d+)|(INV\-\w+)'
