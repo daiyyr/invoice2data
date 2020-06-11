@@ -131,9 +131,9 @@ class InvoiceTemplate(OrderedDict):
         # put dot as decimal sep
 
         credit_is_negtive = False
-        if amount_pipe_no_thousand_sep.endswith('cr'):
+        if amount_pipe_no_thousand_sep.endswith('cr') or amount_pipe_no_thousand_sep.endswith('CR'):
             credit_is_negtive = True
-            amount_pipe_no_thousand_sep = amount_pipe_no_thousand_sep.replace('cr','')
+            amount_pipe_no_thousand_sep = amount_pipe_no_thousand_sep.replace('c','').replace('C','').replace('r','').replace('R','')
         if credit_is_negtive:
             return -float(amount_pipe_no_thousand_sep.replace('|', '.'))
         else:
@@ -297,7 +297,7 @@ class InvoiceTemplate(OrderedDict):
                                 except:
 									pass
                             if len(all_amount) > 0:
-                                output[k] = max(all_amount)
+                                output[k] = max(abs(all_amount))
                             else:
                                 output[k] = res_find[0].replace('$','').replace(' ','').replace('\n', '').replace('\r', '')
                     elif k == 'gst': #if multi match, get the smallest one
