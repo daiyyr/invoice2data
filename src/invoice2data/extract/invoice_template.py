@@ -297,7 +297,7 @@ class InvoiceTemplate(OrderedDict):
                                 except:
 									pass
                             if len(all_amount) > 0:
-                                output[k] = max(abs(all_amount))
+                                output[k] = max(all_amount, key=abs)
                             else:
                                 output[k] = res_find[0].replace('$','').replace(' ','').replace('\n', '').replace('\r', '')
                     elif k == 'gst': #if multi match, get the smallest one
