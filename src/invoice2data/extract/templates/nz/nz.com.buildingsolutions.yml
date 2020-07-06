@@ -1,6 +1,8 @@
 issuer: Building Solutions
 keywords:
-- Building Solutions
+- 'Building\s*Solutions'
+- 'Total\s*\$\s*([\d\,]{1,10}\.\d{2})'
+
 fields: 
   invoice_number: 'Tax\s*Invoice\s*([\w\.]+)\s'
   bc_number: '(?<!C\/\- )Body\s*Corp\s+(\w+)\s(?!Ltd)'
