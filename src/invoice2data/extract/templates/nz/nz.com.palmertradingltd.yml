@@ -1,6 +1,7 @@
 issuer: Palmer Trading Ltd
 keywords:
 - 'Palmer\s*Trading\s*Ltd'
+- 'Due.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
 
 fields: 
   invoice_number: '(INV\-\w+)'

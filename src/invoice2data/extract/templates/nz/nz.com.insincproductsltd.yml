@@ -1,6 +1,6 @@
-issuer: Slipper Electrical Solutions Limited
+issuer: Insinc Products Ltd
 keywords:
-- 'Slipper\s*Electrical\s*Solutions\s*Limited'
+- 'Insinc\s*Products\s*Ltd'
 
 fields:
   invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\d{3,20})\s|I[Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*([a-zA-Z]+\d+)|(INV\-\w+)'
