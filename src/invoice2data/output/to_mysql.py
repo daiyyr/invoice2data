@@ -38,7 +38,16 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass
                 user=dbuser,
                 passwd=dbpass,
                 db=dbname)
+
         x = conn.cursor()
+
+        if data['issuer'].replace("\'","\\\'") == 'Watercare Services Limited':
+            connWatercare = MySQLdb.connect(host= dbhost,
+                user=dbuser,
+                passwd=dbpass,
+                db='watercare')
+	    watercareCur = connWatercare.cursor()
+
     except Exception as e:
         logger.error("Connecting mysql error '%s'", e.message)
         return 'link db failed'
@@ -72,6 +81,24 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass
         except:
             pass
         net = gross - gst
+
+	if data['issuer'].replace("\'","\\\'") == 'Watercare Services Limited':
+            getbccodesql= 'select accountnumber, bccode from useraccount where accountnumber=\'' + data['invoice_number'].replace(u'\u2212', '-').decode('utf-8','ignore').encode("utf-8").replace("\'","\\\'") + '\''
+            watercareCur.execute(getbccodesql)
+            accountNumberRows = watercareCur.fetchall()
+            if accountNumberRows:
+                for row in accountNumberRows:
+                    data['bc_number'] = row[1]
+                    break
+
+            checksql='select `BC number`, `Invoice Date`, `Invoice Total` from edms where `BC number` = ' + data['bc_number'] + ' and `Invoice Date`= ' + ("'"+data['date'].strftime('%Y-%m-%d')+"'") + ' and `Invoice Total`= ' + str(gross)
+            x.execute(checksql)
+            checkRows = x.fetchall()
+            if checkRows:
+                for row in checkRows:
+                    return 'exists'
+
+
 
         onlinefilename = str(uuid.uuid4()) + '.pdf'
         if azure_account == 'nextcloud' and azure_key == 'nextcloud':

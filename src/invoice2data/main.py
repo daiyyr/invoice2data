@@ -357,6 +357,11 @@ def main(args=None):
                 pass
             elif re == 'link db failed':
                 pass
+            elif re == 'exists':
+                #delete
+                os.remove(pdfpath)
+                pass
+
             else:
                 #move to failed
                 failed_path = join(pdfdirectory, 'failed')
@@ -456,6 +461,10 @@ def main2(args=None):
                     shutil.move(pdfpath, destinateFile)
                 pass
             elif re == 'link db failed':
+                pass
+            elif re == 'exists':
+                #delete
+                os.remove(pdfpath)
                 pass
             else:
                 #move to failed
