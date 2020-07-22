@@ -11,6 +11,9 @@ directory2 = None
 directory3 = None
 directory4 = None
 directory5 = None
+pdf_failed = ''
+pdf_succeed = ''
+pdf_moved_failed = ''
 
 try:
     with open(configfile) as fp:
@@ -30,6 +33,12 @@ try:
                 azure_key = line.replace('azure_key:','').replace('\n','').strip()
             elif 'pdf_path:' in line:
                 directory = line.replace('pdf_path:','').replace('\n','').strip()
+            elif 'pdf_failed:' in line:
+                pdf_failed = line.replace('pdf_failed:','').replace('\n','').strip()
+            elif 'pdf_succeed:' in line:
+                pdf_succeed = line.replace('pdf_succeed:','').replace('\n','').strip()
+            elif 'pdf_moved_failed:' in line:
+                pdf_moved_failed = line.replace('pdf_moved_failed:','').replace('\n','').strip()
             elif 'pdf_2_path:' in line:
                 directory2 = line.replace('pdf_2_path:','').replace('\n','').strip()
             elif 'pdf_3_path:' in line:
@@ -70,6 +79,9 @@ while True:
             parame['azure_account'] = azure_account
             parame['azure_key'] = azure_key
             parame['pdf_path'] = directory
+            parame['pdf_failed'] = pdf_failed
+            parame['pdf_succeed'] = pdf_succeed
+            parame['pdf_moved_failed'] = pdf_moved_failed
             parame['output_format'] = 'mysql'
             parame['template_folder'] = 'extract/templates/nz'
             runlog = open('run.log', 'a')
@@ -97,7 +109,8 @@ while True:
             errorlog.close()
             if os.path.exists(directory+ "/" +filename):
                 try:
-                    failed_path = os.path.join(directory, 'failed2')
+                    #failed_path = os.path.join(directory, 'failed2')
+                    failed_path = pdf_moved_failed
                     if not os.path.exists(failed_path):
                         os.makedirs(failed_path)
                     os.rename(directory+ "/" +filename, failed_path+ "/" +filename)

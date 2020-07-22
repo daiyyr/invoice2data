@@ -440,10 +440,13 @@ def main2(args=None):
             pdfname = os.path.basename(f.name)
             if re == 'succeed':
                 #move to successful
-                #succeed_path = join(pdfdirectory, 'successful')
-                #move to public successful folder where clients can access
-                succeed_path = os.path.abspath(os.path.join(pdfdirectory, os.pardir))
-                succeed_path = join(succeed_path, 'successful')
+                if args['pdf_succeed']:
+                    succeed_path = args['pdf_succeed']
+                else:
+                    #succeed_path = join(pdfdirectory, 'successful')
+                    #move to public successful folder where clients can access
+                    succeed_path = os.path.abspath(os.path.join(pdfdirectory, os.pardir))
+                    succeed_path = join(succeed_path, 'successful')
 
                 from datetime import date
                 succeed_path = join(succeed_path, date.today().strftime('%d-%m-%Y'))
@@ -453,7 +456,10 @@ def main2(args=None):
                     destinateFile = join(succeed_path, pdfname)
                     shutil.move(pdfpath, destinateFile)
                 except:
-                    succeed_path = join(pdfdirectory, 'failedToMove')
+                    if args['pdf_moved_failed']:
+                        succeed_path = args['pdf_moved_failed']
+                    else:
+                        succeed_path = join(pdfdirectory, 'failedToMove')
                     succeed_path = join(succeed_path, date.today().strftime('%d-%m-%Y'))
 		    if not os.path.exists(succeed_path):
                         os.makedirs(succeed_path)
@@ -468,7 +474,11 @@ def main2(args=None):
                 pass
             else:
                 #move to failed
-                failed_path = join(pdfdirectory, 'failed')
+                if args['pdf_failed']:
+                    failed_path = args['pdf_failed']
+                else:
+                    father_path = os.path.abspath(os.path.join(pdfdirectory, os.pardir))
+                    failed_path = join(father_path, 'failed')
                 if not os.path.exists(failed_path):
                     os.makedirs(failed_path)
                 destinateFile = join(failed_path, pdfname)

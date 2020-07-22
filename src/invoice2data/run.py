@@ -17,15 +17,20 @@ with open(runtimefile, 'r+') as f:
 	if len(t) > 0:
 		last_time = int(t)
 	if time_seconds - last_time < 60 * 22:
+                faileddirectory = None
 		with open(configfile) as fp:
         		line = fp.readline()
         		while line:
             			if 'pdf_path:' in line:
                 			directory = line.replace('pdf_path:','').replace('\n','').strip()
+            			if 'pdf_failed:' in line:
+                			faileddirectory = line.replace('pdf_failed:','').replace('\n','').strip()
 				line = fp.readline()
     		for filename in os.listdir(directory):
         		if filename.endswith(".pdf") or filename.endswith(".PDF"):
-				faileddirectory = os.path.join(directory, 'failed')
+                                if not faileddirectory:
+                                    import os.path
+                                    faileddirectory = os.path.abspath(os.path.join(directory, os.pardir))
 				shutil.move(os.path.join(directory, filename), os.path.join(faileddirectory, filename))
 				break
 	f.seek(0)
