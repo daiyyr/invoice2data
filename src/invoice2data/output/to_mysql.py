@@ -49,13 +49,14 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass
 	    watercareCur = connWatercare.cursor()
 
     except Exception as e:
-        logger.error("Connecting mysql error '%s'", e.message)
+        logger.error("Connecting mysql error " + str(e))
         return 'link db failed'
 
     if data is None:
         return
 
     try:
+        sqlstr = ''
         description = ''
         if 'description' in data:
             description += data['description'] + '; '
@@ -84,15 +85,23 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass
 
 	if data['issuer'].replace("\'","\\\'") == 'Watercare Services Limited':
             getbccodesql= 'select accountnumber, bccode from useraccount where accountnumber=\'' + data['invoice_number'].replace(u'\u2212', '-').decode('utf-8','ignore').encode("utf-8").replace("\'","\\\'") + '\''
-            watercareCur.execute(getbccodesql)
+            try:
+                watercareCur.execute(getbccodesql)
+            except Exception as e:
+                logger.error("db operation error: " + str(e))
+                print(getbccodesql)
             accountNumberRows = watercareCur.fetchall()
             if accountNumberRows:
                 for row in accountNumberRows:
                     data['bc_number'] = row[1]
                     break
 
-            checksql='select `BC number`, `Invoice Date`, `Invoice Total` from edms where `BC number` = ' + data['bc_number'] + ' and `Invoice Date`= ' + ("'"+data['date'].strftime('%Y-%m-%d')+"'") + ' and `Invoice Total`= ' + str(gross)
-            x.execute(checksql)
+            checksql='select `BC number`, `Invoice Date`, `Invoice Total` from edms where `BC number` = ' + "'"+data['bc_number'].replace("\'","\\\'")+"'" + ' and `Invoice Date`= ' + ("'"+data['date'].strftime('%Y-%m-%d')+"'") + ' and `Invoice Total`= ' + str(gross)
+            try:
+                x.execute(checksql)
+            except Exception as e:
+                logger.error("db operation error: " + str(e))
+                print(checksql)
             checkRows = x.fetchall()
             if checkRows:
                 for row in checkRows:
@@ -161,11 +170,11 @@ creditor_name = null
         conn.commit()
         return 'succeed'
     except Exception as e:
-        if e.message is not '':
-            logger.error("db operation error: %s", e.message)
-        elif len(e.args) > 1 and e.args[1] is not None and e.args[1] is not '':
-            logger.error("db operation error: %s", e.args[1])
-        else:
-            logger.error("db operation error")
+        logger.error("db operation error: " + str(e))
+        if sqlstr:
+            print(str(sqlstr))
         conn.rollback()
-    conn.close()
+    try:
+        conn.close()
+    except:
+        pass

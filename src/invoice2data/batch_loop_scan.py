@@ -4,6 +4,7 @@ import time
 import datetime
 import main
 import sys
+import shutil
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 configfile = os.path.join(dir_path, 'run.config')
@@ -102,8 +103,8 @@ while True:
             try:
                 main.main2(parame)
             except Exception as e:
-                errorlog.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') 
-                + ' process ' + filename + ' error ' + e.message + '\n')
+                print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' process ' + filename + ' error ' + str(e))
+                #errorlog.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' process ' + filename + ' error ' + str(e) + '\n')
             sys.stdout = oristd
             sys.stderr = orierr
             errorlog.close()
@@ -113,7 +114,7 @@ while True:
                     failed_path = pdf_moved_failed
                     if not os.path.exists(failed_path):
                         os.makedirs(failed_path)
-                    os.rename(directory+ "/" +filename, failed_path+ "/" +filename)
+                    shutil.move(directory+ "/" +filename, failed_path+ "/" +filename)
                 except Exception:
                     pass
     if directory2 is not None:
@@ -170,7 +171,7 @@ while True:
                         failed_path = os.path.join(directory2, 'failed2')
                         if not os.path.exists(failed_path):
                             os.makedirs(failed_path)
-                        os.rename(directory2+ "/" +filename, failed_path+ "/" +filename)
+                        shutil.move(directory2+ "/" +filename, failed_path+ "/" +filename)
                     except Exception:
                         pass
     if directory3 is not None:
@@ -227,7 +228,7 @@ while True:
                         failed_path = os.path.join(directory3, 'failed2')
                         if not os.path.exists(failed_path):
                             os.makedirs(failed_path)
-                        os.rename(directory3+ "/" +filename, failed_path+ "/" +filename)
+                        shutil.move(directory3+ "/" +filename, failed_path+ "/" +filename)
                     except Exception:
                         pass
     time.sleep(2) #Delays for 2 seconds

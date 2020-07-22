@@ -100,6 +100,7 @@ def extract_data(invoicefile, templates=None, input_module=pdftotext):
         pdf = PdfFileReader(open(invoicefile,'rb'))
         pageCount = pdf.getNumPages()
     except Exception as e:
+        #print(e.message)
         logger.error(e.message)
         pass
     for t in templates:
@@ -128,6 +129,7 @@ def extract_data(invoicefile, templates=None, input_module=pdftotext):
                         logger.warning('Seperate pdf into multiple files, process in next scanning loop')
                         return 'pdf seperated'
                     except Exception as e:
+                        #print(e.message)
                         logger.error(e.message)
                         pass
 
@@ -155,6 +157,7 @@ def extract_data(invoicefile, templates=None, input_module=pdftotext):
                     return t.extract(optimized_str, invoicefile)
                 else:
                     return tesseract_result
+    #print('No template for ' + invoicefile)
     logger.error('No template for %s', invoicefile)
     return False
 
@@ -368,7 +371,7 @@ def main(args=None):
                 if not os.path.exists(failed_path):
                     os.makedirs(failed_path)
                 destinateFile = join(failed_path, pdfname)
-                os.rename(pdfpath, destinateFile)
+                shutil.move(pdfpath, destinateFile)
                 pass
 
 
@@ -470,6 +473,7 @@ def main2(args=None):
                 pass
             elif re == 'exists':
                 #delete
+                print('data already exists in edms: ' + pdfname)
                 os.remove(pdfpath)
                 pass
             else:
@@ -482,7 +486,7 @@ def main2(args=None):
                 if not os.path.exists(failed_path):
                     os.makedirs(failed_path)
                 destinateFile = join(failed_path, pdfname)
-                os.rename(pdfpath, destinateFile)
+                shutil.move(pdfpath, destinateFile)
                 pass
 
 
