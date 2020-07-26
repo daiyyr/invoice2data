@@ -101,7 +101,7 @@ def extract_data(invoicefile, templates=None, input_module=pdftotext):
         pageCount = pdf.getNumPages()
     except Exception as e:
         #print(e.message)
-        logger.error(e.message)
+        logger.error(str(e))
         pass
     for t in templates:
         optimized_str = t.prepare_input(extracted_str)
@@ -130,7 +130,7 @@ def extract_data(invoicefile, templates=None, input_module=pdftotext):
                         return 'pdf seperated'
                     except Exception as e:
                         #print(e.message)
-                        logger.error(e.message)
+                        logger.error(str(e))
                         pass
 
             ret = t.extract(optimized_str, invoicefile)
