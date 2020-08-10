@@ -3,10 +3,10 @@ keywords:
 - 'Keane\s*Lawnmowing\s*Service'
 
 fields: 
-  invoice_number: 'Invoice\s*No.*?(\w+)'
+  invoice_number: 'Invoice\s*No.*?(\w+)|\s(\d{8})\s'
   bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*\/?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*\#?\s*(\d+)\s(?!\s*Ltd)'
   gst_number: '[^\d](\d{2,3}\-\d{3}\-\d{3})\s'
-  date: 'Date.*?(\d{1,2}.\d{2}.20\d\d)\s'
+  date: '(\d{1,2}.\d{2}.20\d\d)\s'
   due_date: '5days'
   amount: 'Due.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
   gst: 'GST.*?\$?\s*([\d\,]{1,10}\.[\d]{2})'  

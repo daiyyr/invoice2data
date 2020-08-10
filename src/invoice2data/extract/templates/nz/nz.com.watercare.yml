@@ -1,7 +1,7 @@
 issuer: Watercare Services Limited
 keywords:
-- Watercare Services Limited
-- www.watercare.co.nz
+- 'Watercare\s*Services\s*Limited'
+- 'www.watercare.co.nz'
 - 'GST'
 
 fields:

@@ -6,9 +6,9 @@ fields:
   invoice_number: 'Invoice\s*No\..*?\n.*?(\d{6,8})'
   bc_number: '(?<!C\/\- )Body\s*Corporate\s*(\w+)'
   gst_number: 'GST\s*No.*?\n.*?(\d{2,3} \d\d\d \d\d\d)'
-  date: 'Invoice Date.*?\n.*?(\d\d\s*\w{3,9}\s*20\d\d)'
+  date: 'Invoice Date.*?\n.*?\n?.*?(\d\d\s*\w{3,9}\s*20\d\d)'
   due_date: 'Due Date\s*\-\s*(\d\d\s*\w{3,9}\s*20\d\d)'
-  amount: 'Amount\s*Due\:\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+  amount: '[aA][Mm][Oo][Uu][Nn][Tt]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|[Tt][Oo][Tt][Aa][Ll]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|[Bb][Aa][Ll][Aa][Nn][Cc][Ee]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|[T][Oo][Tt][Aa][Ll].*?\$?\s*([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|[Aa][Mm][Oo][Uu][Nn][Tt]\s*\:?\s*\$?\s*([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|[T][oO][tT][aA][lL]\s*NZD.*?\$?\s*([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|GST\s*Inclusive.*?\$?\s*([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|[iI][Nn][Vv][Oo][Ii][cC][Ee]\s*[Tt][oO][tT][aA][lL].*?\$?\s*([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)'
   gst: 'GST\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
   multiple_page: 'True'
 
