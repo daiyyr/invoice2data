@@ -180,6 +180,18 @@ class InvoiceTemplate(OrderedDict):
         # Try to find data for each field.
         output = OrderedDict()
         output['issuer'] = self['issuer']
+        current_charges = float('inf')
+        if self['issuer'].replace("\'","\\\'") == 'Watercare Services Limited':
+            if 'current_charges' in self['fields']:
+                try:
+                    try:
+                        res_find = re.findall(self['fields']['current_charges'], optimized_str)
+                        if res_find:
+                            current_charges = self.parse_number(res_find[0].replace('$','').replace(' ','').replace('\n', '').replace('\r', ''))
+                    except:
+                        logger.error("Error when matching '%s'", k)
+                except Exception as e:
+                    logger.error(e)
 
         for k, v in self['fields'].items():
             if k.startswith('static_'):
@@ -239,7 +251,6 @@ class InvoiceTemplate(OrderedDict):
                         res_find = re.findall(v, optimized_str)
                     except:
                         logger.error("Error when matching '%s'", k)
-                        return None
                 if res_find:
                     logger.debug("res_find=%s", res_find)
                     if k.startswith('date') or k.endswith('date'):
@@ -298,6 +309,8 @@ class InvoiceTemplate(OrderedDict):
 									pass
                             if len(all_amount) > 0:
                                 output[k] = max(all_amount, key=abs)
+                                if current_charges < output[k]:
+                                    output[k] = current_charges
                             else:
                                 output[k] = res_find[0].replace('$','').replace(' ','').replace('\n', '').replace('\r', '')
                     elif k == 'gst': #if multi match, get the smallest one

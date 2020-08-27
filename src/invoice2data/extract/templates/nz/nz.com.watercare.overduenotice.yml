@@ -12,6 +12,7 @@ fields:
   due_date: '0days'
   amount: '[tT]otal.*?\s*\$?\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
   gst: ''
+  current_charges: 'Balance\s*of\s*current\s*charges\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
 
 
 options:

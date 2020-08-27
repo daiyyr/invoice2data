@@ -17,6 +17,8 @@ fields:
   water_usage_0_water_1_wastewater: '[\d\,]{1,10}\.\d\d\s*kL\s*\$[\d\,]{1,10}\.\d{1,5}\/kL\s*\$\s*[\d\,]{1,10}\.\d{1,2}'
   fixed_charges: '\d\d\s*days\s*\$[\d\,]{1,10}\.\d{1,5}\s*pa\s*\$\s*\d{1,10}\.\d{1,2}'
   filename: ''
+  current_charges: 'Balance\s*of\s*current\s*charges\s*\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+
 
 
 options:
