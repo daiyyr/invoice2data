@@ -201,6 +201,9 @@ class InvoiceTemplate(OrderedDict):
                 output[k] = filename
             else:
                 logger.debug("field=%s | regexp=%s", k, v)
+                if k=='date' and v == ('today'):
+                    output[k] = datetime.datetime.today()
+                    continue
                 if k=='due_date' and v.endswith('days') and (output['date'] is not None):
                     duedays = v.replace('days', '')
                     try:
