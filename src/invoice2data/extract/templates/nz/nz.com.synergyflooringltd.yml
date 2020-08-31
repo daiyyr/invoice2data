@@ -1,6 +1,6 @@
-issuer: Xxxxxx Yyyyyy Zzzzzzz
+issuer: Synergy Flooring Ltd
 keywords:
-- 'Xxxxxx\s*Yyyyyy\s*Zzzzzzz'
+- 'Synergy\s*Flooring\s*Ltd'
 
 fields:
   invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?.*?\n?.*?([A-Z]{0,4}\-?\d{3,7})\s|I[Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*([a-zA-Z]+\d+)|(INV\-\w+)'

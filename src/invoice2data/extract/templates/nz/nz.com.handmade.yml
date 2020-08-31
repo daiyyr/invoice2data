@@ -6,7 +6,7 @@ fields:
   invoice_number: 'INVOICE\s*\#\s*(\w+)'
   bc_number: 'BC\s*(\w+)'
   gst_number: 'GST\s*\#\s*(\d{2,3}\-\d\d\d\-\d\d\d)'
-  date: '(\w{3,9}\s\d{1,2}\w\w)'
+  date: '(\w{3,9}\s\d{1,2}\w\w|\d{1,2}[thstndrd]{2}\s+[A-Za-z]{3,9})'
   due_date: '20days'
   amount: 'TOTAL\s*\$\s*([\d\,]{1,10}\.\d\d)'
   gst: ''

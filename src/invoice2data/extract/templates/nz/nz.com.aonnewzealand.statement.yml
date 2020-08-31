@@ -1,9 +1,10 @@
-issuer: Xxxxxx Yyyyyy Zzzzzzz
+issuer: Aon New Zealand
 keywords:
-- 'Xxxxxx\s*Yyyyyy\s*Zzzzzzz'
+- 'Aon\s*New\s*Zealand'
+- 'Statement'
 
 fields:
-  invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?.*?\n?.*?([A-Z]{0,4}\-?\d{3,7})\s|I[Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*([a-zA-Z]+\d+)|(INV\-\w+)'
+  static_invoice_number: 'BCA'
   bc_number: '(?<!C\/\-)\s?B[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[Nn]?[Ii]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *[\#\.\:\-]? *(\d{5,7})[^\d](?!\s*Ltd)'
   gst_number: 'G\.?[Ss]\.?[Tt]\.?\s*[Nn]?[Oo]?.*?\n?.*?\n?.*?(\d{2,3}[\-\s]\d{3}[\-\s]\d{3})[^\d]|G[Ss][tT]\s*R?e?g?.?\s*[Nn\#][oO]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?.*?\n?.*?\n?.*?(\d{8,9})'
   date: '[Dd][Aa][Tt][Ee].*?\n?.*?(\d{1,2}[ \/sthTHndNDrR\-\.]+?\w{3,9}[ \/sthTHndNDrR\-\.\,]+?20\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?(\d{1,2}[ \/sthTHndNDrR\.\-]+?\d{1,2}[ \/sthTHndNDrR\.\-\,]+?2?0?\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?(\w{3,9}[ \/sthTHndNDrR\.\-]+?\d{1,2}[ \/sthTHndNDrR\.\-\,]+?20\d\d)[^\d]'
