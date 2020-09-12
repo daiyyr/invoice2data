@@ -1,0 +1,25 @@
+issuer: Vodafone New Zealand Limited
+keywords:
+- 'vodafone\.co\.nz'
+- 'Statement\s*Date'
+
+fields: 
+  invoice_number: 'Customer\s*Number\s*(\d+)'
+  bc_number: 'Body Corporate.*?\n.*?\n\s*?(\w+)'
+  gst_number: 'GST\s*reg\s*no\:\s*(\d{1,3}\-\d\d\d\-\d\d\d)'
+  date: 'Statement\s*Date\s*(\d{1,2}\s*\w{3,9}\s*\d\d)'
+  due_date: 'Due\s*Date\s*(\d{1,2}\s*\w{3,9}\s*\d\d)'
+  amount: 'Total.*?\$\s*([\d\,]{1,10}\.[\d\scr]{2,5})'
+  gst: '15%'
+
+options:
+  currency: NZD
+  remove_whitespace: false
+  date_formats:
+    - '%b %d, %Y'
+    - '%d %b %Y'
+    - '%d %b %y'
+    - '%d/%m/%Y'
+    - '%d/%m/%y'
+    - '%d/%M/%y'
+    - '%d-%b-%y'

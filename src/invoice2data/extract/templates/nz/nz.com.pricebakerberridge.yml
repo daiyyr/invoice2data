@@ -1,6 +1,6 @@
 issuer: PRICE BAKER BERRIDGE
 keywords:
-- PRICE BAKER BERRIDGE
+- 'PR[IlLi1]CE\s*BAKER\s*BERR[IiLl1]DGE'
 
 fields: 
   invoice_number: '(\d+)\s*in\s*the\s*particulars|\s(\d{1,2}\s*\w{3,9}\s*20\d\d)\s'

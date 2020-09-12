@@ -1,2 +1,2 @@
 issuer,invoice_number,bc_number,gst_number,date,due_date,amount,gst,currency
-Yaping Song,170820,,,31/08/2020,,200.0,26.09,NZD
+Vodafone New Zealand Limited,Customer\s*Number\s*(\d+),,,04/09/2020,,152.87,19.94,NZD

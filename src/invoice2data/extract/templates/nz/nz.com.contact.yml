@@ -1,6 +1,6 @@
 issuer: Contact
 keywords:
-- 'contactenergy.co.nz'
+- 'contactenergy.co.nz|contact.co.nz'
 - '[\d\,]{1,10}\.[\d]{2}.*of\s*GST'
 
 fields:
