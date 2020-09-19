@@ -5,7 +5,17 @@ import main
 import shutil
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
+configfile = os.path.join(dir_path, 'run.config')
 directory = (dir_path + '/pdf/testing').replace("//", "/")
+
+with open(configfile) as fp:
+    line = fp.readline()
+    while line:
+        if 'pdf_failed:' in line:
+            directory = line.replace('pdf_failed:','').replace('\n','').strip()
+            break
+        line = fp.readline()
+
 succeed_path = os.path.join(directory, 'succeed')
 if not os.path.exists(succeed_path):
     os.makedirs(succeed_path)
@@ -25,7 +35,6 @@ parame.append("--debug")
 
 #run main directly
 dir_path = os.path.dirname(os.path.realpath(__file__))
-configfile = os.path.join(dir_path, 'run.config')
 
 parame = {}
 parame['dbpass'] = None

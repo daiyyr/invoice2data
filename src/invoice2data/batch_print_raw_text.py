@@ -4,6 +4,18 @@ import sys
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 directory = (dir_path + '/pdf/testing').replace("//", "/")
+
+configfile = os.path.join(dir_path, 'run.config')
+
+with open(configfile) as fp:
+    line = fp.readline()
+    while line:
+        if 'pdf_failed:' in line:
+            directory = line.replace('pdf_failed:','').replace('\n','').strip()
+            break
+        line = fp.readline()
+
+
 all_files = ''
 parame = ['invoice2data','--output-format', 'csv']
 

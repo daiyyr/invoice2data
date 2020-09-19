@@ -3,7 +3,7 @@ keywords:
 - 'WasteCo\s*NZ\s*Limited'
 
 fields:
-  invoice_number: '(INV\-\w+)'
+  invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?.*?\n?.*?([A-Z]{0,4}\-?\d{3,7})\s|I[Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*([a-zA-Z]+\d+)|(INV\-\w+)'
   bc_number: '(?<!C\/\-)\sB[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[ni]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *\#? *(\d+)[^\d](?!\s*Ltd)'
   gst_number: 'GST\s*[Nn]?[Oo]?umber.*\n.*\n?.*[^\d](\d{2,3}\d{3}\d{3})\s'
   date: '[^\d](\d{1,2}[^\d]+\w{3,9}[^\d]+20\d\d)[^\d]'
