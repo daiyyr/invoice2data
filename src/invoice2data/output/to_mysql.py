@@ -71,6 +71,13 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass
         if 'fixed_charges' in data:
             description += 'fixed charges: ' + data['fixed_charges'] + '; '
 
+        #Norma requested @23.09.2020, Watercare description: Water charges 18/04/2019-22/05/2019
+        if data['issuer'].replace("\'","\\\'") == 'Watercare Services Limited':
+            if 'this_month_reading' in data and data['this_month_reading'] and 'last_month_reading' in data and data['last_month_reading']:
+                last_month = re.findall("(\d{1,2}\-[a-zA-Z]{3}\-\d\d)", data['last_month_reading'])
+                this_month = re.findall("(\d{1,2}\-[a-zA-Z]{3}\-\d\d)", data['this_month_reading'])
+		if last_month and this_month:
+                    description = 'Water charges ' + last_month[0] + ' - ' + this_month[0]
         gst = 0
         try:
             gst = float(data['gst'])
