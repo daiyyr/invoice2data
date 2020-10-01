@@ -142,7 +142,7 @@ class InvoiceTemplate(OrderedDict):
     def parse_date(self, value):
         """Parses date and returns date after parsing"""
         res = dateparser.parse(
-            value, date_formats=self.options['date_formats'], languages=self.options['languages']
+            value.replace('.', ' '), date_formats=self.options['date_formats'], languages=self.options['languages']
         )
         logger.debug("result of date parsing=%s", res)
         return res
