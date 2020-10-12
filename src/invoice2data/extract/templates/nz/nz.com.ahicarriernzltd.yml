@@ -3,7 +3,7 @@ keywords:
 - 'AHI\s*Carrier\s*.NZ.\s*Ltd'
 
 fields:
-  invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\w+)|(INV\-\w+)'
+  invoice_number: 'Customer\s*No.*?(\d{5,7})|[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*(\w+)|(INV\-\w+)'
   bc_number: '(?<!C\/\-)\s?B[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[Nn]?[Ii]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *[\#\.]? *(\d+)[^\d](?!\s*Ltd)'
   gst_number: 'G\.?S\.?T\.?\s*[Nn]?[Oo]?.*?\n?.*?\n?.*?[^\d](\d{2,3}[\-\s]\d{3}[\-\s]\d{3})[^\d]|GST\s*Number.*?\n?.*?\n?.*?[^\d](\d{8,9})'
   date: '[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+\w{3,9}[^\d]+\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\d{1,2}[^\d]+\d{1,2}[^\d]+20\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?[^\d](\w{3,9}[^\d]+\d{1,2}[^\d]+20\d\d)[^\d]'

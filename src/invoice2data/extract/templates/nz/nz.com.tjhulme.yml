@@ -1,14 +1,14 @@
-issuer: Treesafe Ltd
+issuer: T J Hulme
 keywords:
-- 'Treesafe\s*Ltd'
+- 'T\s*J\s*Hulme'
 
 fields:
-  invoice_number: 'TAX\s*INVOICE\s*(\d{7,9})|Reference\s*(\d{3,20})|I[Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*([a-zA-Z]+\d+)|(INV\-\w+)'
+  invoice_number: '[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#][Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?.*?\n?.*?([A-Z]{0,4}\-?\d{3,7})\s|T[Aa][Xx]\s*[Ii][Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?.*?\n?.*?([A-Z]{0,4}\-?\d{3,7})\s|I[Nn][Vv][Oo][Ii][Cc][Ee]\s*[Nn\#]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?[Oo]?\s*\.?\:?\s*([a-zA-Z]+\d+)|(INV\-\w+)'
   bc_number: '(?<!C\/\-)\s?B[oO]?[Dd]?[Yy]?\s*[Cc][oO]?[Rr]?[Pp]?[Oo]?[Rr]?[Aa]?[Tt]?[Ee]?\s*[Aa]?[Dd]?[Mm]?[Ii]?[Nn]?[Ii]?[Ss]?[Tt]?[Rr]?[Aa]?[Tt]?[Ii]?[Oo]?[Nn]?[Oo]?\s*[Bb]?[Cc]? *[\#\.\:\-]? *(\d{5,7})[^\d](?!\s*Ltd)'
   gst_number: 'G\.?[Ss]\.?[Tt]\.?\s*[Nn]?[Oo]?.*?\n?.*?\n?.*?(\d{2,3}[\-\s]\d{3}[\-\s]\d{3})[^\d]|G[Ss][tT]\s*R?e?g?.?\s*[Nn\#][oO]?[Uu]?[Mm]?[Bb]?[Ee]?[Rr]?.*?\n?.*?\n?.*?(\d{8,9})'
   date: '[Dd][Aa][Tt][Ee].*?\n?.*?(\d{1,2}[ \/sthTHndNDrR\-\.]+?\w{3,9}[ \/sthTHndNDrR\-\.\,]+?20\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?(\d{1,2}[ \/sthTHndNDrR\.\-]+?\d{1,2}[ \/sthTHndNDrR\.\-\,]+?2?0?\d\d)[^\d]|[Dd][Aa][Tt][Ee].*?\n?.*?(\w{3,9}[ \/sthTHndNDrR\.\-]+?\d{1,2}[ \/sthTHndNDrR\.\-\,]+?20\d\d)[^\d]'
   due_date: '[Dd][Uu][Ee]\s*?[Dd]?[Aa]?[Tt]?[Ee]?.*?(\d{1,2}[ \/sthTHndNDrR\-\.]+?\w{3,9}[ \/sthTHndNDrR\-\.\,]+?20\d\d)[^\d]|[Dd][Uu][Ee]\s*[Dd]?[Aa]?[Tt]?[Ee]?.*?\n?.*?\n?.*?(\d{1,2}[ \/sthTHndNDrR\-\.]+?\d{1,2}[ \/sthTHndNDrR\-\.\,]+?2?0?\d\d)[^\d]|[Dd][Uu][Ee].*?\n?.*?(\w{3,9}[^\d]\d{1,2}[^\d]20\d\d)[^\d]'
-  amount: '[aA][Mm][Oo][Uu][Nn][Tt]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2})|[Tt][Oo][Tt][Aa][Ll]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2})|[Bb][Aa][Ll][Aa][Nn][Cc][Ee]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2})|[T][Oo][Tt][Aa][Ll].*?\$?\s*([\d\,]{1,10}\.[\d]{2})|[Aa][Mm][Oo][Uu][Nn][Tt]\s*\:?\s*\$?\s*([\d\,]{1,10}\.[\d]{2})|[T][oO][tT][aA][lL]\s*NZD.*?\$?\s*([\d\,]{1,10}\.[\d]{2})|GST\s*Inclusive.*?\$?\s*([\d\,]{1,10}\.[\d]{2})|[iI][Nn][Vv][Oo][Ii][cC][Ee]\s*[Tt][oO][tT][aA][lL].*?\$?\s*([\d\,]{1,10}\.[\d]{2})'
+  amount: '[aA][Mm][Oo][Uu][Nn][Tt]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|[Tt][Oo][Tt][Aa][Ll]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|[Bb][Aa][Ll][Aa][Nn][Cc][Ee]\s*[Dd][Uu][Ee].*?\$?([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|[T][Oo][Tt][Aa][Ll].*?\$?\s*([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|[Aa][Mm][Oo][Uu][Nn][Tt]\s*\:?\s*\$?\s*([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|[T][oO][tT][aA][lL]\s*NZD.*?\$?\s*([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|GST\s*Inclusive.*?\$?\s*([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)|[iI][Nn][Vv][Oo][Ii][cC][Ee]\s*[Tt][oO][tT][aA][lL].*?\$?\s*([\d\,]{1,10}\.[\d]{2}[cC]?[Rr]?)'
   gst: '15%'
 
 options:
