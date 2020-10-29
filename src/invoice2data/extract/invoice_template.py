@@ -189,7 +189,7 @@ class InvoiceTemplate(OrderedDict):
                         if res_find:
                             current_charges = self.parse_number(res_find[0].replace('$','').replace(' ','').replace('\n', '').replace('\r', ''))
                     except:
-                        logger.error("Error when matching '%s'", k)
+                        logger.error("Error when matching current_charges")
                 except Exception as e:
                     logger.error(e)
 
@@ -262,22 +262,22 @@ class InvoiceTemplate(OrderedDict):
                             all_date = []
                             for redates in res_find:
                                 try:
-									if isinstance(redates, tuple):
-										for redate00 in redates:
-											try:
-												redate000 = self.parse_date(redate00.lower().replace('o','0').replace('jnu','jun')
-															.replace('0ct','Oct').replace('0CT','OCT').replace('0ber','ober')
-															.replace('0vem','ovem').replace('N0v','Nov').replace('n0v','nov').replace('feburary','february'))
-												if redate000 is not None:
-													all_date.append(redate000)
-											except:
-												pass
-									else:
-										redate00 = self.parse_date(redates.lower().replace('o','0').replace('jnu','jun')
-													.replace('0ct','Oct').replace('0CT','OCT').replace('0ber','ober')
-													.replace('0vem','ovem').replace('N0v','Nov').replace('n0v','nov').replace('feburary','february'))
-										if redate00 is not None:
-											all_date.append(redate00)
+                                    if isinstance(redates, tuple):
+                                        for redate00 in redates:
+                                            try:
+                                                redate000 = self.parse_date(redate00.lower().replace('o','0').replace('jnu','jun')
+                                                            .replace('0ct','Oct').replace('0CT','OCT').replace('0ber','ober')
+                                                            .replace('0vem','ovem').replace('N0v','Nov').replace('n0v','nov').replace('feburary','february'))
+                                                if redate000 is not None:
+                                                    all_date.append(redate000)
+                                            except:
+                                                pass
+                                    else:
+                                        redate00 = self.parse_date(redates.lower().replace('o','0').replace('jnu','jun')
+                                                    .replace('0ct','Oct').replace('0CT','OCT').replace('0ber','ober')
+                                                    .replace('0vem','ovem').replace('N0v','Nov').replace('n0v','nov').replace('feburary','february'))
+                                        if redate00 is not None:
+                                            all_date.append(redate00)
                                 except:
                                     pass
                             if k == 'date' and len(all_date)>0:
@@ -300,16 +300,16 @@ class InvoiceTemplate(OrderedDict):
                             all_amount = []
                             for amt in res_find:
                                 try:
-									if isinstance(amt, tuple):
-										for amt0 in amt:
-											try:
-												all_amount.append(self.parse_number(amt0.replace('$','').replace(' ','').replace('\n', '').replace('\r', '')))
-											except:
-												pass
-									else:
-										all_amount.append(self.parse_number(amt.replace('$','').replace(' ','').replace('\n', '').replace('\r', '')))
+                                    if isinstance(amt, tuple):
+                                        for amt0 in amt:
+                                            try:
+                                                all_amount.append(self.parse_number(amt0.replace('$','').replace(' ','').replace('\n', '').replace('\r', '')))
+                                            except:
+                                                pass
+                                    else:
+                                        all_amount.append(self.parse_number(amt.replace('$','').replace(' ','').replace('\n', '').replace('\r', '')))
                                 except:
-									pass
+                                    pass
                             if len(all_amount) > 0:
                                 output[k] = max(all_amount, key=abs)
                                 if current_charges < output[k]:
@@ -331,7 +331,7 @@ class InvoiceTemplate(OrderedDict):
                     else:
                         res_find = list(set(res_find))
                         resstr = ''
-			for res in res_find:
+                        for res in res_find:
                             # make sure this do not affact regular bc number
                             if isinstance(res, tuple):
                                 for res00 in res:
