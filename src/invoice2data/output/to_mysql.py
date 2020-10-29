@@ -46,7 +46,7 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass
                 user=dbuser,
                 passwd=dbpass,
                 db='watercare')
-	    watercareCur = connWatercare.cursor()
+        watercareCur = connWatercare.cursor()
 
     except Exception as e:
         logger.error("Connecting mysql error " + str(e))
@@ -76,7 +76,7 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass
             if 'this_month_reading' in data and data['this_month_reading'] and 'last_month_reading' in data and data['last_month_reading']:
                 last_month = re.findall("(\d{1,2}\-[a-zA-Z]{3}\-\d\d)", data['last_month_reading'])
                 this_month = re.findall("(\d{1,2}\-[a-zA-Z]{3}\-\d\d)", data['this_month_reading'])
-		if last_month and this_month:
+        if last_month and this_month:
                     description = 'Water charges ' + last_month[0] + ' - ' + this_month[0]
         gst = 0
         try:
@@ -90,7 +90,7 @@ def write_to_db(data, path, date_format="%Y-%m-%d", dbhost="", dbuser="", dbpass
             pass
         net = gross - gst
 
-	if data['issuer'].replace("\'","\\\'") == 'Watercare Services Limited':
+        if data['issuer'].replace("\'","\\\'") == 'Watercare Services Limited':
             getbccodesql= 'select accountnumber, bccode from useraccount where accountnumber=\'' + data['invoice_number'].replace(u'\u2212', '-').decode('utf-8','ignore').encode("utf-8").replace("\'","\\\'") + '\''
             try:
                 watercareCur.execute(getbccodesql)
