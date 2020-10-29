@@ -464,7 +464,7 @@ def main2(args=None):
                     else:
                         succeed_path = join(pdfdirectory, 'failedToMove')
                     succeed_path = join(succeed_path, date.today().strftime('%d-%m-%Y'))
-		    if not os.path.exists(succeed_path):
+                    if not os.path.exists(succeed_path):
                         os.makedirs(succeed_path)
                     destinateFile = join(succeed_path, pdfname)
                     shutil.move(pdfpath, destinateFile)
